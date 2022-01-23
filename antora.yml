@@ -1,0 +1,5 @@
+name: contentlib
+version: 'latest'
+title: ContentLib
+nav:
+- modules/ROOT/nav.adoc

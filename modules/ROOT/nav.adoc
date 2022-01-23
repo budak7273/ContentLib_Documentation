@@ -1,0 +1,35 @@
+* xref:index.adoc[Home Page]
+* https://ficsit.app/mod/ContentLib/[Mod Page]
+* https://discord.gg/kcRmFxn89d[Discord]
+* https://github.com/Nogg-aholic/ContentLib/tree/master/PatchNotes[Patch Notes]
+
+* Background Information
+** xref:BackgroundInfo/FolderNames.adoc[Folder Names]
+** xref:BackgroundInfo/LoadingOrder.adoc[Content Loading Order]
+
+* Features
+** xref:Features/Patching.adoc[Patches]
+** xref:Features/Items.adoc[Item Creation]
+** xref:Features/Recipes.adoc[Recipe Creation]
+** xref:Features/Schematics.adoc[Schematic Creation]
+** xref:Features/VisualKits.adoc[VisualKits]
+** xref:Features/CDOs.adoc[CDO Modification]
+
+* Tutorials
+** xref:Tutorials/Setup.adoc[Setting Up]
+** xref:Tutorials/FindAssetPath.adoc[Finding Assets]
+** xref:Tutorials/ContentInspector.adoc[Using ContentInspector]
+** xref:Tutorials/ItemPatching.adoc[Rename an Item]
+** xref:Tutorials/RecipePatching.adoc[Modify a Recipe]
+** xref:Tutorials/SchematicPatching.adoc[Modify a Milestone/MAM Node]
+** xref:Tutorials/FluidsInfo.adoc[Fluids]
+** xref:Tutorials/CreateItem.adoc[Create an Item]
+** xref:Tutorials/CreateRecipe.adoc[Create a Recipe]
+** xref:Tutorials/CreateSchematic.adoc[Create a Schematic]
+** xref:Tutorials/PublishMod.adoc[Publish your Work]
+
+* API Reference
+
+** xref:Reference/BpLib.adoc[Blueprint Library]
+** xref:Reference/CppLib.adoc[C++ Library]
+

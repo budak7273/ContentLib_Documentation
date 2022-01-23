@@ -1,0 +1,32 @@
+= ContentLib Documentation
+
+Welcome to the https://ficsit.app/mod/ContentLib/[ContentLib] documentation!
+
+You can find the source code for the mod https://github.com/Nogg-aholic/ContentLib[here].
+
+For further support, please join the https://discord.gg/kcRmFxn89d[Nog's Mods discord server].
+
+These docs are still largely a work in progress. If you'd like to contribute, feel free to open a PR, or contact me (Robb#6731) on the discord.
+
+
+== For Users
+
+If you'd just like to make a couple recipe or item tweaks, these pages may be of use to you.
+
+- Coming soon.
+
+== For Developers
+
+If you'd like to package your own ContentLib scripts for distribution as a mod on https://ficsit.app/[Satisfactory Mod Repository], these pages may be of use to you.
+
+- Coming soon.
+
+
+== For Advanced Developers
+
+If you'd like the use ContentLib's blueprint and C++ APIs, these pages may be of use to you.
+
+- You **must** have source of the updated versions of the JsonStructs and ContentInspector mods as loaded plugins, else packaging will fail
+  - JsonStructs source can be found https://ficsit.app/mod/JsonStructs[here]
+  - ContentInspector source can be found https://ficsit.app/mod/ContentInspector[TODO here]
+- Coming soon.

@@ -1,0 +1,3 @@
+= Content Default Object Modification
+
+This feature of ContentLib is not currently supported since I (Robb) do not have a copy of the source code that has it implemented.
