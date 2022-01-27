@@ -1,0 +1,9 @@
+= Setting Up For Using ContentLib
+
+TODO
+
+Get a text editor that supports xref:Reference/JsonSchema.adoc[JSON Schemas]
+
+For testing you can put scripts in the Configs xref:BackgroundInfo/FolderNames.adoc[Folders] 
+
+If you want a packaged mod you can follow xref:Tutorials/PublishMod.adoc[Publish your Work]

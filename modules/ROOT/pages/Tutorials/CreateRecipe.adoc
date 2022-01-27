@@ -1,0 +1,115 @@
+= Creating a Recipe
+
+In order to write your own recipes, you will need the following:
+
+1. A text editor, preferably one that supports JSON Schema validation (like Visual Studio Code or Rider)
+2. The internal names of the ingredients and products in your recipe
+3. The internal name of the building(s) that can use your recipe
+4. The internal name of the schematic that will unlock your recipe
+
+Read up on xref:Features/VisualKits.adoc[VisualKits] before you proceed to understand how to reference icons and meshes for your items.
+
+== Simple Recipe
+
+Below is an example recipe and a screenshot of it within the Item Codex in game.
+
+```json
+{
+    "Name": "BioFuel",
+    "Ingredients": [
+        {
+            "Item": "Coal",
+            "Amount": 1
+        }
+    ],
+    "Products": [
+        {
+            "Item": "Biofuel",
+            "Amount": 10
+        }
+    ],
+    "ManufacturingDuration": 1,
+    "ProducedIn": [
+        "ConstructorMk1"
+    ],
+    "UnlockedBy": [
+        "Schematic_1-1"
+    ]
+}
+```
+
+image:https://i.imgur.com/ZUl6Mc5.png[Recipe]
+
+== Complex Recipe
+
+Here's an example recipe for the Blender made by McGalleon.
+
+```json
+{
+    "Name": "Synthetic Crystal",
+    "Ingredients": [
+        {
+            "Item": "Desc_RawQuartz",
+            "Amount": 16
+        },
+        {
+            "Item": "Desc_QuartzCrystal",
+            "Amount": 7
+        },
+        {
+            "Item": "Desc_Water",
+            "Amount": 4800
+        }
+    ],
+    "Products": [
+        {
+            "Item": "Desc_QuartzCrystal",
+            "Amount": 20
+        }
+    ],
+    "ManufacturingDuration": 8,
+    "ProducedIn": [
+        "Build_Blender"
+    ],
+    "UnlockedBy": [
+        "Schematic_1-1"
+    ]
+}
+```
+
+image:https://cdn.discordapp.com/attachments/771801486828896260/863510909476143184/unknown.png[Blender example ingame]
+
+== Setting Up
+
+After setting up your text editor, go ahead and create a new file called `Recipe_YourNameHere.json` and copy in the "Example Starter Recipe" from above.
+
+It is important that your recipe name is formatted in this way because the file name will become the internal recipe blueprint name once the recipe is loaded.
+
+Override names do not need to follow any specific pattern, as they are modifying an existing asset as opposed to creating a new one.
+
+Next, you need to find the item, building, and schematic names. These names are part of the 'blueprint path' of the items in the game's files. Thankfully, this mod will automatically resolve part of the blueprint path into the full name, saving you from having to type out the full name. You can exclude the "_C" from the end as well. 
+
+Find out how to track down asset names xref:Tutorials/FindAssetPath.adoc[here].
+
+Watch out - if you're using fluids in your recipes, you need to multiply the item count by 1000,  Each fluid 'item' in Satisfactory is small interval, which allows for decimal values of fluid in-game. For example, if you want a recipe to consume 4.8 Fuel per operation, you will need to use `Item` name `Desc_LiquidFuel` and an `Amount` of 4800. Optionally, you can read more about how Fluids work on the xref:Tutorials/FluidsInfo.adoc[Fluids] page.
+
+Here are a few Vanilla building names:
+
+* Constructor : `Build_ConstructorMk1`
+* Assembler : `Build_AssemblerMk1`
+* Foundry : `Build_FoundryMk1`
+* Manufacturer : `Build_ManufacturerMk1`
+* Blender: `Build_Blender`
+
+Schematic names for HUB milestones will generally follow the format `Schematic_1-1`, but you can find out specific ones via the approaches described xref:Tutorials/FindAssetPath.adoc[here].
+
+Use the values you've selected and the example recipe above to create your recipe, then place it in the `FactoryGame/Configs/ContentLib/Recipes` directory and launch the game to try it out. If you've done everything correctly, you should see your recipe unlocked by the schematic you specified, and you can use it in the machines you added to ProducedIn.
+
+== Common Errors
+
+Make sure to read the xref:Tutorials/Troubleshooting.adoc[Troubleshooting] page.
+
+* Nothing showing up at all in the logs
+  ** Make sure your recipes are in the `FactoryGame/Configs/ContentLib/Recipes` directory.
+* `Wrong Naming Convention ! "Recipe" expected followed by a Name`
+  ** Your recipe file should be names like this: `Recipe_YourNameHere.json`

@@ -1,0 +1,7 @@
+= ContentInspector
+
+TODO
+
+You can use the mod https://ficsit.app/mod/ContentInspector[ContentInspector] to quickly analyze if your ContentLib scripts are loading correctly.
+
+See the mod page for more info.

@@ -1,0 +1,9 @@
+= Recipes
+
+TODO
+
+xref:Tutorials/CreateRecipe.adoc[Create a Recipe]
+
+Recipes auto-generate categories for you if you specify one that doesn't exist
+
+- JSON-generated Item Categories now automatically have their asset name (not the in-game name) start with `Cat_` for consistency with base game and identification.

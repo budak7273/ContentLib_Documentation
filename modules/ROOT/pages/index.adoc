@@ -1,5 +1,17 @@
 = ContentLib Documentation
 
+// TODO
+// Mention folder testing abilities
+// Mention prefixing things with consistent names 
+
+
+====
+These docs are still highly a work in progress. I decided that if I waited until finishing these to release the U5 update, it would be months before anyone got their hands on the mod, and these docs are only really relevant to a smaller portion of the ContentLib userbase.
+
+If you have any suggestions for these docs, or are willing to contribute, please open a Pull Request or contact me (Robb) on the https://discord.gg/kcRmFxn89d[Nog's Mods discord server].
+====
+
+
 Welcome to the https://ficsit.app/mod/ContentLib/[ContentLib] documentation!
 
 You can find the source code for the mod https://github.com/Nogg-aholic/ContentLib[here].
@@ -8,25 +20,49 @@ For further support, please join the https://discord.gg/kcRmFxn89d[Nog's Mods di
 
 These docs are still largely a work in progress. If you'd like to contribute, feel free to open a PR, or contact me (Robb#6731) on the discord.
 
-
 == For Users
 
 If you'd just like to make a couple recipe or item tweaks, these pages may be of use to you.
 
-- Coming soon.
+* xref:Tutorials/Troubleshooting.adoc[Troubleshooting]
+* xref:Tutorials/CreateItem.adoc[Create an Item]
+* xref:Tutorials/CreateRecipe.adoc[Create a Recipe]
 
 == For Developers
 
+You can use  _ContentLib_ to define the Items, Recipes, and Schematics for your own mods!
+
+Not only is it a lot faster to write items this way, and faster to iterate, it also makes it easy for end users to configure recipes to their own balance preferences.
+
+Additionally, the data-driven nature of ContentLib can help you quickly create Recipes or Items if you want to automatically generate them from another source.
+
 If you'd like to package your own ContentLib scripts for distribution as a mod on https://ficsit.app/[Satisfactory Mod Repository], these pages may be of use to you.
 
-- Coming soon.
-
+* xref:Tutorials/Troubleshooting.adoc[Troubleshooting]
+* xref:Tutorials/Setup.adoc[Setting Up]
+* xref:Tutorials/PublishMod.adoc[Publish your Work]
+* More coming soon.
 
 == For Advanced Developers
 
 If you'd like the use ContentLib's blueprint and C++ APIs, these pages may be of use to you.
 
-- You **must** have source of the updated versions of the JsonStructs and ContentInspector mods as loaded plugins, else packaging will fail
-  - JsonStructs source can be found https://ficsit.app/mod/JsonStructs[here]
-  - ContentInspector source can be found https://ficsit.app/mod/ContentInspector[TODO here]
-- Coming soon.
+The data-driven nature of ContentLib can help you quickly create Recipes or Items if you want to automatically generate them from another source. For example, Aquilla uses ContentLib to allow users to make their own recipes in-game.
+
+ContentLib also has some capabilities not accessible via JSON, and useful for creating mods of your own. These include:
+
+- Easily processing (and modifying) all loaded recipes or items in the game
+- Runtime content generation (ex. generate new recipes for every fluid in the game, like Aquilla does in the mod [Free Fluids - CL](https://ficsit.app/mod/A4WLK29kjJ54nm))
+- Reverse lookup (ex. "What recipes can I use to make this item?")
+- Recipe power cost analysis
+
+To use these features, you will need to set up a full modding project by following the [Getting Started Guide](https://docs.ficsit.app/satisfactory-modding/latest/Development/BeginnersGuide/index.html) and bring in the ContentLib, JsonStructs, and ContentInspector plugins to your project.
+
+Ask on the Discord for further help doing this, since these docs are still a work in progress.
+
+
+* You will need the source of ContentLib loaded in your editor as well. The git repo is the plugin source folder.
+* You **must** also have source of the updated versions of the JsonStructs and ContentInspector mods as loaded plugins, else packaging will fail
+  ** JsonStructs source can be found https://ficsit.app/mod/JsonStructs[here]
+  ** ContentInspector source can be found https://ficsit.app/mod/ContentInspector[TODO I need to get repo access so I can push here]
+* More coming soon.

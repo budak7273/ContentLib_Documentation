@@ -1,0 +1,58 @@
+= Creating an Item
+
+Creating a new item is this simple, as long as you're fine with re-using meshes.
+
+In order to write your own Items, you will need the following:
+
+* A text editor, preferably one that supports JSON Schema validation (like Visual Studio Code or Rider)
+* If you want to _re-use existing (modded or vanilla) item icons and meshes_, the internal name of the item whose Visual Kit you want to re-use.
+* If you want to use your own _icons_, PNG images for the icons.
+* If you want to use your own _meshes_, an packaged mod with those files contained within (the reasoning for this is explained further down).
+* A way to define a recipe for obtaining your item, usually a ContentLib Recipe
+
+
+== Custom Item Example
+
+Below is an example of a freshly created Item and a screenshot of it within the game.
+
+```json
+{
+  "Name": "Gold Too",
+  "VisualKit": "Desc_OreGold_C",
+  "Description" : "This is a new Item which re-uses the visuals of Caterium Ore!"
+}
+```
+
+image:https://i.imgur.com/T7OC3vq.jpg[Item In Game]
+
+== Setting Up
+
+After setting up your text editor, go ahead and copy in the "Example Starter Item" from above.
+
+Next, you need to find the ClassName of the exiting item you want to copy. These names are part of the 'blueprint path' of the items in the game's files. Thankfully, this mod will automatically resolve part of the blueprint path into the full name, saving you from having to type out the full name. You can exclude the "_C" from the end as well.
+
+Find out how to track down asset names xref:Tutorials/FindAssetPath.adoc[here].
+
+If you're making a Liquid or Gas, be sure to read the xref:Tutorials/FluidsInfo.adoc[Fluids] page.
+
+Use the values you've selected and the example item above to define your own Item, then place the json file in the `FactoryGame/Configs/Items` directory.
+
+You have created an item, but there is no way to obtain it yet. See below to find out why. Follow the xref:Tutorials/CreateRecipe.adoc[Create a Recipe] tutorial to make one so you can obtain your item.
+
+Now that you have an item and a recipe to obtain it with, launch the game and check it out.
+
+If you've done everything correctly, you should see your Item in game via an item spawning utility or the recipes you defined.
+
+== More Info
+
+=== Why A Packaged Mod is Needed for Custom Meshes
+
+Unreal Engine expects materials and meshes to be in a very specific cooked format in order for use. This preparation step is unavoidable. The simplest way to prepare your files for usage is to package them using the same method used to package a mod.
+
+=== Why a Recipe is Needed
+
+====
+"Why do I need to use a ContentLib Recipe so that I can obtain my item? Can't I just spawn it in?"
+====
+
+As a performance measure, an Item is generally not available in Satisfactory unless a Recipe exists to register it. When you create a new item with _ContentLib Items_, there are no Recipes that produce it, so the game does not know to register it as existing. Writing a recipe with a ContentLib Recipe is the simplest way to create a recipe for it. Depending on how your item spawning mod locates items, it may or may not be able to find this otherwise hidden item and register it for you.

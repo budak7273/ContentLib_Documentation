@@ -12,7 +12,7 @@ content:
   sources:
     
     ## Used for dev
-    - url: .
+    - url: ./
       branches: HEAD
 
 ui:

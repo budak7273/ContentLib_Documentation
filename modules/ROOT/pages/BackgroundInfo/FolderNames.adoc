@@ -12,7 +12,7 @@ To see the full list of new directories, check your logs after going to the Cont
 
 If you're writing scripts to go in your configs folder, these are the supported folder names as of 0.2.0
 
-```?
+```
 Configs/ContentLib/Items/
 Configs/ContentLib/Icons/
 Configs/ContentLib/Recipes/
@@ -30,7 +30,7 @@ If you're writing scripts to be shipped with a mod, these are the supported fold
 
 Make sure you see the xref:Tutorials/PublishMod.adoc[tutorial] about how to ensure these files are packaged correctly to be included with your mod.
 
-```?
+```
 Mods/ModReferenceGoesHere/ContentLib/Items/
 Mods/ModReferenceGoesHere/ContentLib/Icons/
 Mods/ModReferenceGoesHere/ContentLib/Recipes/

@@ -1,0 +1,11 @@
+= Logging 
+
+TODO
+
+* Easily select logging levels from the mod configs menu. Selecting a more detailed option includes previous options.
+    ** Errors and Sequence Only - Default, good for users playing with the mod
+    ** Warnings and Info - If you're developing stuff with ContentLib, you should *at least* be at this level
+    ** Debug - The most detailed logging, includes stuff like checked folder paths
+* All C++ logs are now in the `LogContentLib` category so it's easier to track things down in the logs. Most Blueprint logs are prefaced with `[CL]`
+
+You can search your game logs for these to find ContentLib error messages and track down problems with your files.

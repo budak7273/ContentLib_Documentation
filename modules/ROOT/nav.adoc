@@ -1,11 +1,13 @@
 * xref:index.adoc[Home Page]
-* https://ficsit.app/mod/ContentLib/[Mod Page]
-* https://discord.gg/kcRmFxn89d[Discord]
-* https://github.com/Nogg-aholic/ContentLib/tree/master/PatchNotes[Patch Notes]
+* https://ficsit.app/mod/ContentLib/[Mod Page 🔗]
+* https://discord.gg/kcRmFxn89d[Discord 🔗]
+* https://github.com/Nogg-aholic/ContentLib/tree/master/PatchNotes[Patch Notes 🔗]
 
 * Background Information
 ** xref:BackgroundInfo/FolderNames.adoc[Folder Names]
 ** xref:BackgroundInfo/LoadingOrder.adoc[Content Loading Order]
+** xref:BackgroundInfo/AutomaticNameResolving.adoc[Automatic Name Resolving]
+** xref:BackgroundInfo/Logging.adoc[Logging]
 
 * Features
 ** xref:Features/Patching.adoc[Patches]
@@ -17,6 +19,7 @@
 
 * Tutorials
 ** xref:Tutorials/Setup.adoc[Setting Up]
+** xref:Tutorials/Troubleshooting.adoc[Troubleshooting]
 ** xref:Tutorials/FindAssetPath.adoc[Finding Assets]
 ** xref:Tutorials/ContentInspector.adoc[Using ContentInspector]
 ** xref:Tutorials/ItemPatching.adoc[Rename an Item]
@@ -30,6 +33,7 @@
 
 * API Reference
 
+** xref:Reference/JsonSchema.adoc[JSON Schemas]
 ** xref:Reference/BpLib.adoc[Blueprint Library]
 ** xref:Reference/CppLib.adoc[C++ Library]
 

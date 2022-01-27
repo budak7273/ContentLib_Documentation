@@ -1,0 +1,87 @@
+= Patching
+
+In addition to creating new content, you can also use _ContentLib_ to modify existing items, recipes, and schematics, both base-game and those added by other mods.
+
+Override JSON file names do not need to follow any specific pattern, as they are modifying an existing asset as opposed to creating a new one.
+
+The JSON syntax is mostly the same as creating the content, but you must put an additional line at the start of the file to specify what item to overwrite - the asset's blueprint path, and **the file goes in the Patches directory instead.** For example, an Item patch would go in `FactoryGame/Configs/ContentLib/ItemPatches`. See xref:BackgroundInfo/FolderNames.adoc[Folder Names] for more info on where the file should go.
+
+== Example Item Patch
+
+[WARNING]
+====
+Remember that Item Patches need to go in the correct xref:BackgroundInfo/FolderNames.adoc[Folder].
+====
+
+Below is an example modification of the base game's "Caterium Ore" item, which is named OreGold internally. With the power of ContentLib Items, you can https://i.imgur.com/eawzrXv.png[reveal who's really behind that mask] - Gold Ore!
+
+.The Big Reveal
+[%collapsible]
+====
+
+image:https://i.imgur.com/eawzrXv.png[Meme]
+
+====
+
+This example replaces the item name and description, but you can modify other fields, too.
+
+```json
+//Game/FactoryGame/Resource/RawResources/OreGold/Desc_OreGold.Desc_OreGold_C
+{
+  "Name": "Gold Ore",
+  "Description" : "Surely not Caterium Ore. Couldn't be!"
+}
+```
+
+== Example Recipe Patch
+
+
+[WARNING]
+====
+Remember that Recipe Patches need to go in the correct xref:BackgroundInfo/FolderNames.adoc[Folder].
+====
+
+```json
+//Game/FactoryGame/Recipes/Constructor/Recipe_Biofuel.Recipe_Biofuel_C
+{
+  "Name": "BioFuel Override",
+  "Ingredients": [
+    {
+      "Item": "Coal",
+      "Amount": 1
+    }
+  ],
+  "Products": [
+    {
+      "Item": "Biofuel",
+      "Amount": 10
+    }
+  ]
+}
+```
+
+== Example Schematic Patch
+
+[WARNING]
+====
+Remember that Schematic Patches need to go in the correct xref:BackgroundInfo/FolderNames.adoc[Folder].
+====
+
+TODO
+
+== Background Info
+
+=== Why do Item overwrites need the blueprint path?
+
+The reason is simple:
+
+* This Item may not be loaded when it isn't added by a Registered Recipe at this point.
+* There is no way to "Find" it by name without loading *everything*.
+
+Therefore, this mod uses a Blueprint Path here to reliably load the Item to be Patched.
+
+=== Why is the blueprint path not part of the Json itself?
+
+* The step of turning the raw text into JSON is skipped when the item class fails to load to improve performance.
+* Putting the path inside of the JSON would have forced this Mod to do the conversion step earlier.
+* Even if it were part of the JSON, it has no actual value for the Items themselves, just for the mod figuring out what to overwrite. The path resolves to either a useless nullptr or a valid pointer with no further usefulness.

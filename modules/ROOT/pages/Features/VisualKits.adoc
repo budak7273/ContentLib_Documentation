@@ -1,0 +1,37 @@
+= VisualKits
+
+_ContentLib_ introduces the concept of Visual Kits to prevent having to deal with long, verbose blueprint paths in Item definitions.
+
+Visual Kits are automatically generated at Runtime for every pre-existing Item (including those from other mods) and can be accessed by using the ClassName of the item.
+
+Below is an example Visual Kit that reuses properties of the base-game Water resource.
+
+```json
+{
+  "Mesh": "/Game/FactoryGame/Resource/Parts/PackagedWater/SM_PackedWater_01.SM_PackedWater_01",
+  "BigIcon": "/Game/FactoryGame/Resource/RawResources/Water/UI/LiquidWater_Pipe_512.LiquidWater_Pipe_512",
+  "SmallIcon": "/Game/FactoryGame/Resource/RawResources/Water/UI/LiquidWater_Pipe_256.LiquidWater_Pipe_256",
+  "FluidColor":
+  {
+    "r": 122,
+    "g": 176,
+    "b": 212,
+    "a": 255
+  },
+  "GasColor":
+  {
+    "r": 122,
+    "g": 176,
+    "b": 212,
+    "a": 255
+  }
+}
+```
+
+As with the Item schema, all Fields are optional.
+
+If a Json file using this Schema is placed in the Folder `FactoryGame/Configs/ContentLib/VisualKits`, the name of this file can be used by all Item definitions, and is preferred over any existing definitions of the same name (meaning base-game visual kits will be overwritten).
+
+If this file was named `CustomWater.json`, then the Visual Kit could be used in Item definitions via the name "CustomWater".
+
+**View the VisualKit json schema on GitHub [here](https://raw.githubusercontent.com/Nogg-aholic/ContentLib_Items/master/FContentLib_ItemVisualKit.json).**

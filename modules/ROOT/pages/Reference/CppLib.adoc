@@ -1,0 +1,7 @@
+= C++ Libraries
+
+TODO
+
+Follow xref:Tutorials/PublishMod.adoc[Publish your Work] to get dependencies set up correctly.
+
+Look at the Content Lib source code for usage examples

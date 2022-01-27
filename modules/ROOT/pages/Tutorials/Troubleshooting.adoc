@@ -1,0 +1,35 @@
+= Troubleshooting
+
+TODO
+
+== Chunk 1
+
+Although ContentLib is generally easier to use than setting up stuff in the Unreal editor, there are still room for mistakes. You should follow the steps below to set up for debugging your scripts.
+
+- In your SML configs, you should turn on the `consoleWindow` config option so you can see the debug console while the game is running. Find out how to do this [here](https://docs.ficsit.app/satisfactory-modding/latest/SMLConfiguration.html).
+- It can be beneficial to open the `FactoryGame.log` file in a text editor that has good searching capabilities, such as Notepad++, so you can track down messages. The file is stored in your `%localappdata%` folder, for example, `....\AppData\Local\FactoryGame\Saved\Logs\FactoryGame.log`
+- You should get the **Content Inspector** mod to check if your content has loaded correctly, and to discover values and paths of base game and mod assets. You can download it [here](https://ficsit.app/mod/F3gKrk7S5nbSBN).
+- Increase your Logging Detail Level to either `Warnings and Info` or `Debug` in the Mod Configs screen for ContentLib
+
+Once you have these tools set up, the following tips/process should help you debug.
+
+- Check the logs for WARNING and ERROR level messages in the `LogContentLib` category, or containing the text `[CL]`, these contain potentially useful messages.
+- Use Content Inspector (mentioned above) to check the data for loaded items and see if it matches what you expect
+
+- Although ContentLib attempts to offer live reloading of JSON assets (when triggered by the chat commands or config widget) this hasn't really been tested much, and Satisfactory was not designed for it.
+
+== Frequent Problems
+
+- I created a new Item but it doesn't exist in-game
+  - Remember that you need to have a Recipe that produces that item, and a Schematic to unlock that item, for it to exist in-game.
+  - Make sure that you put your files in the correct folders. See the "Where to put your ContentLib files" section.
+- I wrote a Patch, but it isn't changing anything!
+  - Make sure that you put your files in the correct folders. See the "Where to put your ContentLib files" section.
+
+== Chunk 2
+
+If an error is encountered while loading, the mod will print error information to the SML console and your log files. To see the SML console, turn on `consoleWindow` in your configs. You can find info on how to do that https://docs.ficsit.app/satisfactory-modding/latest/SMLConfiguration.html[here]. You can find your log files in your Local AppData directory, ex. `AppData\Local\FactoryGame\Saved\Logs`.
+
+See the xref:BackgroundInfo/Logging.adoc[Logging page] to find out how to track down ContentLib error messages.
+
+See xref:Tutorials/ContentInspector.adoc[Using ContentInspector] for how to check if your content is loaded or not without having to poke around in-game.

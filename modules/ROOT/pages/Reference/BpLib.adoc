@@ -1,0 +1,13 @@
+= Blueprint Libraries
+
+TODO
+
+Follow xref:Tutorials/PublishMod.adoc[Publish your Work] to get dependencies set up correctly.
+
+Look at the Content Lib source code for usage examples
+
+== Recipe Example
+
+You can follow the examples below to load recipes from your mod's own custom directories, or create and register recipes from strings alone, or whatever you'd like!
+
+image:https://i.imgur.com/p5TgndI.png[RecipeExample]

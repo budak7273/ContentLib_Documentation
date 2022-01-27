@@ -1,0 +1,7 @@
+= Schematics
+
+This section is a WIP.
+
+You can use _ContentLib_ to create your own schematics, or edit existing ones!
+
+To specify schematic icons, use item Visual Kits.
