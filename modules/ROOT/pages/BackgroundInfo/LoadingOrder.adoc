@@ -1,7 +1,5 @@
 = Content Loading Order
 
-TODO
-
 As of 0.2.0, all ContentLib content is now processed in the order:
 
 1. Vanilla

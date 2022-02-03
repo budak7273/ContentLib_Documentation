@@ -1,0 +1,12 @@
+= Icons
+
+If you would like to use icons other than those distributed with the base game for your xref:Features/VisualKits.adoc[Visual Kits], ContentLib allows you to load **PNG image files** as assets for your content to use.
+
+The game has two primary icon sizes - Small (256x256) and Big (512x512), but it is possible to use a Big icon as a Small one without any issues in-game. Using sizes other than these may cause unusual scaling problems in-game, but it will probably still work.
+
+You may find it beneficial to include the dimensions of the icons as a suffix in the file name, for example, `ItemName_256.png` and `ItemName_512.png`
+
+[WARNING]
+====
+Remember that custom Icons need to go in the correct xref:BackgroundInfo/FolderNames.adoc[Folder].
+====

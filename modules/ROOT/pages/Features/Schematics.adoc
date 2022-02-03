@@ -1,7 +1,47 @@
 = Schematics
 
-This section is a WIP.
+[NOTE]
+====
+TODO this schema isn't written yet.
+You can find a WIP xref:Reference/JsonSchema.adoc[JSON Schema] for Schematics https://github.com/budak7273/ContentLib_Documentation/tree/main/JsonSchemas[here].
+====
 
 You can use _ContentLib_ to create your own schematics, or edit existing ones!
 
-To specify schematic icons, use item Visual Kits.
+In order to make them easy to identify among other assets, all Schematic JSON files should start with the prefix `Schematic_`. You may find it beneficial to add further detail in the prefix, such as `Schematic_HUB_` for HUB milestones and `Schematic_Node_` for MAM Nodes.
+
+To specify schematic icons, use xref:Features/VisualKits.adoc[Visual Kits].
+
+[WARNING]
+====
+Remember that custom Schematics need to go in the correct xref:BackgroundInfo/FolderNames.adoc[Folder].
+====
+
+== Schematic Example
+
+Here is an example schematic from the RePan Oil mod: 
+
+```json
+{
+  "Name": "RePan Acid Process",
+  "Type": "Milestone",
+  "Tier": 8,
+  "VisualKit": "Kit_Aciding",
+  "Category": "RePan-Oil",
+  "Cost": [
+    {
+      "Item": "Desc_AluminumPlate",
+      "Amount": 100
+    },
+    {
+      "Item": "Desc_PackagedNitrogenGas",
+      "Amount": 100
+    },
+    {
+      "Item": "Desc_PackagedSulfuricAcid",
+      "Amount": 100
+    }
+  ],
+  "Recipes": [ "Recipe_CatalyticNitricAcid", "Recipe_PickledSteelIngots", "Recipe_PickledSteelBeam", "Recipe_BlowMoldedTank", "Recipe_EtchedBoards", "Recipe_ReprocessedUranium", "Recipe_UREXCells" ]
+}
+```

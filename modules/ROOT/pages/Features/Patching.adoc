@@ -2,7 +2,7 @@
 
 In addition to creating new content, you can also use _ContentLib_ to modify existing items, recipes, and schematics, both base-game and those added by other mods.
 
-Override JSON file names do not need to follow any specific pattern, as they are modifying an existing asset as opposed to creating a new one.
+Patch JSON file names do not need to follow any specific pattern, as they are modifying an existing asset as opposed to creating a new one, but it is advised that you start them with the prefix of the type of asset you are patching. For example, recipe patches should start with `Recipe_` and item patches with `Desc_`
 
 The JSON syntax is mostly the same as creating the content, but you must put an additional line at the start of the file to specify what item to overwrite - the asset's blueprint path, and **the file goes in the Patches directory instead.** For example, an Item patch would go in `FactoryGame/Configs/ContentLib/ItemPatches`. See xref:BackgroundInfo/FolderNames.adoc[Folder Names] for more info on where the file should go.
 

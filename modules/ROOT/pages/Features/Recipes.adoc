@@ -1,9 +1,86 @@
 = Recipes
 
+[NOTE]
+====
+You can find a WIP xref:Reference/JsonSchema.adoc[JSON Schema] for Recipes https://github.com/budak7273/ContentLib_Documentation/tree/main/JsonSchemas[here].
+====
+
 TODO
+
+In order to make them easy to identify among other assets, all Recipe JSON files should start with the prefix `Recipe_`
 
 xref:Tutorials/CreateRecipe.adoc[Create a Recipe]
 
 Recipes auto-generate categories for you if you specify one that doesn't exist
 
-- JSON-generated Item Categories now automatically have their asset name (not the in-game name) start with `Cat_` for consistency with base game and identification.
+Auto-generated Item Category assets have their asset name (not the in-game name) start with `Cat_` for consistency with the base game, and identification.
+
+== Simple Recipe
+
+Below is an example recipe and a screenshot of it within the Item Codex in game.
+
+```json
+{
+    "Name": "BioFuel",
+    "Ingredients": [
+        {
+            "Item": "Coal",
+            "Amount": 1
+        }
+    ],
+    "Products": [
+        {
+            "Item": "Biofuel",
+            "Amount": 10
+        }
+    ],
+    "ManufacturingDuration": 1,
+    "ProducedIn": [
+        "ConstructorMk1"
+    ],
+    "UnlockedBy": [
+        "Schematic_1-1"
+    ]
+}
+```
+
+image:https://i.imgur.com/ZUl6Mc5.png[Recipe]
+
+== Complex Recipe
+
+Here's an example recipe for the Blender made by McGalleon.
+
+```json
+{
+    "Name": "Synthetic Crystal",
+    "Ingredients": [
+        {
+            "Item": "Desc_RawQuartz",
+            "Amount": 16
+        },
+        {
+            "Item": "Desc_QuartzCrystal",
+            "Amount": 7
+        },
+        {
+            "Item": "Desc_Water",
+            "Amount": 4800
+        }
+    ],
+    "Products": [
+        {
+            "Item": "Desc_QuartzCrystal",
+            "Amount": 20
+        }
+    ],
+    "ManufacturingDuration": 8,
+    "ProducedIn": [
+        "Build_Blender"
+    ],
+    "UnlockedBy": [
+        "Schematic_1-1"
+    ]
+}
+```
+
+image:https://cdn.discordapp.com/attachments/771801486828896260/863510909476143184/unknown.png[Blender example ingame]

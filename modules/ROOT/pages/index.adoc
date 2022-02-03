@@ -52,17 +52,16 @@ The data-driven nature of ContentLib can help you quickly create Recipes or Item
 ContentLib also has some capabilities not accessible via JSON, and useful for creating mods of your own. These include:
 
 - Easily processing (and modifying) all loaded recipes or items in the game
-- Runtime content generation (ex. generate new recipes for every fluid in the game, like Aquilla does in the mod [Free Fluids - CL](https://ficsit.app/mod/A4WLK29kjJ54nm))
+- Runtime content generation (ex. generate new recipes for every fluid in the game, like Aquilla does in the mod https://ficsit.app/mod/A4WLK29kjJ54nm[Free Fluids - CL])
 - Reverse lookup (ex. "What recipes can I use to make this item?")
 - Recipe power cost analysis
 
-To use these features, you will need to set up a full modding project by following the [Getting Started Guide](https://docs.ficsit.app/satisfactory-modding/latest/Development/BeginnersGuide/index.html) and bring in the ContentLib, JsonStructs, and ContentInspector plugins to your project.
+To use these features, you will need to set up a full modding project by following the https://docs.ficsit.app/satisfactory-modding/latest/Development/BeginnersGuide/index.html[Getting Started Guide] and bring in the ContentLib, JsonStructs, and ContentInspector plugins to your project.
 
 Ask on the Discord for further help doing this, since these docs are still a work in progress.
 
-
-* You will need the source of ContentLib loaded in your editor as well. The git repo is the plugin source folder.
+* You will need the source of ContentLib loaded in your editor as well. The https://github.com/Nogg-aholic/ContentLib[git repo] is the plugin source folder.
 * You **must** also have source of the updated versions of the JsonStructs and ContentInspector mods as loaded plugins, else packaging will fail
   ** JsonStructs source can be found https://ficsit.app/mod/JsonStructs[here]
-  ** ContentInspector source can be found https://ficsit.app/mod/ContentInspector[TODO I need to get repo access so I can push here]
+  ** ContentInspector source can be found https://ficsit.app/mod/ContentInspector[here]
 * More coming soon.

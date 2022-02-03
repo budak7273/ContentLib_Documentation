@@ -14,7 +14,8 @@
 ** xref:Features/Items.adoc[Item Creation]
 ** xref:Features/Recipes.adoc[Recipe Creation]
 ** xref:Features/Schematics.adoc[Schematic Creation]
-** xref:Features/VisualKits.adoc[VisualKits]
+** xref:Features/VisualKits.adoc[Visual Kits]
+** xref:Features/Icons.adoc[Icons]
 ** xref:Features/CDOs.adoc[CDO Modification]
 
 * Tutorials

@@ -2,6 +2,8 @@
 
 TODO
 
-Watch out - if you're using fluids in your recipes, you need to multiply the item count by 1000,  Each fluid 'item' in Satisfactory is small interval, which allows for decimal values of fluid in-game. For example, if you want a recipe to consume 4.8 Fuel per operation, you will need to use `Item` name `Desc_LiquidFuel` and an `Amount` of 4800.
+Fluids are still defined by xref:Features/Items.adoc[Item] descriptors, but they have their stack size set to Fluid and their Form set to either Liquid or Gas.
 
 Fluids get their colors from xref:Features/VisualKits.adoc[VisualKits].
+
+Watch out - if you're using fluids in your recipes, you need to multiply the item count by 1000,  Each fluid 'item' in Satisfactory is small interval, which allows for decimal values of fluid in-game. For example, if you want a recipe to consume 4.8 Fuel per operation, you will need to use `Item` name `Desc_LiquidFuel` and an `Amount` of 4800.

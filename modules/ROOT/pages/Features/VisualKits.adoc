@@ -1,10 +1,43 @@
 = VisualKits
 
+[NOTE]
+====
+You can find a WIP xref:Reference/JsonSchema.adoc[JSON Schema] for Visual Kits https://github.com/budak7273/ContentLib_Documentation/tree/main/JsonSchemas[here].
+====
+
 _ContentLib_ introduces the concept of Visual Kits to prevent having to deal with long, verbose blueprint paths in Item definitions.
 
 Visual Kits are automatically generated at Runtime for every pre-existing Item (including those from other mods) and can be accessed by using the ClassName of the item.
 
+You can also define your own Visual Kits using JSON files. In custom visual kits, you can re-use base game content, refer to content from other mods, or (in the case of icons only) use xref:Features/Icons.adoc[Icons] that have been loaded by ContentLib.
+
+For example, a custom kit file named `Kit_CustomWater.json` can be used in Item definitions via the name "Kit_CustomWater".
+
+[WARNING]
+====
+Remember that custom Visual Kits need to go in the correct xref:BackgroundInfo/FolderNames.adoc[Folder].
+====
+
+In order to make them easy to identify among other assets, all Visual Kit JSON files should start with the prefix `Kit_`
+
+As with the Item schema, all Fields are optional.
+
+== Schematic Visual Kit Example
+
+Here is an example Visual Kit that is used in RePan to reference custom xref:Features/Icons.adoc[Icons] for use in a xref:Features/Schematics.adoc[Schematic]
+
+```json
+{
+  "BigIcon": "AcidRefinery",
+  "SmallIcon": "AcidRefinery"
+}
+```
+
+== Item Visual Kit Example
+
 Below is an example Visual Kit that reuses properties of the base-game Water resource.
+
+Note that if a Solid is given fluid/gas color properties, they will have no noticeable effect.
 
 ```json
 {
@@ -28,10 +61,6 @@ Below is an example Visual Kit that reuses properties of the base-game Water res
 }
 ```
 
-As with the Item schema, all Fields are optional.
+== Visual Kit overriding
 
 If a Json file using this Schema is placed in the Folder `FactoryGame/Configs/ContentLib/VisualKits`, the name of this file can be used by all Item definitions, and is preferred over any existing definitions of the same name (meaning base-game visual kits will be overwritten).
-
-If this file was named `CustomWater.json`, then the Visual Kit could be used in Item definitions via the name "CustomWater".
-
-**View the VisualKit json schema on GitHub [here](https://raw.githubusercontent.com/Nogg-aholic/ContentLib_Items/master/FContentLib_ItemVisualKit.json).**

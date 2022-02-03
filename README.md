@@ -2,7 +2,7 @@
 
 Documentation for the [ContentLib](https://ficsit.app/mod/ContentLib) Satisfactory mod.
 
-Deployed on [docs.ficsit.app](https://docs.ficsit.app/satisfactory-modding/latest/index.html) as a sub-section.
+Deployed on [docs.ficsit.app](https://docs.ficsit.app/contentlib/latest/index.html) as a sub-section.
 
 ## Development Setup
 
