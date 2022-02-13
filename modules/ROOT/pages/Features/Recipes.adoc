@@ -15,9 +15,7 @@ Recipes auto-generate categories for you if you specify one that doesn't exist
 
 Auto-generated Item Category assets have their asset name (not the in-game name) start with `Cat_` for consistency with the base game, and identification.
 
-
 You can attempt to hot reload Recipes via the button on the Mod Configuration screen, or the `/CLRecipeReload` chat command. Hot reloading is a WIP feature.
-
 
 == Simple Recipe
 

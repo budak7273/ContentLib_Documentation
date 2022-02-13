@@ -35,7 +35,6 @@ This example replaces the item name and description, but you can modify other fi
 
 == Example Recipe Patch
 
-
 [WARNING]
 ====
 Remember that Recipe Patches need to go in the correct xref:BackgroundInfo/FolderNames.adoc[Folder].
