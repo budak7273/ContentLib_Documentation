@@ -5,14 +5,34 @@
 You can find a WIP xref:Reference/JsonSchema.adoc[JSON Schema] for CDOs https://github.com/budak7273/ContentLib_Documentation/tree/main/JsonSchemas[here].
 ====
 
-**NOTE- These are not working in the current version of the mod since I (Rob) lack the source code for that version.** You can also use ContentLib to perform (Class Default Object) CDO edits.
+You can also use ContentLib to perform (Class Default Object) CDO edits.
+
+This is an advanced feature that can modify fields on pretty much any asset, as long as you know where the asset is and what field to look for. It's possible to do a lot of cool things with this feature, but also **cause a lot of crashes** if you don't know what you're doing.
+
+It can also do things like change the parent classes of blueprint assets.
+
+To learn more about what a CDO is, see xref:https://docs.unrealengine.com/4.26/en-US/ProgrammingAndScripting/ProgrammingWithCPP/UnrealArchitecture/Objects/[this] Unreal Engine documentation page.
+
+In order to find the names of fields, you probably will need to either have a set up modding project, and/or look at the C++ headers shipped with the game. Experimentation will be required to find out what fields do what.
+
+You can attempt to hot reload CDOs via the button on the Mod Configuration screen, or the `/CLCDOReload` chat command. *Hot reloading is a WIP feature*, and could work, have no effect, or possibly even crash you depending on the fields you are modifying.
+
+There are no restrictions on the name for CDO json files.
 
 [WARNING]
 ====
 Remember that CDOs need to go in the correct xref:BackgroundInfo/FolderNames.adoc[Folder].
 ====
 
-== Examples
+== JSON Examples
+
+=== Rename an Item
+
+This renames Caterium Ingots to Gold Ingots. The mInventoryIcon TintColor modifications don't seem to be working, but I don't think they work even if set up through normal means.
+
+This is an example of a CDO edit that works with hot reloading.
+
+image:https://i.imgur.com/FIyBHQB.png[Gold example]
 
 ```json
 {
@@ -38,9 +58,9 @@ Remember that CDOs need to go in the correct xref:BackgroundInfo/FolderNames.ado
         "TintColor": {
           "SpecifiedColor": {
             "R": 1,
-            "G": 1,
-            "B": 1,
-            "A": 2
+            "G": 0,
+            "B": 0,
+            "A": 1
           },
           "ColorUseRule": 0
         }
@@ -49,6 +69,8 @@ Remember that CDOs need to go in the correct xref:BackgroundInfo/FolderNames.ado
   ]
 }
 ```
+
+=== Recipe Ingredients Quantity Change
 
 ```json
 {
@@ -75,6 +97,8 @@ Remember that CDOs need to go in the correct xref:BackgroundInfo/FolderNames.ado
 }
 ```
 
+=== Change Material Parent Class
+
 ```json
 {
   "Class": "/Game/FactoryGame/-Shared/Material/MI_Factory_Base_01.MI_Factory_Base_01",
@@ -86,3 +110,7 @@ Remember that CDOs need to go in the correct xref:BackgroundInfo/FolderNames.ado
   ]
 }
 ```
+
+== Blueprint Library
+
+Perform your own CDO modifications directly with `UCLCDOBPFLib::GenerateCLCDOFromString` or `UCLCDOBPFLib::EditCDO`. See the `CL_CDO_Module`` blueprint asset for examples of GenerateCLCDOFromString.

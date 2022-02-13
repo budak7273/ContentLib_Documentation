@@ -12,6 +12,8 @@ In order to make them easy to identify among other assets, all Schematic JSON fi
 
 To specify schematic icons, use xref:Features/VisualKits.adoc[Visual Kits].
 
+You can attempt to hot reload Schematics via the button on the Mod Configuration screen, or the `/CLSchemReload` chat command. Hot reloading is a WIP feature.
+
 [WARNING]
 ====
 Remember that custom Schematics need to go in the correct xref:BackgroundInfo/FolderNames.adoc[Folder].

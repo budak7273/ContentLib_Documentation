@@ -22,6 +22,12 @@ In order to make them easy to identify among other assets, all Visual Kit JSON f
 
 As with the Item schema, all Fields are optional.
 
+== VisualKit Exporting
+
+Nog previously wrote a chat command for exporting the VisualKits of all loaded items to text files. I (Robb) have not checked if this command is still working.
+
+You can attempt to use it via `/CLDumpVisualKits`, and it should output files to `FactoryGame/Mods/ContentLib/Configs/ItemVisualKits/DumpOutput/<KitName>.json` if it worked.
+
 == Schematic Visual Kit Example
 
 Here is an example Visual Kit that is used in RePan to reference custom xref:Features/Icons.adoc[Icons] for use in a xref:Features/Schematics.adoc[Schematic]

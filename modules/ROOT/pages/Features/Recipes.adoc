@@ -9,11 +9,15 @@ TODO
 
 In order to make them easy to identify among other assets, all Recipe JSON files should start with the prefix `Recipe_`
 
-xref:Tutorials/CreateRecipe.adoc[Create a Recipe]
+xref:Tutorials/CreateRecipe.adoc[Create a Recipe Tutorial]
 
 Recipes auto-generate categories for you if you specify one that doesn't exist
 
 Auto-generated Item Category assets have their asset name (not the in-game name) start with `Cat_` for consistency with the base game, and identification.
+
+
+You can attempt to hot reload Recipes via the button on the Mod Configuration screen, or the `/CLRecipeReload` chat command. Hot reloading is a WIP feature.
+
 
 == Simple Recipe
 

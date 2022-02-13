@@ -9,4 +9,6 @@ TODO
 
 In order to make them easy to identify among other assets, all Item JSON files should start with the prefix `Desc_`
 
-xref:Tutorials/CreateItem.adoc[Create an Item]
+xref:Tutorials/CreateItem.adoc[Create an Item Tutorial]
+
+You can attempt to hot reload Items via the button on the Mod Configuration screen, or the `/CLItemReload` chat command. Hot reloading is a WIP feature.
