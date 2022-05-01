@@ -11,3 +11,18 @@ Look at the Content Lib source code for usage examples
 You can follow the examples below to load recipes from your mod's own custom directories, or create and register recipes from strings alone, or whatever you'd like!
 
 image:https://i.imgur.com/p5TgndI.png[RecipeExample]
+
+== Advanced Example from Difficulty Tuner
+
+image:https://i.imgur.com/jKDaZb9.png[DifficultyTunerSubsystem]
+
+This is a function and an extract from the mod Difficulty Tuner by SifVerT.
+
+1. Inputs from the Event Graph to the blueprint function. This function takes the multiplier variable float from the subsystem and alters the cost of all in-game schematics, but via the function's input any kind of schematics can be chosen for edit.
+2. The loop processes each schematic in the array one by one. I am using ContentLib recipes which I have backed up earlier so here I bring out the keys of the cost in an orderly fashion via an array. The Find feature does look into the map for the currently scanned Display Name and gets the value there based on the key.
+3. The value from the previous loop goes into a simple mathematical multiplication, the multiplier value is derived from the input into the function, in Difficulty Tuner this is set via a configuration widget. And for each loop of going through keys in '2' it adds each modified entry into a temporary map variable. Nothing is saved yet to the ContentLib schematic.
+4. For each schematic, once all cost keys have been processed, they get initialized (saved/overwritten in this case) to the ContentLib library and take effect in game immediately. It is important to clear the temporary map here before going through the main loop again or the costs will be really messy.
+
+ContentLib's Subsystem must be called for in order to use the entire CL feature. If you have any questions feel welcome to contact SifVerT for help. If the demo needs extra clarification please also come with feedback.
+
+PR'ed by SifVerT 5/1/2022
