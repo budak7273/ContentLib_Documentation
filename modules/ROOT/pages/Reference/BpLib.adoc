@@ -12,17 +12,18 @@ You can follow the examples below to load recipes from your mod's own custom dir
 
 image:https://i.imgur.com/p5TgndI.png[RecipeExample]
 
-== Advanced Example from Difficulty Tuner
+== Schematic Cost Modification Example from Difficulty Tuner
 
-image:https://i.imgur.com/jKDaZb9.png[DifficultyTunerSubsystem]
+image:https://i.imgur.com/jKDaZb9.png[DifficultyTunerSubsystem Schematic Example]
 
-This is a function and an extract from the mod Difficulty Tuner by SifVerT.
+Last updated by SifVerT 5/3/2022
 
-1. Inputs from the Event Graph to the blueprint function. This function takes the multiplier variable float from the subsystem and alters the cost of all in-game schematics, but via the function's input any kind of schematics can be chosen for edit.
-2. The loop processes each schematic in the array one by one. I am using ContentLib recipes which I have backed up earlier so here I bring out the keys of the cost in an orderly fashion via an array. The Find feature does look into the map for the currently scanned Display Name and gets the value there based on the key.
-3. The value from the previous loop goes into a simple mathematical multiplication, the multiplier value is derived from the input into the function, in Difficulty Tuner this is set via a configuration widget. And for each loop of going through keys in '2' it adds each modified entry into a temporary map variable. Nothing is saved yet to the ContentLib schematic.
-4. For each schematic, once all cost keys have been processed, they get initialized (saved/overwritten in this case) to the ContentLib library and take effect in game immediately. It is important to clear the temporary map here before going through the main loop again or the costs will be really messy.
+This example is from the mod https://ficsit.app/mod/DifficultyTuner[Difficulty Tuner] by SifVerT.
+It applies a configurable cost multiplier to the ingredients of all in-game schematics.
 
-ContentLib's Subsystem must be called for in order to use the entire CL feature. If you have any questions feel welcome to contact SifVerT for help. If the demo needs extra clarification please also come with feedback.
+1. Inputs from the Event Graph to the blueprint function. This function takes arrays of Schematics (`FGSchematic Array`) and CL Schematic structs (`CLSchematic Array`) whose items are in parallel (items at the same index are relevant to each other), a reference to the CL subsystem (`CL Subsystem`), and a multiplier variable (`Multiplier`).
+2. The loop processes each schematic in the array one by one. I am using ContentLib Schematics which I have put in an array earlier passed into this function, so here I bring out the keys of the cost in an orderly fashion via an array. The Find feature looks into the ingredients name map for the currently scanned Display Name and gets the value (the quantity) based on the key (the item name).
+3. The value from the previous loop goes into a simple mathematical multiplication, with the `Multiplier` input into the function. In Difficulty Tuner this input value is set externally via a configuration widget. And for each loop of going through keys in 'Step #2' it adds each modified entry into a temporary map variable. Nothing is saved yet to the ContentLib schematic.
+4. For each schematic, once all cost keys have been processed, the changes to the schematic are applied (saved/overwritten in this case) via the ContentLib blueprint library and take effect in game immediately. Before proceeding to the next schematic to modify, the temporary map is cleared, so that it is blank for use in the next schematic.
 
-PR'ed by SifVerT 5/1/2022
+ContentLib's Subsystem must be called for in order to use the entire CL feature. If you have any questions feel welcome to contact SifVerT#2610 on Discord for help. If the demo needs extra clarification please also come with feedback.
