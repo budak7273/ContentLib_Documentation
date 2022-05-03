@@ -4,7 +4,15 @@ TODO
 
 Follow xref:Tutorials/PublishMod.adoc[Publish your Work] to get dependencies set up correctly.
 
-Look at the Content Lib source code for usage examples
+In addition to using the text-file-based JSON features of ContentLib,
+skilled modders can interact directly with ContentLib systems to make writing other mods easier.
+
+For example, the blueprint lib could be used to iterate over every defined item at launch and remove the radiation stat from them.
+
+ContentLib offers both Blueprint and xref:Reference/CppLib[{cpp}] APIs with additional functionality.
+
+You can find examples of its usage by looking at the Content Lib mod's blueprint code for usage examples,
+or by looking at the source code of other mods using Content Lib, such as Aquilla's mods or SifVerT's Difficulty Tuner.
 
 == Recipe Example
 

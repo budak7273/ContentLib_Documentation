@@ -2,9 +2,11 @@
 
 TODO
 
+This page covers how to publish ContentLib scripts you have created as mod for others to use.
+
 You don't necessarily need to set up a full modding project (Unreal editor install), but it helps a lot since it will package your mod for you, and it will make it easier to transition to a full mod later, if you so desire.
 
-== Copied in markdown
+== Setting Up the Plugin Folder
 
 === Option 1 - No Unreal Editor
 
@@ -28,7 +30,7 @@ Create your plugin as normal as described on the docs.
 
 Now continue below at the "Moving in the scripts" section. Your script files will go in your modding project's plugin folder. In order to package your changes for the game, and for distribution as a mod, use Alpakit as described in the docs.
 
-You can still edit the json files in your `/Mods/` folder, but if you chose to do so, be careful not to accidentally lose their contents by packing over them with Alpakit.
+You can still edit the json files in your game install's `/Mods/` folder, but if you chose to do so, be careful not to accidentally lose their contents by packing over them with Alpakit.
 
 == Moving in the scripts
 
@@ -48,15 +50,7 @@ Basically, copy the ContentLib subfolder from your Configs into your plugin's ro
 /ModReferenceGoesHere/ContentLib/CDOs/
 ```
 
-
-
-
-
-
-
-
-
-
+== Dependency Configuration
 
 Make sure that you list `ContentLib` as a required dependency of your own mod, and follow the directions [here](https://docs-dev.ficsit.app/satisfactory-modding/latest/Development/BeginnersGuide/Adding_Ingame_Mod_Icon.html) to be sure that any json files you include in your mod files get packed into your final mod.
 
@@ -79,4 +73,4 @@ This process is out of scope of this tutorial. You can follow the directions in 
 
 A couple things to note
 
-- Made sure you followed the directions above for including 
+- Make sure you followed the directions above for including 
