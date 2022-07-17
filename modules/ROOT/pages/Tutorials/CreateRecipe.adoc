@@ -82,6 +82,11 @@ After setting up your text editor, go ahead and create a new file called `Recipe
 
 It is important that your recipe name is formatted in this way because the file name will become the internal recipe blueprint name once the recipe is loaded.
 
+It's important to make sure that the names of your files
+do not conflict with the names of any existing assets.
+If a conflict is found, it will appear in the logs, which will be discussed later.
+For now, try to be unique and specific with your file names to avoid any possible conflicts.
+
 Next, you need to find the item, building, and schematic names. These names are part of the 'blueprint path' of the items in the game's files. Thankfully, this mod will xref:BackgroundInfo/AutomaticNameResolving.adoc[automatically resolve] part of the blueprint path into the full name, saving you from having to type out the full name. You can exclude the "_C" from the end as well. 
 
 Find out how to track down asset names xref:Tutorials/FindAssetPath.adoc[here].

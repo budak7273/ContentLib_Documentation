@@ -2,8 +2,6 @@
 
 // TODO
 // Mention folder testing abilities
-// Mention prefixing things with consistent names 
-
 
 ====
 These docs are still highly a work in progress. I decided that if I waited until finishing these to release the U5 update, it would be months before anyone got their hands on the mod, and these docs are only really relevant to a smaller portion of the ContentLib userbase.

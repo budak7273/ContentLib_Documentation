@@ -11,6 +11,11 @@ Visual Kits are automatically generated at Runtime for every pre-existing Item (
 
 You can also define your own Visual Kits using JSON files. In custom visual kits, you can re-use base game content, refer to content from other mods, or (in the case of icons only) use xref:Features/Icons.adoc[Icons] that have been loaded by ContentLib.
 
+If you want to refer to the kit of an existing item,
+use its descriptor name, *with the `+_C+` suffix*,
+For example, `Desc_OreGold_C` resolves to the Caterium Ore kit,
+but `Desc_OreGold` resolves to the DefaultItemMesh (default)
+
 For example, a custom kit file named `Kit_CustomWater.json` can be used in Item definitions via the name "Kit_CustomWater".
 
 [WARNING]
@@ -18,7 +23,7 @@ For example, a custom kit file named `Kit_CustomWater.json` can be used in Item 
 Remember that custom Visual Kits need to go in the correct xref:BackgroundInfo/FolderNames.adoc[Folder].
 ====
 
-In order to make them easy to identify among other assets, all Visual Kit JSON files should start with the prefix `Kit_`
+In order to make them easy to identify among other assets, all custom Visual Kit JSON files should start with the prefix `Kit_`
 
 As with the Item schema, all Fields are optional.
 
@@ -68,5 +73,7 @@ Note that if a Solid is given fluid/gas color properties, they will have no noti
 ```
 
 == Visual Kit overriding
+
+TODO is this functionality still around?
 
 If a Json file using this Schema is placed in the Folder `FactoryGame/Configs/ContentLib/VisualKits`, the name of this file can be used by all Item definitions, and is preferred over any existing definitions of the same name (meaning base-game visual kits will be overwritten).
