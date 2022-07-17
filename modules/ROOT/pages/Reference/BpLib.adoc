@@ -4,10 +4,34 @@ TODO
 
 Follow xref:Tutorials/PublishMod.adoc[Publish your Work] to get dependencies set up correctly.
 
-Look at the Content Lib source code for usage examples
+In addition to using the text-file-based JSON features of ContentLib,
+skilled modders can interact directly with ContentLib systems to make writing other mods easier.
+
+For example, the blueprint lib could be used to iterate over every defined item at launch and remove the radiation stat from them.
+
+ContentLib offers both Blueprint and xref:Reference/CppLib[{cpp}] APIs with additional functionality.
+
+You can find examples of its usage by looking at the Content Lib mod's blueprint code for usage examples,
+or by looking at the source code of other mods using Content Lib, such as Aquilla's mods or SifVerT's Difficulty Tuner.
 
 == Recipe Example
 
 You can follow the examples below to load recipes from your mod's own custom directories, or create and register recipes from strings alone, or whatever you'd like!
 
 image:https://i.imgur.com/p5TgndI.png[RecipeExample]
+
+== Schematic Cost Modification Example from Difficulty Tuner
+
+image:https://i.imgur.com/jKDaZb9.png[DifficultyTunerSubsystem Schematic Example]
+
+Last updated by SifVerT 5/3/2022
+
+This example is from the mod https://ficsit.app/mod/DifficultyTuner[Difficulty Tuner] by SifVerT.
+It applies a configurable cost multiplier to the ingredients of all in-game schematics.
+
+1. Inputs from the Event Graph to the blueprint function. This function takes arrays of Schematics (`FGSchematic Array`) and CL Schematic structs (`CLSchematic Array`) whose items are in parallel (items at the same index are relevant to each other), a reference to the CL subsystem (`CL Subsystem`), and a multiplier variable (`Multiplier`).
+2. The loop processes each schematic in the array one by one. I am using ContentLib Schematics which I have put in an array earlier passed into this function, so here I bring out the keys of the cost in an orderly fashion via an array. The Find feature looks into the ingredients name map for the currently scanned Display Name and gets the value (the quantity) based on the key (the item name).
+3. The value from the previous loop goes into a simple mathematical multiplication, with the `Multiplier` input into the function. In Difficulty Tuner this input value is set externally via a configuration widget. And for each loop of going through keys in 'Step #2' it adds each modified entry into a temporary map variable. Nothing is saved yet to the ContentLib schematic.
+4. For each schematic, once all cost keys have been processed, the changes to the schematic are applied (saved/overwritten in this case) via the ContentLib blueprint library and take effect in game immediately. Before proceeding to the next schematic to modify, the temporary map is cleared, so that it is blank for use in the next schematic.
+
+ContentLib's Subsystem must be called for in order to use the entire CL feature. If you have any questions feel welcome to contact SifVerT#2610 on Discord for help. If the demo needs extra clarification please also come with feedback.
