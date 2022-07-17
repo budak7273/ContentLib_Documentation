@@ -1,9 +1,146 @@
 = Setting Up For Using ContentLib
 
-TODO
+Before you can get started using ContentLib,
+there's a few things you'll have to set up.
+Don't worry, it's still a lot less than the full modding environment setup process.
 
-Get a text editor that supports xref:Reference/JsonSchema.adoc[JSON Schemas]
+== Get a Good Text Editor
 
-For testing you can put scripts in the Configs xref:BackgroundInfo/FolderNames.adoc[Folders] 
+Windows Notepad will actively make editing your scripts more difficult.
+Don't use it for this!
 
-If you want a packaged mod you can follow xref:Tutorials/PublishMod.adoc[Publish your Work]
+Notepad++ is an improvement, but we can do better
+
+Get a text editor that supports xref:Reference/JsonSchema.adoc[JSON Schemas],
+or you can use the https://vscode.dev/[VSCode web editor]
+if you don't want to download anything.
+
+[WARNING]
+====
+Don't use Notepad!
+I won't be mad, but I will be disappointed,
+if I see screenshots in the help channels of people using Notepad,
+and I will almost assuredly nag you to use something else instead.
+====
+
+== Alternate Approach: Configs Folder
+
+These steps will walk you through setting up a mini mod to test your scripts with,
+but you can also just write your scripts inside of the respective ContentLib
+xref:BackgroundInfo/FolderNames.adoc[Config Folders].
+
+If you decide to go this route,
+all of your scripts will instead go in those folders
+instead of inside of the plugin folders.
+The docs are written assuming that your files are in a plugin folder, though.
+
+== Download the Example Plugin Skeleton
+
+Download the empty mod plugin skeleton zip
+link:{attachmentsdir}/ExampleContentLibMod.zip[here].
+
+Extract this zip to a temporary location;
+we will be moving it in another section.
+
+Before you release a mod from this template,
+you must switch over some files to use your mod reference
+instead of the current value of `ExampleContentLibMod`
+
+You can read more about mod references
+and what naming format they must follow in the
+https://docs.ficsit.app/satisfactory-modding/latest/Development/BeginnersGuide/index.html#_mod_reference[main modding documentation].
+
+It's okay to leave it as ExampleContentLibMod for now,
+but it also doesn't hurt to change it right now
+if you already have a name in mind for your mod.
+
+Once you have decided on a mod reference you will have to:
+
+- Rename the folder (from `ExampleContentLibMod` to `YourModReferenceHere`)
+- Rename the .uplugin file inside the folder (from `ExampleContentLibMod.uplugin` to `YourModReferenceHere.uplugin`)
+- Edit the FriendlyName, Description, and CreatedBy fields of `YourModReferenceHere.uplugin`
+- You may need to change the SemVersion value of the SML plugin to the latest SML version number.
+
+== Setting Up the Plugin Folder
+
+=== Option 1 - No Unreal Editor
+
+Before you decide to follow this section,
+I suggest considering Option 2,
+since it helps if you ever decide to go further in modding.
+
+Put the folder in the `Mods` folder of your Satisfactory game install.
+
+For example, if your game was installed in the folder
+`D:\Programs\EpicGamesGames\SatisfactoryExperimental\`
+then the folder path to inside of the folder you moved in should be 
+`D:\Programs\EpicGamesGames\SatisfactoryExperimental\FactoryGame\Mods\YourModReferenceHere`
+
+Beware that other modding tools (SMM CLI) could accidentally delete it,
+so keep backups if you change mod profiles.
+
+=== Option 2 - With Unreal Editor
+
+If you have a copy of the editor,
+you probably already know what you're doing,
+and you can put this in the Plugins folder,
+after which you can Alpakit like any other mod.
+
+If you don't have a copy of the editor,
+you should to follow the
+https://docs.ficsit.app/[normal modding setup docs]
+to get one, and follow the modding starter project set up.
+This will take some time,
+but if you ever want to add more advanced functionality to your mod,
+you will have to do this.
+
+When the docs ask you to create a plugin,
+you can skip that step and instead bring in the skeleton plugin folder.
+
+Your script files will go in your modding project's plugin folder.
+In order to package your changes for the game,
+and for distribution as a mod,
+use Alpakit as described in the main modding docs.
+
+
+=== Option 3 - Adding ContentLib Scripts to an Existing Mod
+
+If you already have a mod set up,
+and you want to add ContentLib functionality,
+you will have to modify your mod slightly.
+
+The full process is out of scope of this document
+
+== Moving in the scripts
+
+Once you have decided to put your ContentLib scripts into a mod, you can move them out of your Configs folder and into the plugin folder for your mod.
+
+Basically, copy the ContentLib subfolder from your Configs into your plugin's root directory. To be specific, they should now be in the following locations:
+
+```?
+/ModReferenceGoesHere/ContentLib/Items/
+/ModReferenceGoesHere/ContentLib/Icons/
+/ModReferenceGoesHere/ContentLib/Recipes/
+/ModReferenceGoesHere/ContentLib/RecipePatches/
+/ModReferenceGoesHere/ContentLib/ItemPatches/
+/ModReferenceGoesHere/ContentLib/Schematics/
+/ModReferenceGoesHere/ContentLib/SchematicPatches/
+/ModReferenceGoesHere/ContentLib/VisualKits/
+/ModReferenceGoesHere/ContentLib/CDOs/
+```
+
+== Dependency Configuration
+
+Make sure that you list `ContentLib` as a required dependency of your own mod,
+and follow the directions 
+https://docs-dev.ficsit.app/satisfactory-modding/latest/Development/BeginnersGuide/Adding_Ingame_Mod_Icon.html[here]
+to be sure that any json files you include in your mod files get packed into your final mod.
+
+Example `PluginSettings.ini`
+
+```
+[StageSettings]
++AdditionalNonUSFDirectories=Resources
++AdditionalNonUSFDirectories=ContentLib
+
+```
