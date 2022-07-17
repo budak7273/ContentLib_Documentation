@@ -1,24 +1,30 @@
 = Creating an Item
 
-Creating a new item is this simple, as long as you're fine with re-using meshes.
+Creating a new item is simple, as long as you're fine with re-using meshes.
+This example will cover making new item that looks like Leaves with no special properties.
+
+Make sure to follow the
+xref:Tutorials/Setup.adoc[Setting Up]
+tutorial first!
 
 In order to write your own Items, you will need the following:
 
-* A text editor, preferably one that supports JSON Schema validation (like Visual Studio Code or Rider)
 * If you want to _re-use existing (modded or vanilla) item icons and meshes_, the internal name of the item whose Visual Kit you want to re-use.
 * If you want to use your own _icons_, PNG images for the icons.
 * If you want to use your own _meshes_, an packaged mod with those files contained within (the reasoning for this is explained further down).
-* A way to define a recipe for obtaining your item, usually a ContentLib Recipe
-
+* A way to define a recipe for obtaining your item, usually a ContentLib Recipe.
 
 == Custom Item Example
 
 Below is an example of a freshly created Item and a screenshot of it within the game.
+We'll use it as a template to make our own item from.
 
+JSON file named: `Desc_GoldToo.json`
 ```json
 {
   "Name": "Gold Too",
   "VisualKit": "Desc_OreGold_C",
+  "Form": "Solid",
   "Description" : "This is a new Item which re-uses the visuals of Caterium Ore!"
 }
 ```
@@ -27,22 +33,71 @@ image:https://i.imgur.com/T7OC3vq.jpg[Item In Game]
 
 == Setting Up
 
-After setting up your text editor, go ahead and copy in the "Example Starter Item" from above.
+Inside of your plugin's `ContentLib/Items/` folder,
+create a new file called `Desc_DocsCustomLeaves.json`
 
-Next, you need to find the ClassName of the exiting item you want to copy. These names are part of the 'blueprint path' of the items in the game's files. Thankfully, this mod will xref:BackgroundInfo/AutomaticNameResolving.adoc[automatically resolve] part of the blueprint path into the full name, saving you from having to type out the full name. You can exclude the "_C" from the end as well.
+It's important to make sure that the names of your files
+do not conflict with the names of any existing assets.
+If a conflict is found, it will appear in the logs, which will be discussed later.
+For now, try to be unique and specific with your file names to avoid any possible conflicts.
 
-Find out how to track down asset names xref:Tutorials/FindAssetPath.adoc[here].
+Copy in the "Custom Item Example" JSON from above to the file.
+
+== Name and Description
+
+Setting the name and description of the item is as simple as specifying the Name and Description fields.
+
+Let's call our item "Custom Leaves",
+with the description "These leaves would look great in a Plantpot of Knowledge!"
+
+== Find the Visual Kit Name
+
+In order to make our item look like leaves, we'll need to find the name of the Visual Kit of the base-game Leaves item.
+
+The names of base-game Visual Kits are based on the Class Name of the item descriptor that uses it.
+If you'd like, you can learn more about Visual Kits
+on their xref:Features/VisualKits.adoc[respective page].
+
+You might already be able to guess from the template what the Leaves kit name would be,
+but it's not always so straightforward.
+
+Looking at the https://satisfactory.fandom.com/wiki/Leaves[Satisfactory Wiki],
+we can see in the infobox that the item's Blueprint Path is
+`/Game/FactoryGame/Resource/Parts/GenericBiomass/Desc_Leaves.Desc_Leaves_C`.
+
+This means that the name of the blueprint generated class,
+which is used as the name of the Visual Kit, is `Desc_Leaves_C`.
+
+ContentLib will
+xref:BackgroundInfo/AutomaticNameResolving.adoc[automatically resolve]
+the class name into the full asset path for you,
+saving you from having to use that full path.
+
+You can find more info on the process of tracking down class names
+xref:Tutorials/FindAssetPath.adoc[here].
+
+== Additional Properties
+
+You might have noticed that there was another field,
+'Form', specified as `Solid`.
+If this field is not specified, the Item's type will default to `Invalid`,
+which can't be used as a normal item.
 
 If you're making a Liquid or Gas, be sure to read the xref:Tutorials/FluidsInfo.adoc[Fluids Info] page.
 
-Use the values you've selected and the example item above to define your own Item, then place the json file in the `FactoryGame/Configs/ContentLib/Items` directory.
+There are a lot more fields you can use that this tutorial did not discuss.
+Check out the xref:Features/Items.adoc[Item] page for more info,
+or examine vanilla items with
+xref:Tutorials/ContentInspector.adoc[ContentInspector]
+as examples.
 
-[NOTE]
-====
-At this point, you have created an item, but **there is no way to obtain it yet** - even with cheats. See the 'More Info' section below to find out why. Follow the xref:Tutorials/CreateRecipe.adoc[Create a Recipe] tutorial to make one so you can obtain your item.
-====
+== Get the Item In Game
 
-Now that you have created an item, and followed the other tutorial to create a recipe to obtain it with, launch the game and check it out.
+At this point, you have created an item, but **there is no way to obtain it yet** - even with cheats.
+See the 'More Info' section below to find out why.
+
+Follow the xref:Tutorials/CreateRecipe.adoc[Create a Recipe]
+tutorial to make one so you can obtain your item and test it out.
 
 If you've done everything correctly, you should be able to obtain Item in game via an item spawning utility, or by unlocking the recipes you defined.
 
@@ -51,19 +106,19 @@ If you've done everything correctly, you should be able to obtain Item in game v
 Make sure to read the xref:Tutorials/Troubleshooting.adoc[Troubleshooting] page.
 
 * Nothing showing up at all in the logs
-  ** Make sure your items are in the `FactoryGame/Configs/ContentLib/Items` directory.
+  ** Make sure your items are in the xref:BackgroundInfo/FolderNames.adoc[correct folder].
 * Item not showing up in-game
-  ** This could be the fault of the item or the custom recipe you made to grant it. Check the logs as described on the Troubleshooting page.
+  ** This could be the fault of the item, or the custom recipe you made to grant it. Check the logs as described on the Troubleshooting page.
 
 == Next Steps
 
 === Custom Icon
 
-If you want to use custom icons for your new item, you can create your own xref:Features/VisualKits.adoc[Visual Kit] using 
+If you want to use custom icons for your new item, you can create your own xref:Features/VisualKits.adoc[Visual Kit].
 
-=== More Fields
+=== Fluids
 
-There are a lot more fields you can use that this tutorial did not discuss. Check out the xref:Features/Items.adoc[Item] page for more info.
+If you're making a Liquid or Gas, be sure to read the xref:Tutorials/FluidsInfo.adoc[Fluids Info] page.
 
 == More Info
 
@@ -78,4 +133,6 @@ As a performance measure, an Item is generally not available in Satisfactory unl
 
 === Why A Packaged Mod is Needed for Custom Meshes
 
-Unreal Engine expects materials and meshes to be in a very specific cooked format in order for use. This preparation step is unavoidable. The simplest way to prepare your files for usage is to package them using the same method used to package a mod.
+Unreal Engine expects materials and meshes to be in a very specific cooked format in order for use.
+This preparation step is unavoidable.
+The simplest way to prepare your files for usage is to package them using the same method used to package a mod.
