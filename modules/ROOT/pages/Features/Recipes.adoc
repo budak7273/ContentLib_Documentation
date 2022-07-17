@@ -23,22 +23,22 @@ Below is an example recipe and a screenshot of it within the Item Codex in game.
 
 ```json
 {
-    "Name": "BioFuel",
+    "Name": "ContentLib BioFuel",
     "Ingredients": [
         {
-            "Item": "Coal",
+            "Item": "Desc_Coal",
             "Amount": 1
         }
     ],
     "Products": [
         {
-            "Item": "Biofuel",
+            "Item": "Desc_Biofuel",
             "Amount": 10
         }
     ],
     "ManufacturingDuration": 1,
     "ProducedIn": [
-        "ConstructorMk1"
+        "Build_ConstructorMk1"
     ],
     "UnlockedBy": [
         "Schematic_1-1"

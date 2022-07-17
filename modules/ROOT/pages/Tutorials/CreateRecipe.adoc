@@ -2,10 +2,9 @@
 
 In order to write your own recipes, you will need the following:
 
-1. A text editor, preferably one that supports JSON Schema validation (like Visual Studio Code or Rider)
-2. The internal names of the ingredients and products in your recipe
-3. The internal name of the building(s) that can use your recipe
-4. The internal name of the schematic that will unlock your recipe
+- The internal names of the ingredients and products in your recipe
+- The internal name of the building(s) that can use your recipe
+- The internal name of the schematic that will unlock your recipe
 
 == Simple Recipe
 
@@ -16,19 +15,19 @@ Below is an example recipe and a screenshot of it within the Item Codex in game.
     "Name": "BioFuel",
     "Ingredients": [
         {
-            "Item": "Coal",
+            "Item": "Desc_Coal",
             "Amount": 1
         }
     ],
     "Products": [
         {
-            "Item": "Biofuel",
+            "Item": "Desc_Biofuel",
             "Amount": 10
         }
     ],
     "ManufacturingDuration": 1,
     "ProducedIn": [
-        "ConstructorMk1"
+        "Build_ConstructorMk1"
     ],
     "UnlockedBy": [
         "Schematic_1-1"

@@ -13,7 +13,8 @@ The JSON syntax is mostly the same as creating the content, but you must put an 
 Remember that Item Patches need to go in the correct xref:BackgroundInfo/FolderNames.adoc[Folder].
 ====
 
-Below is an example modification of the base game's "Caterium Ore" item, which is named OreGold internally. With the power of ContentLib Items, you can https://i.imgur.com/eawzrXv.png[reveal who's really behind that mask] - Gold Ore!
+Below is an example modification of the base game's "Caterium Ore" item, which is named OreGold internally.
+With the power of ContentLib, you can reveal who's really behind that mask - Gold Ore!
 
 .The Big Reveal
 [%collapsible]
@@ -23,7 +24,8 @@ image:https://i.imgur.com/eawzrXv.png[Meme]
 
 ====
 
-This example replaces the item name and description, but you can modify other fields, too.
+This example replaces the item name and description,
+but you can modify other fields, too.
 
 ```json
 //Game/FactoryGame/Resource/RawResources/OreGold/Desc_OreGold.Desc_OreGold_C
@@ -46,13 +48,13 @@ Remember that Recipe Patches need to go in the correct xref:BackgroundInfo/Folde
   "Name": "BioFuel Override",
   "Ingredients": [
     {
-      "Item": "Coal",
+      "Item": "Desc_Coal",
       "Amount": 1
     }
   ],
   "Products": [
     {
-      "Item": "Biofuel",
+      "Item": "Desc_Biofuel",
       "Amount": 10
     }
   ]
@@ -70,11 +72,11 @@ TODO
 
 == Background Info
 
-=== Why do Item overwrites need the blueprint path?
+=== Why do patches need the blueprint path?
 
 The reason is simple:
 
-* This Item may not be loaded when it isn't added by a Registered Recipe at this point.
+* This content may not be loaded at this point in the loading sequence.
 * There is no way to "Find" it by name without loading *everything*.
 
 Therefore, this mod uses a Blueprint Path here to reliably load the Item to be Patched.
@@ -82,5 +84,5 @@ Therefore, this mod uses a Blueprint Path here to reliably load the Item to be P
 === Why is the blueprint path not part of the Json itself?
 
 * The step of turning the raw text into JSON is skipped when the item class fails to load to improve performance.
-* Putting the path inside of the JSON would have forced this Mod to do the conversion step earlier.
-* Even if it were part of the JSON, it has no actual value for the Items themselves, just for the mod figuring out what to overwrite. The path resolves to either a useless nullptr or a valid pointer with no further usefulness.
+* Putting the path inside of the JSON would have forced this mod to do the parsing step earlier.
+* Even if it were part of the JSON, it has no actual value for the Items themselves, just for the mod figuring out what to overwrite. The path resolves to either a useless nullptr or a valid pointer with no further use.
