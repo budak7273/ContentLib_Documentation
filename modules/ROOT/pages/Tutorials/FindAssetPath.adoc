@@ -2,8 +2,13 @@
 
 TODO
 
-For a number of fields, you can type a friendly name of what you want to refer to, and ContentLib will try to resolve it for you. xref:BackgroundInfo/AutomaticNameResolving.adoc[Automatic Name Resolving]
+For a number of fields, you can type a friendly name of what you want to refer to,
+and ContentLib will try to resolve it for you. xref:BackgroundInfo/AutomaticNameResolving.adoc[Automatic Name Resolving]
 
-However, if you want to make a xref:Features/Patching.adoc[Patch], you will need to know the full path of the asset you're patching so that ContentLib knows what to modify. See the Patching page for more info as to why.
+However, if you want to make a xref:Features/Patching.adoc[Patch],
+you will need to know the full path of the asset you're patching so that ContentLib knows what to modify.
+See the Patching page for more info as to why.
 
-You can find this blueprint path from a https://github.com/Goz3rr/SatisfactorySaveEditor/blob/master/Reference%20Materials/[reference list], via a tool like https://www.gildor.org/en/projects/umodel[UModel], or by looking a mod's source code (either online or ingame with xref:Tutorials/ContentInspector.adoc[ContentInspector]).
+You can find this blueprint path from a https://github.com/Goz3rr/SatisfactorySaveEditor/blob/master/Reference%20Materials/[reference list],
+via a tool like https://www.gildor.org/en/projects/umodel[UModel],
+or by looking a mod's source code (either online or ingame with xref:Tutorials/ContentInspector.adoc[ContentInspector]).
