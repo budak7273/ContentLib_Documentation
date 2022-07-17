@@ -1,10 +1,20 @@
 = ContentLib Folder Names
 
-As of ContentLib 0.2.0, the directory structure has been changed to be more informative and consistent with a packaged mod. This is so that making the transition to a full mod is easier later on.
+As of ContentLib 0.2.0, the directory structure has been changed
+to be more informative and consistent with a packaged mod.
+This is so that making the transition to a full mod is easier later on.
 
-When outside of a custom mod, ContentLib scripts should all be placed within specific folders within your Mod Configs folder, for example, `<game install directory>/Configs/ContentLib/Items`
+When outside of a custom mod,
+ContentLib scripts should all be placed within specific folders within your Mod Configs folder,
+for example, `<game install directory>/Configs/ContentLib/Items`
 
-To see the full list of directories, check your logs after going to the ContentLib mod configs screen in-game. To enable logging, see https://docs.ficsit.app/satisfactory-modding/latest/SMLConfiguration.html[this official docs page].
+Note that ContentLib **does not create these folders for you**
+- you will have to create new empty folders in the correct location if you want to use them.
+
+To see the full list of supported directories,
+check your logs after going to the ContentLib mod configs screen in-game.
+To enable logging, see
+https://docs.ficsit.app/satisfactory-modding/latest/SMLConfiguration.html[this official docs page].
 
 == Folder Layout
 
@@ -23,6 +33,11 @@ Configs/ContentLib/SchematicPatches/
 Configs/ContentLib/VisualKits/
 Configs/ContentLib/CDOs/
 ```
+
+For example, if your game was installed in the folder
+`D:\Programs\EpicGamesGames\SatisfactoryExperimental\`
+then the folder path to the ContentLib Items folder should be
+`D:\Programs\EpicGamesGames\SatisfactoryExperimental\FactoryGame\Configs\ContentLib\Items` 
 
 === Packed with Mod
 
