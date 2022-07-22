@@ -1,7 +1,7 @@
 = Creating an Item
 
 Creating a new item is simple, as long as you're fine with re-using meshes.
-This example will cover making new item that looks like Leaves with no special properties.
+This example will cover making a new item that looks like Leaves with no special properties.
 
 Make sure to follow the
 xref:Tutorials/Setup.adoc[Setting Up]

@@ -1,12 +1,21 @@
 = Creating a Recipe
 
+This example will cover making a new recipe for Solid Biofuel from Coal that can only be made in the Constructor.
+It will be unlocked by the existing Schematic 1-1 (the first Milestone in Tier 1).
+
+Make sure to follow the
+xref:Tutorials/Setup.adoc[Setting Up]
+tutorial first!
+
 In order to write your own recipes, you will need the following:
 
 - The internal names of the ingredients and products in your recipe
-- The internal name of the building(s) that can use your recipe
+- The internal name of the building(s) that can use your recipe (a few are listed below)
 - The internal name of the schematic that will unlock your recipe
 
-== Simple Recipe
+First, here's two example recipes to show some of what's possible:
+
+== Example Starter Recipe
 
 Below is an example recipe and a screenshot of it within the Item Codex in game.
 
@@ -76,9 +85,12 @@ Here's an example recipe for the Blender made by McGalleon.
 
 image:https://cdn.discordapp.com/attachments/771801486828896260/863510909476143184/unknown.png[Blender example ingame]
 
+
 == Setting Up
 
-After setting up your text editor, go ahead and create a new file called `Recipe_YourNameHere.json` and copy in the "Example Starter Recipe" from above.
+After setting up your text editor,
+go ahead and create a new file called `Recipe_YourNameHere.json` in your mod's Recipes folder
+and copy in the "Example Starter Recipe" from above.
 
 It is important that your recipe name is formatted in this way because the file name will become the internal recipe blueprint name once the recipe is loaded.
 

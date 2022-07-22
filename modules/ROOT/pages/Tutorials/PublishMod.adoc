@@ -1,10 +1,6 @@
 = Publish your Mod
 
-This page covers how to publish ContentLib scripts you have created as mod for others to use.
-
-You don't necessarily need to set up a full modding project (Unreal editor install),
-but it helps a lot since it will package your mod for you,
-and it will make it easier to transition to a full mod later, if you so desire.
+This page directs you to the correct docs for how to publish ContentLib scripts you have created as mod for others to use.
 
 Check out the 
 xref:Tutorials/Setup.adoc[Setup document]
@@ -12,11 +8,14 @@ to set up a plugin structure for your mod files.
 
 == Upload to SMR
 
-You can upload your mod to Satisfactory Mod Repository for anyone to download and use.
+If you followed the xref:Tutorials/Setup.adoc[Setup document],
+your files should already be in mod format.
 
-This process is out of scope of this tutorial.
+You can now upload your mod to Satisfactory Mod Repository for anyone to download and use.
+
 You can follow the directions in the
-https://docs.ficsit.app/satisfactory-modding/latest/UploadToSMR.html[main modding documentation].
+https://docs.ficsit.app/satisfactory-modding/latest/UploadToSMR.html[main modding documentation]
+to achieve this.
 
 Make sure your mod depends on ContentLib as described in the 
 xref:Tutorials/Setup.adoc[Setup document],

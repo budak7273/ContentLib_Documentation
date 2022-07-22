@@ -43,10 +43,10 @@ Hopefully this will improve in the future.
 
 == Frequent Problems
 
-- I created a new Item but it doesn't exist in-game
-  - Remember that you need to have a Recipe that produces that item, and a Schematic to unlock that item, for it to exist in-game.
-  - Check the logs as mentioned above to see if there were any errors in registering it
-  - Make sure that you put your files in the correct folders. See the xref:BackgroundInfo/FolderNames.adoc[Folder Names] section.
-- I wrote a Patch, but it isn't changing anything!
-  - Check the logs as mentioned above to see if there were any errors in registering it
-  - Make sure that you put your files in the correct folders. See the xref:BackgroundInfo/FolderNames.adoc[Folder Names] section.
+* I created a new Item but it doesn't exist in*game
+  ** Remember that you need to have a Recipe that produces that item, and a Schematic to unlock that item, for it to exist in*game.
+  ** Check the logs as mentioned above to see if there were any errors in registering it
+  ** Make sure that you put your files in the correct folders. See the xref:BackgroundInfo/FolderNames.adoc[Folder Names] section.
+* I wrote a Patch, but it isn't changing anything!
+  ** Check the logs as mentioned above to see if there were any errors in registering it
+  ** Make sure that you put your files in the correct folders. See the xref:BackgroundInfo/FolderNames.adoc[Folder Names] section.
