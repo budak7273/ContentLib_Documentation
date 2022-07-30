@@ -1,0 +1,104 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://raw.githubusercontent.com/budak7273/ContentLib_Documentation/main/JsonSchemas/CL_Item.json",
+    "title": "ContentLib Item",
+    "description": "ContentLib item struct definitions can be made following this JSON, and when converted to JSON, will follow this form.",
+    "$comment": "This is NOT a copy-paste template for your items! Check the docs to see how to use this! https://docs.ficsit.app/contentlib/latest/index.html",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "Name": {
+            "type": "string",
+            "description": "The item's name in game, which appears in its tooltip, and what it is called in the Codex"
+        },
+        "Description": {
+            "type": "string",
+            "description": "A description of the item, which appears in its tooltip and the Codex"
+        },
+        "Form": {
+            "type": "string",
+            "description": "Type of item, controls what can move it. Solids move on belts and can be put in the inventory. Liquid and Gas must be moved with pipes. Heat and Invalid do not function correctly as of U6.",
+            "enum": [
+                "Solid",
+                "Liquid",
+                "Gas",
+                "Heat",
+                "Invalid"
+            ]
+        },
+        "StackSize": {
+            "type": "string",
+            "description": "Satisfactory has hardcoded item stack sizes; you must use other mods if you want a specific number. Items can stack to either 1 (One), 50 (Small), 100 (Medium), 200 (Big), 500 (Huge), or 50,000 (Fluid, 50 Liters)",
+            "enum": [
+                "One",
+                "Small",
+                "Medium",
+                "Big",
+                "Huge",
+                "Fluid"
+            ]
+        },
+        "Category": {
+            "type": "string",
+            "description": "Groups the item into a category, which affects where it shows up in the recipe list. Either a base-game category, or a string which ContentLib will automatically turn into a category for you. You should specify something here because items without categories will not appear unless searched for by name in certain GUIs",
+            "examples": [
+                "Cat_Other",
+                "MyCustomAutoCreatedCategory"
+            ]
+        },
+        "VisualKit": {
+            "type": "string",
+            "description": "Name of the Visual Kit to use for this item. If you want to refer to the kit of an existing item, use its descriptor name, with the _C suffix",
+            "examples": []
+        },
+        "NameShort": {
+            "type": "string",
+            "description": "A shortend form of the name, try to keep it below 5 characters. If the user has enabled abbreviated names in their 'User Interface > Item Abbreviation' game settings, this text will appear (white with black outlines) in the top left corner of the item icon. In the base game, this is usually only set for items that are difficult to distinguish, for example, raw ores and ingots."
+        },
+        "CanBeDiscarded": {
+            "type": "boolean",
+            "description": "Whether the item can be trashed using the trashcan slot of your inventory. AWESOME sink shredability settings are handled though a different system."
+        },
+        "RememberPickUp": {
+            "type": "boolean",
+            "description": "Decides if the game should keep track of if any player has ever possessed this item. The base game uses this for items like Raw Quartz ore, which unlocks the Quartz MAM tree and triggers an ADA voiceline once collected."
+        },
+        "EnergyValue": {
+            "type": "number",
+            "description": "Describes how much energy in megawatt Seconds (MWs, aka MJ) this item should release when burned in a generator or vehicle. You can find the fuel values of vanilla items on the wiki: https://satisfactory.fandom.com/wiki/Category:Fuels"
+        },
+        "RadioactiveDecay": {
+            "type": "number",
+            "description": "If set to a value greater than 0, being near or holding instances of item will cause the player to take radiation damage. The editor tooltip for this field is incorrect - values can seemingly be any value greater than 0. For example, Plutonium Waste (most intense in Vanilla) uses a value of 200, and Encased Uranium Cell (least intense) uses 0.5"
+        },
+        "ResourceSinkPoints": {
+            "type": "integer",
+            "description": "How many points this item is worth when shredded in the AWESOME Sink",
+            "$comment": "TODO Does this work?"
+        },
+        "ResourceItem": {
+            "type": "object",
+            "description": "TODO only for FGResourceDescriptors",
+            "properties": {
+                "PingColor": {
+                    "$comment": "TODO"
+                },
+                "CollectSpeedMultiplier": {
+                    "type": "number"
+                }
+            }
+        },
+        "FuelWasteItem": {
+            "type": "object",
+            "description": "TODO only for FGNuclearFuelDescriptor",
+            "properties": {
+                "SpentFuelClass": {
+                    "type": "string"
+                },
+                "AmountOfWaste": {
+                    "type": "integer"
+                }
+            }
+        }
+    }
+}

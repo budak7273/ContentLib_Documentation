@@ -7,7 +7,11 @@ You can find a WIP xref:Reference/JsonSchema.adoc[JSON Schema] for Items https:/
 
 TODO
 
-In order to make them easy to identify among other assets, all Item JSON files should start with the prefix `Desc_`
+All Item JSON files must start with the prefix `Desc_`
+
+Items auto-generate the categories used in the `Category` field for you if you specify one that doesn't exist
+
+Auto-generated Category assets have their asset name (not the in-game name) start with `Cat_` for consistency with the base game, and identification.
 
 xref:Tutorials/CreateItem.adoc[Create an Item Tutorial]
 

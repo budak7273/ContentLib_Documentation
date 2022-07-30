@@ -1,0 +1,88 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://raw.githubusercontent.com/budak7273/ContentLib_Documentation/main/JsonSchemas/CL_VisualKit.json",
+    "title": "ContentLib Visual Kit",
+    "description": "ContentLib Visual Kit struct definitions can be made following this JSON, and when converted to JSON, will follow this form.",
+    "$comment": "This is NOT a copy-paste template for your items! Check the docs to see how to use this! https://docs.ficsit.app/contentlib/latest/index.html",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "Mesh": {
+            "type": "string",
+            "description": "Asset path to the Mesh, inside a packaged mod",
+            "examples": [
+                "/Game/FactoryGame/Resource/Parts/PackagedWater/SM_PackedWater_01.SM_PackedWater_01"
+            ]
+        },
+        "BigIcon": {
+            "type": "string",
+            "description": "File name of a PNG in your mod's Icons folder, OR asset path to an Icon texture, inside a packaged mod",
+            "examples": [
+                "/Game/FactoryGame/Resource/RawResources/Water/UI/LiquidWater_Pipe_512.LiquidWater_Pipe_512",
+                "MyIconName_512"
+            ]
+        },
+        "SmallIcon": {
+            "type": "string",
+            "description": "File name of a PNG in your mod's Icons folder, OR asset path to an Icon texture inside a packaged mod",
+            "examples": [
+                "/Game/FactoryGame/Resource/RawResources/Water/UI/LiquidWater_Pipe_256.LiquidWater_Pipe_256",
+                "MyIconName_256"
+            ]
+        },
+        "FluidColor": {
+            "type": "object",
+            "description": "Controls the color of a fluid in pipes",
+            "required": ["r", "g", "b", "a"],
+            "properties": {
+                "r": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 255
+                },
+                "g": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 255
+                },
+                "b": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 255
+                },
+                "a": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 255
+                }
+            }
+        },
+        "GasColor": {
+            "type": "object",
+            "description": "Controls the second color that used by gasses in pipes",
+            "required": ["r", "g", "b", "a"],
+            "properties": {
+                "r": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 255
+                },
+                "g": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 255
+                },
+                "b": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 255
+                },
+                "a": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 255
+                }
+            }
+        }
+    }
+}
