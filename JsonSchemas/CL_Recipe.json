@@ -1,0 +1,45 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://raw.githubusercontent.com/budak7273/ContentLib_Documentation/main/JsonSchemas/CL_Recipe.json",
+    "title": "ContentLib Recipe",
+    "description": "ContentLib Recipe struct definitions can be made from this JSON, and when converted to JSON, will follow this form.",
+    "$comment": "This is NOT a copy-paste template! Check the docs to see how to use this! https://docs.ficsit.app/contentlib/latest/index.html",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "Name": {
+            "type": "string",
+            "description": "Override for the recipe's name, which is displayed inside the manual crafting bench, or any machines you set it to be used in. By default, recipes take the name of their first product item."
+        },
+        "OverrideCategory": {
+            "type": "string",
+            "description": ""
+        },
+        "ManufacturingDuration": {},
+        "ManualManufacturingMultiplier": {},
+        "VariablePowerConsumptionFactor": {},
+        "VariablePowerConsumptionConstant": {},
+        "ManufacturingMenuPriority": {},
+        "Ingredients": {},
+        "Products": {},
+        "ProducedIn": {},
+        "UnlockedBy": {},
+        "ClearIngredients": {},
+        "ClearProducts": {},
+        "ClearBuilders": {},
+        "OverrideName": {
+            "type": "boolean",
+            "description": "DEPRECATED - Just either specify or exclude the Name field"
+        }
+    },
+    "patternProperties": {
+        "schema": {
+            "$comment": "Allow the $schema line in files",
+            "type": "string"
+        },
+        "comment": {
+            "$comment": "Allow the $comment line in files",
+            "type": "string"
+        }
+    }
+}

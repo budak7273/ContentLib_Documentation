@@ -2,8 +2,8 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/budak7273/ContentLib_Documentation/main/JsonSchemas/CL_Item.json",
     "title": "ContentLib Item",
-    "description": "ContentLib item struct definitions can be made following this JSON, and when converted to JSON, will follow this form.",
-    "$comment": "This is NOT a copy-paste template for your items! Check the docs to see how to use this! https://docs.ficsit.app/contentlib/latest/index.html",
+    "description": "ContentLib Item struct definitions can be made from this JSON, and when converted to JSON, will follow this form.",
+    "$comment": "This is NOT a copy-paste template! Check the docs to see how to use this! https://docs.ficsit.app/contentlib/latest/index.html",
     "type": "object",
     "additionalProperties": false,
     "properties": {
@@ -49,7 +49,11 @@
         "VisualKit": {
             "type": "string",
             "description": "Name of the Visual Kit to use for this item. If you want to refer to the kit of an existing item, use its descriptor name, with the _C suffix",
-            "examples": []
+            "examples": [
+                "Desc_OreGold_C",
+                "Desc_Water_C",
+                "Kit_MyCustomVisualKitName"
+            ]
         },
         "NameShort": {
             "type": "string",
@@ -78,27 +82,53 @@
         },
         "ResourceItem": {
             "type": "object",
-            "description": "TODO only for FGResourceDescriptors",
+            "description": "Including this field will treat the item as an FGResourceDescriptor, which is typically used for mineable resources.",
+            "additionalProperties": false,
             "properties": {
                 "PingColor": {
-                    "$comment": "TODO"
+                    "$ref": "Components/CL_RGBA_Color.json",
+                    "description": "Color for pings of this resource to have while scanning."
                 },
                 "CollectSpeedMultiplier": {
+                    "description": "CollectSpeedMultiplier of Items",
                     "type": "number"
                 }
             }
         },
         "FuelWasteItem": {
             "type": "object",
-            "description": "TODO only for FGNuclearFuelDescriptor",
+            "description": "Including this field will treat the item as an FGNuclearFuelDescriptor, allowing it to specify a 'spent fuel' item to return.",
+            "additionalProperties": false,
             "properties": {
                 "SpentFuelClass": {
-                    "type": "string"
+                    "$ref": "Components/CL_NameResolvedAsset.json",
+                    "description": "Item to return when done burning"
                 },
                 "AmountOfWaste": {
-                    "type": "integer"
+                    "type": "integer",
+                    "description": "Quantity of the waste item to return",
+                    "minimum": 0
                 }
             }
+        }
+    },
+    "allOf": [
+        {
+            "$comment": "ResourceItem and FuelWasteItem are mutually exclusive",
+            "if": {
+                "required": ["FuelWasteItem", "ResourceItem"]
+            },
+            "then": false
+        }
+    ],
+    "patternProperties": {
+        "schema": {
+            "$comment": "Allow the $schema line in files",
+            "type": "string"
+        },
+        "comment": {
+            "$comment": "Allow the $comment line in files",
+            "type": "string"
         }
     }
 }

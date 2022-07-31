@@ -2,21 +2,21 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/budak7273/ContentLib_Documentation/main/JsonSchemas/CL_VisualKit.json",
     "title": "ContentLib Visual Kit",
-    "description": "ContentLib Visual Kit struct definitions can be made following this JSON, and when converted to JSON, will follow this form.",
-    "$comment": "This is NOT a copy-paste template for your items! Check the docs to see how to use this! https://docs.ficsit.app/contentlib/latest/index.html",
+    "description": "ContentLib Visual Kit struct definitions can be made from this JSON, and when converted to JSON, will follow this form.",
+    "$comment": "This is NOT a copy-paste template! Check the docs to see how to use this! https://docs.ficsit.app/contentlib/latest/index.html",
     "type": "object",
     "additionalProperties": false,
     "properties": {
         "Mesh": {
             "type": "string",
-            "description": "Asset path to the Mesh, inside a packaged mod",
+            "description": "Asset path to the Mesh for belts and dropped items. Must be inside a packaged mod",
             "examples": [
                 "/Game/FactoryGame/Resource/Parts/PackagedWater/SM_PackedWater_01.SM_PackedWater_01"
             ]
         },
         "BigIcon": {
             "type": "string",
-            "description": "File name of a PNG in your mod's Icons folder, OR asset path to an Icon texture, inside a packaged mod",
+            "description": "File name of a PNG in your mod's /ContentLib/Icons folder, OR asset path to an Icon texture, inside a packaged mod",
             "examples": [
                 "/Game/FactoryGame/Resource/RawResources/Water/UI/LiquidWater_Pipe_512.LiquidWater_Pipe_512",
                 "MyIconName_512"
@@ -24,65 +24,29 @@
         },
         "SmallIcon": {
             "type": "string",
-            "description": "File name of a PNG in your mod's Icons folder, OR asset path to an Icon texture inside a packaged mod",
+            "description": "File name of a PNG in your mod's /ContentLib/Icons folder, OR asset path to an Icon texture inside a packaged mod",
             "examples": [
                 "/Game/FactoryGame/Resource/RawResources/Water/UI/LiquidWater_Pipe_256.LiquidWater_Pipe_256",
                 "MyIconName_256"
             ]
         },
         "FluidColor": {
-            "type": "object",
-            "description": "Controls the color of a fluid in pipes",
-            "required": ["r", "g", "b", "a"],
-            "properties": {
-                "r": {
-                    "type": "integer",
-                    "minimum": 0,
-                    "maximum": 255
-                },
-                "g": {
-                    "type": "integer",
-                    "minimum": 0,
-                    "maximum": 255
-                },
-                "b": {
-                    "type": "integer",
-                    "minimum": 0,
-                    "maximum": 255
-                },
-                "a": {
-                    "type": "integer",
-                    "minimum": 0,
-                    "maximum": 255
-                }
-            }
+            "description": "Controls the color of a Liquid, and the primary color of a Gas",
+            "$ref": "Components/CL_RGBA_Color.json"
         },
         "GasColor": {
-            "type": "object",
-            "description": "Controls the second color that used by gasses in pipes",
-            "required": ["r", "g", "b", "a"],
-            "properties": {
-                "r": {
-                    "type": "integer",
-                    "minimum": 0,
-                    "maximum": 255
-                },
-                "g": {
-                    "type": "integer",
-                    "minimum": 0,
-                    "maximum": 255
-                },
-                "b": {
-                    "type": "integer",
-                    "minimum": 0,
-                    "maximum": 255
-                },
-                "a": {
-                    "type": "integer",
-                    "minimum": 0,
-                    "maximum": 255
-                }
-            }
+            "description": "Controls the secondary color of a Gas",
+            "$ref": "Components/CL_RGBA_Color.json"
+        }
+    },
+    "patternProperties": {
+        "schema": {
+            "$comment": "Allow the $schema line in files",
+            "type": "string"
+        },
+        "comment": {
+            "$comment": "Allow the $comment line in files",
+            "type": "string"
         }
     }
 }

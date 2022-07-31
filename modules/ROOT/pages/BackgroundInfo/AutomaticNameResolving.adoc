@@ -48,7 +48,7 @@ When referencing a descriptor's Visual Kit, you must keep the `+_C+` suffix.
 For example, `Desc_OreGold_C` resolves to the Caterium Ore kit,
 but `Desc_OreGold` resolves to the DefaultItemMesh (default fallback).
 
-If the asset you are patching was blueprint generated, it needs the `+_C`.
+If the asset you are patching was blueprint generated, it needs the `+_C+`.
 Script-generated assets may or may not need the suffix (untested).
 
 For example, the line at the top of the file patching the Turbofuel recipe must be

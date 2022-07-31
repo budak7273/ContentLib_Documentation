@@ -1,0 +1,37 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://raw.githubusercontent.com/budak7273/ContentLib_Documentation/main/JsonSchemas/CL_RGBA_Color.json",
+    "title": "RGBA Color",
+    "description": "Unreal 'Red Green Blue Alpha' color",
+    "$comment": "This file does not represent ContentLib asset type! It's a resource used by other JSON Schemas.",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "r",
+        "g",
+        "b",
+        "a"
+    ],
+    "properties": {
+        "r": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 255
+        },
+        "g": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 255
+        },
+        "b": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 255
+        },
+        "a": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 255
+        }
+    }
+}

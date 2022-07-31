@@ -1,0 +1,6 @@
+{
+    "$schema": "./../CL_Item.json",
+    "$comment": "This fails because an asset can't be both a resource and a nuclear fuel",
+    "ResourceItem": {},
+    "FuelWasteItem": {}
+}
