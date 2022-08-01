@@ -1,13 +1,31 @@
 = JSON Schemas
 
-TODO
+The format of all ContentLib JSON definition files follows a https://json-schema.org/[JSON Schema],
+a helpful template that both explains the structure of the file
+and allows your favorite editors to automatically check your syntax for you.
+The schema itself is human-readable, so you can also read it to learn about the supported fields.
 
-The format of all ContentLib JSON definition files follows a https://json-schema.org/[JSON Schema], a helpful template that both explains the structure of the file and allows your favorite editors to automatically check your syntax for you. The schema itself is human-readable, so you can also read it to learn the supported fields.
+== How to Use a Schema
 
-A JSON schema is *not* a template you should copy-paste into an empty file to start off - it's a set of documentation items that editors can read as well.
+A JSON schema is *not* a template you should copy-paste into an empty file to start off
+- it's a set of documentation items that editors can read as well.
 
-You can use https://youtu.be/m30JiCuW42U[Visual Studio Code], https://www.jetbrains.com/help/idea/json.html#ws_json_schema_add_custom[any JetBrains editor], or more, to get automatic suggestions and see the documentation as you write. Those links go to documentation on how to set it up.
+Simply include a link to the schema at the top of your JSON file,
+and correctly set up editing software will perform some syntax checking,
+get field documentation on hover,
+and auto-suggestions (ex. when you press Ctrl-Space in Visual Studio Code).
 
-TODO update links
+As an editor, you can use
+https://youtu.be/m30JiCuW42U[Visual Studio Code],
+https://www.jetbrains.com/help/idea/json.html#ws_json_schema_add_custom[any JetBrains editor],
+or more.
+Those links go to documentation on how to use schemas in said editors.
 
-**View the Item json schema on GitHub [here](https://raw.githubusercontent.com/Nogg-aholic/ContentLib_Items/master/FContentLib_Item.json).**
+== ContentLib Schemas
+
+All available schemas can be found https://github.com/budak7273/ContentLib_Documentation/tree/main/JsonSchemas[on the documentation github repo].
+
+To use a schema, simply include a property in your JSON file: `$schema` with the value as the link to the schema.
+You can find the link to the schema in the `$id` field of the schema you want to follow.
+For example, the link to the Recipe schema is
+`https://raw.githubusercontent.com/budak7273/ContentLib_Documentation/main/JsonSchemas/CL_Recipe.json`
