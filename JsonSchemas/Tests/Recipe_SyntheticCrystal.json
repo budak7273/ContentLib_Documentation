@@ -1,0 +1,31 @@
+{
+    "$schema": "./../CL_Recipe.json",
+    "Name": "Synthetic Crystal",
+    "Ingredients": [
+        {
+            "Item": "Desc_RawQuartz",
+            "Amount": 16
+        },
+        {
+            "Item": "Desc_QuartzCrystal",
+            "Amount": 7
+        },
+        {
+            "Item": "Desc_Water",
+            "Amount": 4800
+        }
+    ],
+    "Products": [
+        {
+            "Item": "Desc_QuartzCrystal",
+            "Amount": 20
+        }
+    ],
+    "ManufacturingDuration": 8,
+    "ProducedIn": [
+        "Build_Blender"
+    ],
+    "UnlockedBy": [
+        "Schematic_1-1"
+    ]
+}

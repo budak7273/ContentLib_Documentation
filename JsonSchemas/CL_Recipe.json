@@ -12,24 +12,76 @@
             "description": "Override for the recipe's name, which is displayed inside the manual crafting bench, or any machines you set it to be used in. By default, recipes take the name of their first product item."
         },
         "Ingredients": {
-            "$comment": "TODO mention ClearIngredients"
+            "type": "array",
+            "description": "ItemAmounts which form the ingredients. Be sure to not exceed an item's stack size, and remember that 1000 fluid units is 1 Liter ingame. See 'ClearIngredients' to append instead of replace.",
+            "items": {
+                "$ref": "./Components/CL_ItemAmount.json"
+            }
         },
         "Products": {
-            "$comment": "TODO mention ClearProducts"
+            "type": "array",
+            "description": "ItemAmounts which form the recipe outputs. Be sure to not exceed an item's stack size, and remember that 1000 fluid units is 1 Liter ingame. See 'ClearProducts' to append instead of replace.",
+            "items": {
+                "$ref": "./Components/CL_ItemAmount.json"
+            }
         },
         "ProducedIn": {
-            "$comment": "TODO mention ClearBuilders"
+            "type": "array",
+            "description": "Machines which this recipe can be used in. Use 'manual' for all manual workbenches; this is a workaround and will be fixed in the future. See 'ClearBuilders' to append instead of replace.",
+            "items": {
+                "$ref": "./Components/CL_NameResolvedAsset.json",
+                "examples": [
+                    "manual",
+                    "Build_ConstructorMk1",
+                    "Build_AssemblerMk1",
+                    "Build_FoundryMk",
+                    "Build_ManufacturerMk1",
+                    "Build_OilRefinery",
+                    "Build_Packager",
+                    "Build_Blender",
+                    "Build_HadronCollider",
+                    "Please read https://docs-dev.ficsit.app/contentlib/latest/BackgroundInfo/AutomaticNameResolving.html"
+                ]
+            }
         },
         "OverrideCategory": {
             "type": "string",
-            "description": ""
+            "description": "By default, recipes take on the category of their first product item. Specifying something here causes it to be used as the category instead. Either a base-game category, or a string which ContentLib will automatically turn into a category for you.",
+            "examples": [
+                "Cat_Other",
+                "MyCustomAutoCreatedCategory"
+            ]
         },
-        "ManufacturingDuration": {},
-        "ManualManufacturingMultiplier": {},
-        "VariablePowerConsumptionFactor": {},
-        "VariablePowerConsumptionConstant": {},
-        "ManufacturingMenuPriority": {},
-        "UnlockedBy": {},
+        "ManufacturingDuration": {
+            "type": "number",
+            "description": "The time it takes for a machine to process this recipe in seconds. Recipe energy consumption is usually this times the machine's power usage."
+        },
+        "ManualManufacturingMultiplier": {
+            "type": "number",
+            "description": "If you want to use the same recipe for machines and the craft bench, this defines how much longer the crafting of this recipe should take in the craft bench. With the multiplier set to the default of 0, the number of clicks to craft is the number of seconds it takes to craft divided by two.",
+            "examples": [
+                0.0
+            ]
+        },
+        "UnlockedBy": {
+            "type": "array",
+            "description": "Schematics to add this recipe to. Alternative way of tying recipes to schematics; the normal way is to use the schematic's 'Recipes' field. Useful if you don't want to also make a patch to add your recipe to a base-game schematic.",
+            "items": {
+                "$ref": "./Components/CL_NameResolvedAsset.json"
+            }
+        },
+        "VariablePowerConsumptionFactor": {
+            "type": "number",
+            "description": "Only works in variable consumption machines (the Particle Accelerator in base game). Added to the VariablePowerConsumptionFactor to get the 'maximum' power consumption the recipe can scale up to over its cycle."
+        },
+        "VariablePowerConsumptionConstant": {
+            "type": "number",
+            "description": "Only works in variable consumption machines (the Particle Accelerator in base game). The 'minimum' power consumption the recipe can scale down to over its cycle."
+        },
+        "ManufacturingMenuPriority": {
+            "type": "number",
+            "description": "Controls the order that recipes appear within their category. Lower values means earlier in the menu. Negatives and decimals allowed."
+        },
         "OverrideName": {
             "type": "boolean",
             "description": "For patches, should the Recipe this is used on have its 'use override name' flag enabled? Default is true when 'Name' exists, false when not. This can be used to ex. revert a recipe's displayed name to that of its first product, instead of the custom name that was specified for it."
@@ -46,7 +98,6 @@
             "type": "boolean",
             "description": "For patches, should the Recipe this is used on have its existing ProducedIn array cleared before adding to it? Default is true when 'ProducedIn' exists, false when not."
         }
-        
     },
     "patternProperties": {
         "schema": {

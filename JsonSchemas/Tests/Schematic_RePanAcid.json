@@ -1,0 +1,31 @@
+{
+    "$schema": "./../CL_Schematic.json",
+    "Name": "RePan Acid Process",
+    "Type": "Milestone",
+    "Tier": 8,
+    "VisualKit": "Kit_Aciding",
+    "Category": "RePan-Oil",
+    "Cost": [
+        {
+            "Item": "Desc_AluminumPlate",
+            "Amount": 100
+        },
+        {
+            "Item": "Desc_PackagedNitrogenGas",
+            "Amount": 100
+        },
+        {
+            "Item": "Desc_PackagedSulfuricAcid",
+            "Amount": 100
+        }
+    ],
+    "Recipes": [
+        "Recipe_CatalyticNitricAcid",
+        "Recipe_PickledSteelIngots",
+        "Recipe_PickledSteelBeam",
+        "Recipe_BlowMoldedTank",
+        "Recipe_EtchedBoards",
+        "Recipe_ReprocessedUranium",
+        "Recipe_UREXCells"
+    ]
+}

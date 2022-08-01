@@ -40,7 +40,7 @@
         },
         "Category": {
             "type": "string",
-            "description": "Groups the item into a category, which affects where it shows up in the recipe list. Either a base-game category, or a string which ContentLib will automatically turn into a category for you. You should specify something here because items without categories will not appear unless searched for by name in certain GUIs",
+            "description": "Groups the item into a category, which affects where it shows up in the recipe list. Either a base-game category, or a string which ContentLib will automatically turn into a category for you. You should specify something here because items without categories will not appear unless searched for by name in certain GUIs.",
             "examples": [
                 "Cat_Other",
                 "MyCustomAutoCreatedCategory"
