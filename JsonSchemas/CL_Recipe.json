@@ -11,6 +11,15 @@
             "type": "string",
             "description": "Override for the recipe's name, which is displayed inside the manual crafting bench, or any machines you set it to be used in. By default, recipes take the name of their first product item."
         },
+        "Ingredients": {
+            "$comment": "TODO mention ClearIngredients"
+        },
+        "Products": {
+            "$comment": "TODO mention ClearProducts"
+        },
+        "ProducedIn": {
+            "$comment": "TODO mention ClearBuilders"
+        },
         "OverrideCategory": {
             "type": "string",
             "description": ""
@@ -20,17 +29,24 @@
         "VariablePowerConsumptionFactor": {},
         "VariablePowerConsumptionConstant": {},
         "ManufacturingMenuPriority": {},
-        "Ingredients": {},
-        "Products": {},
-        "ProducedIn": {},
         "UnlockedBy": {},
-        "ClearIngredients": {},
-        "ClearProducts": {},
-        "ClearBuilders": {},
         "OverrideName": {
             "type": "boolean",
-            "description": "DEPRECATED - Just either specify or exclude the Name field"
+            "description": "For patches, should the Recipe this is used on have its 'use override name' flag enabled? Default is true when 'Name' exists, false when not. This can be used to ex. revert a recipe's displayed name to that of its first product, instead of the custom name that was specified for it."
+        },
+        "ClearIngredients": {
+            "type": "boolean",
+            "description": "For patches, should the Recipe this is used on have its existing Ingredients array cleared before adding to it? Default is true when 'Ingredients' exists, false when not."
+        },
+        "ClearProducts": {
+            "type": "boolean",
+            "description": "For patches, should the Recipe this is used on have its existing Products array cleared before adding to it? Default is true when 'Products' exists, false when not."
+        },
+        "ClearBuilders": {
+            "type": "boolean",
+            "description": "For patches, should the Recipe this is used on have its existing ProducedIn array cleared before adding to it? Default is true when 'ProducedIn' exists, false when not."
         }
+        
     },
     "patternProperties": {
         "schema": {

@@ -1,0 +1,11 @@
+{
+    "$schema": "./../CL_CDO.json",
+    "$comment": "Example gold rename from the docs",
+    "Class": "/Game/FactoryGame/Resource/Parts/GoldIngot/Desc_GoldIngot.Desc_GoldIngot_C",
+    "Edits": [
+        {
+            "Property": "mDisplayName",
+            "Value": "Gold Ingot"
+        }
+    ]
+}

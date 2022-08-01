@@ -1,0 +1,24 @@
+{
+    "$schema": "./../CL_CDO.json",
+    "$comment": "Example recipe quantity change from the docs",
+    "Class": "/Game/FactoryGame/Recipes/Blender/Recipe_FusedModularFrame.Recipe_FusedModularFrame_C",
+    "Edits": [
+        {
+            "Property": "mIngredients",
+            "Value": [
+                {
+                    "ItemClass": "/Game/FactoryGame/Resource/Parts/ModularFrameHeavy/Desc_ModularFrameHeavy.Desc_ModularFrameHeavy_C",
+                    "Amount": 1
+                },
+                {
+                    "ItemClass": "/Game/FactoryGame/Resource/Parts/AluminumCasing/Desc_AluminumCasing.Desc_AluminumCasing_C",
+                    "Amount": 1
+                },
+                {
+                    "ItemClass": "/Game/FactoryGame/Resource/RawResources/NitrogenGas/Desc_NitrogenGas.Desc_NitrogenGas_C",
+                    "Amount": 1000
+                }
+            ]
+        }
+    ]
+}

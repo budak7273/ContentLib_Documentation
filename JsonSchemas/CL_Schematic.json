@@ -1,0 +1,121 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://raw.githubusercontent.com/budak7273/ContentLib_Documentation/main/JsonSchemas/CL_Schematic.json",
+    "title": "ContentLib Schematic",
+    "description": "ContentLib Schematic struct definitions can be made from this JSON, and when converted to JSON, will follow this form.",
+    "$comment": "This is NOT a copy-paste template! Check the docs to see how to use this! https://docs.ficsit.app/contentlib/latest/index.html",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "Name": {
+            "type": "string",
+            "description": "TODO"
+        },
+        "Type": {
+            "type": "string",
+            "description": "TODO",
+            "enum": [
+                "Custom",
+                "Cheat",
+                "Tutorial",
+                "Milestone",
+                "Alternate",
+                "Story",
+                "MAM",
+                "ResourceSink",
+                "HardDrive",
+                "Prototype"
+            ]
+        },
+        "VisualKit": {
+            "type": "string",
+            "description": "TODO",
+            "examples": [
+                "Desc_OreGold_C",
+                "Desc_Water_C",
+                "Kit_MyCustomVisualKitName"
+            ]
+        },
+        "Description": {
+            "type": "string",
+            "description": "TODO"
+        },
+        "Cost": {
+            "type": "array",
+            "items": {
+                "$ref": "./Components/CL_ItemAmount.json"
+            },
+            "$comment": "TODO mention ClearCost"
+        },
+        "Category": {
+            "$comment": "TODO mention ClearCats"
+        },
+        "SubCategories": {
+            "type": "array",
+            "$comment": "TODO mention ClearCats"
+        },
+        "DependsOn": {
+            "type": "array",
+            "$comment": "TODO mention ClearDeps"
+        },
+        "MenuPriority": {
+            "type": "number"
+        },
+        "Time": {
+            "type": "number"
+        },
+        "Tier": {
+            "type": "integer",
+            "minimum": 0
+        },
+        "InventorySlotsToGive": {
+            "type": "integer"
+        },
+        "ArmSlotsToGive": {
+            "type": "integer"
+        },
+        "Recipes": {
+            "type": "array"
+        },
+        "ItemsToGive": {
+            "type": "array",
+            "description": "Items to give the player upon schematic purchase, only tested with Resource Sink (AWESOME Shop) schematics.",
+            "items": {
+                "$ref": "./Components/CL_ItemAmount.json"
+            }
+        },
+        "ClearCats": {
+            "type": "boolean",
+            "description": "TODO"
+        },
+        "ClearCost": {
+            "type": "boolean",
+            "description": "TODO"
+        },
+        "ClearRecipes": {
+            "type": "boolean",
+            "description": "TODO"
+        },
+        "ClearDeps": {
+            "type": "boolean",
+            "description": "TODO"
+        },
+        "ClearItemsToGive": {
+            "type": "boolean",
+            "description": "TODO"
+        },
+        "ResearchTree": {
+            "description": "I (Robb) have not investigated this field to find out if it still works. See https://github.com/Nogg-aholic/ContentLib/blob/master/Source/ContentLib/Private/CLSchematicBPFLib.cpp if you want to try it."
+        }
+    },
+    "patternProperties": {
+        "schema": {
+            "$comment": "Allow the $schema line in files",
+            "type": "string"
+        },
+        "comment": {
+            "$comment": "Allow the $comment line in files",
+            "type": "string"
+        }
+    }
+}

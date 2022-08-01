@@ -5,6 +5,7 @@
     "description": "An asset that can be specified either with a full path, or a shortened name for ContentLib to resolve. See more info here: https://docs-dev.ficsit.app/contentlib/latest/BackgroundInfo/AutomaticNameResolving.html",
     "$comment": "This file does not represent ContentLib asset type! It's a resource used by other JSON Schemas.",
     "type": "string",
+    "minLength": 1,
     "examples": [
         "Please read https://docs-dev.ficsit.app/contentlib/latest/BackgroundInfo/AutomaticNameResolving.html"
     ]

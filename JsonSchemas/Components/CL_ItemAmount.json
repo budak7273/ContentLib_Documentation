@@ -1,0 +1,22 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://raw.githubusercontent.com/budak7273/ContentLib_Documentation/main/JsonSchemas/CL_ItemAmount.json",
+    "title": "Item Amount Structure",
+    "description": "Respresents a quantity of an item",
+    "$comment": "This file does not represent ContentLib asset type! It's a resource used by other JSON Schemas.",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "Item",
+        "Amount"
+    ],
+    "properties": {
+        "Item": {
+            "$ref": "./CL_NameResolvedAsset.json"
+        },
+        "Amount": {
+            "type": "integer",
+            "minimum": 0
+        }
+    }
+}

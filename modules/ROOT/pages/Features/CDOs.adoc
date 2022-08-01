@@ -19,6 +19,9 @@ There are no restrictions on the names for CDO JSON files.
 
 This feature becomes even more powerful when paired with a mod of your own. For example, you can use CDO edits to change the parent class of other Materials to one you packaged with your mod, changing the appearance of anything using that material.
 
+You can see the field types supported by ContentLib CDOs by looking at the `UCLCDOBPFLib::EditCDO` implementation
+https://github.com/Nogg-aholic/ContentLib/blob/master/Source/ContentLib/Private/CLCDOBPFLib.cpp[here].
+
 [WARNING]
 ====
 Remember that CDOs need to go in the correct xref:BackgroundInfo/FolderNames.adoc[Folder].
@@ -93,4 +96,4 @@ image:https://i.imgur.com/FIyBHQB.png[Gold example]
 
 == Blueprint Library
 
-Perform your own CDO modifications directly with `UCLCDOBPFLib::GenerateCLCDOFromString` or `UCLCDOBPFLib::EditCDO`. See the `CL_CDO_Module`` blueprint asset for examples of GenerateCLCDOFromString.
+Perform your own CDO modifications directly with `UCLCDOBPFLib::GenerateCLCDOFromString` or `UCLCDOBPFLib::EditCDO`. See the `CL_CDO_Module` blueprint asset for examples of GenerateCLCDOFromString.

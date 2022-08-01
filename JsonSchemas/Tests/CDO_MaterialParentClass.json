@@ -1,0 +1,11 @@
+{
+    "$schema": "./../CL_CDO.json",
+    "$comment": "Example asset parent change from the docs",
+    "Class": "/Game/FactoryGame/-Shared/Material/MI_Factory_Base_01.MI_Factory_Base_01",
+    "Edits": [
+      {
+        "Property": "Parent",
+        "Value": "/AdaptingGenerators/Assets/MM_FactoryCopy.MM_FactoryCopy"
+      }
+    ]
+  }
