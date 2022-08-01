@@ -99,7 +99,9 @@ See the 'More Info' section below to find out why.
 Follow the xref:Tutorials/CreateRecipe.adoc[Create a Recipe]
 tutorial to make one so you can obtain your item and test it out.
 
-If you've done everything correctly, you should be able to obtain Item in game via an item spawning utility, or by unlocking the recipes you defined.
+If you've done everything correctly,
+you should be able to obtain your Item in game via an item spawning utility,
+or by unlocking the recipes you defined.
 
 == Common Errors
 

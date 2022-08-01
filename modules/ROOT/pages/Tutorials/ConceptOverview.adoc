@@ -1,6 +1,9 @@
 = Overview
 
-ContentLib mod allows users to easily create custom recipes, items, schematics, and more, or modify existing ones from any mod!
+== ContentLib Workflow
+
+ContentLib mod allows users to easily create custom
+recipes, items, schematics, and more, or modify existing ones from any mod!
 Custom content of your own design is only a couple of JSON files away!
 
 The flow of developing a ContentLib script is generally as follows:
@@ -8,12 +11,25 @@ The flow of developing a ContentLib script is generally as follows:
 1. Get an idea for what you want to modify
 2. https://ficsit.app/mod/ContentLib[Install ContentLib via SMM]
 3. Follow the directions on the xref:Tutorials/Setup.adoc[Setup page] to get a mod skeleton ready
-4. Locate the asset names of what you would like to modify or unlock, probably using xref:Tutorials/ContentInspector.adoc[ContentInspector]
+4. Locate the asset names of what you would like to modify or unlock,
+  probably using xref:Tutorials/ContentInspector.adoc[ContentInspector]
 5. Follow the directions on the docs' Tutorials page for the asset you'd like to create, tweaking the examples to reach your end goal
-    * If you want to *modify the properties of an existing asset,* you'll want to create a xref:Features/Patching.adoc[Patch for that asset]
-    * If you want to create a new item or fluid to use in recipes, follow xref:Tutorials/CreateItem.adoc[Create an Item]
-    * If you want to create a new recipe for producing an item or building, follow xref:Tutorials/CreateRecipe.adoc[Create a Recipe]
-    * If you want to create new ways to unlock recipes or buildings, follow xref:Tutorials/CreateRecipe.adoc[Create a Schematic]
-6. Following the xref:Tutorials/Troubleshooting.adoc[Troubleshooting directions] to figure out what went wrong and how to resolve it
+    * If you want to *modify the properties of an existing asset,*
+      you'll want to create a xref:Features/Patching.adoc[Patch for that asset]
+    * If you want to create a new item or fluid to use in recipes,
+      follow xref:Tutorials/CreateItem.adoc[Create an Item]
+    * If you want to create a new recipe for producing an item or building,
+      follow xref:Tutorials/CreateRecipe.adoc[Create a Recipe]
+    * If you want to create new ways to unlock recipes or buildings,
+      follow xref:Tutorials/CreateRecipe.adoc[Create a Schematic]
+6. Use your text editor's auto suggest (powered by xref:Reference/JsonSchema.adoc[JSON Schemas])
+  to learn about and use other fields the tutorials may not cover
+7. Following the xref:Tutorials/Troubleshooting.adoc[Troubleshooting directions] to figure out what went wrong and how to resolve it
 
-If you get stuck, please describe your goal and share your script(s) as a file upload on the https://discord.gg/kcRmFxn89d[Nog's Mods discord server].
+If you get stuck, please describe your goal
+and share your script(s) as a file upload on the https://discord.gg/kcRmFxn89d[Nog's Mods discord server].
+
+== Next Steps
+
+Follow the directions on the xref:Tutorials/Setup.adoc[Setup page]
+to get a basic structure for your scripts and mod.

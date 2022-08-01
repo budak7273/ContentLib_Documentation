@@ -78,7 +78,9 @@ then the folder path to inside of the folder you moved in should be
 `D:\Programs\EpicGamesGames\SatisfactoryExperimental\FactoryGame\Mods\YourModReferenceHere`
 
 Beware that other modding tools (SMM CLI) could accidentally delete it,
-so keep backups if you change mod profiles.
+so keep backups!
+
+Proceed to the link:#_next_steps[Next Steps section].
 
 === Option 2 - With Unreal Editor
 
@@ -102,6 +104,8 @@ Your script files will go in your modding project's plugin folder.
 In order to package your changes for the game,
 and for distribution as a mod,
 use Alpakit as described in the main modding docs.
+
+Proceed to the link:#_next_steps[Next Steps section].
 
 === Option 3 - Adding ContentLib Scripts to an Existing Mod
 
@@ -144,3 +148,14 @@ Example `PluginSettings.ini`
 +AdditionalNonUSFDirectories=ContentLib
 
 ```
+
+Proceed to the link:#_next_steps[Next Steps section].
+
+== Next Steps
+
+Now that you've got your editor and mod set up,
+it's time to get started making some content.
+
+A great place to start is the 
+xref:Tutorials/CreateItem.adoc[Create an Item]
+tutorial.
