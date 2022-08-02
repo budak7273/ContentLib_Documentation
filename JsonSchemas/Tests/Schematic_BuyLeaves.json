@@ -1,0 +1,22 @@
+{
+    "$schema": "./../CL_Schematic.json",
+    "Name": "Buy Leaves",
+    "Type": "ResourceSink",
+    "Category": "SC_RSS_Parts",
+    "SubCategories": [
+      "SC_RSS_Biomass"
+    ],
+    "Description": "The AWESOME Shop actually displays the description of the schematic.",
+    "Cost": [
+      {
+        "Item": "Desc_ResourceSinkCoupon",
+        "Amount": 1
+      }
+    ],
+    "ItemsToGive": [
+      {
+        "Item": "Desc_Leaves",
+        "Amount": 200
+      }
+    ]
+  }

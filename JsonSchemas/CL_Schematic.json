@@ -9,11 +9,11 @@
     "properties": {
         "Name": {
             "type": "string",
-            "description": "TODO"
+            "description": "The in-game name of our schematic, exactly as it is displayed to the user."
         },
         "Type": {
             "type": "string",
-            "description": "TODO",
+            "description": "Determines if the schematic is part of the tutorial system or if it's a Milestone/etc.",
             "enum": [
                 "Custom",
                 "Cheat",
@@ -29,7 +29,7 @@
         },
         "VisualKit": {
             "type": "string",
-            "description": "TODO",
+            "description": "Name of the Visual Kit to use. If you want to refer to the kit of an existing asset, use its descriptor name, with the _C suffix. TODO test if base-game schematics get kits genned?",
             "examples": [
                 "Desc_OreGold_C",
                 "Desc_Water_C",
@@ -38,21 +38,35 @@
         },
         "Description": {
             "type": "string",
-            "description": "TODO"
+            "description": "A text description to display along with the schematic. As of Update 5, only AWESOME Shop schematics actually display this field anywhere in-game."
         },
         "Cost": {
             "type": "array",
+            "description": "ItemAmounts which form the unlock cost. Nog's Research mod must be used if you want to submit fluid item types. See 'ClearCost' to append cost of replace.",
             "items": {
                 "$ref": "./Components/CL_ItemAmount.json"
-            },
-            "$comment": "TODO mention ClearCost"
+            }
         },
         "Category": {
-            "$comment": "TODO mention ClearCats"
+            "type": "string",
+            "$comment": "TODO mention ClearCats",
+            "description": "Defines the category in which this schematic gets grouped into. Only AWESOME Shop schematics actually use this field. Either a base-game category, or a string which ContentLib will automatically turn into a category for you.",
+            "minLength": 1,
+            "examples": [
+                "SC_RSS_Parts",
+                "MyCustomAutoCreatedCategory"
+            ]
         },
         "SubCategories": {
             "type": "array",
-            "$comment": "TODO mention ClearCats"
+            "$comment": "TODO mention ClearCats",
+            "items": {
+                "type": "string",
+                "description": "Defines the SUB-category in which this schematic gets grouped into. Only AWESOME Shop schematics actually use this field. Either a base-game category, or a string which ContentLib will automatically turn into a category for you.",
+                "examples": [
+                    "SC_RSS_Biomass"
+                ]
+            }
         },
         "DependsOn": {
             "type": "array",
