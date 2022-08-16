@@ -19,13 +19,14 @@ In order to write your own Items, you will need the following:
 Below is an example of a freshly created Item and a screenshot of it within the game.
 We'll use it as a template to make our own item from.
 
-JSON file named: `Desc_GoldToo.json`
 ```json
 {
-  "Name": "Gold Too",
+  "$schema": "https://raw.githubusercontent.com/budak7273/ContentLib_Documentation/main/JsonSchemas/CL_Item.json",
+  "$comment": "Comment lines will be ignored by the mod, and are a good place to leave yourself notes.",
+  "Name": "My Custom Item",
   "VisualKit": "Desc_OreGold_C",
   "Form": "Solid",
-  "Description" : "This is a new Item which re-uses the visuals of Caterium Ore!"
+  "Description": "This is a new custom Item which re-uses the visuals of Caterium Ore!"
 }
 ```
 
@@ -42,6 +43,20 @@ If a conflict is found, it will appear in the logs, which will be discussed late
 For now, try to be unique and specific with your file names to avoid any possible conflicts.
 
 Copy in the "Custom Item Example" JSON from above to the file.
+
+Notice the `$schema` line at the top of what we copied in -
+that tells your editor what kind of format the file will follow.
+
+If you've set up your editor correctly, you should be able to hover over the Name field,
+for example, and get a description of what it does:
+
+image:Tutorials/Item_DescriptionHover.png[image]
+
+Or, you can press Ctrl+Space, and your editor will suggest more fields you could add:
+
+image:Tutorials/Item_AutoSuggest.png[image]
+
+If you don't see these, go get a good text editor as described on the xref:Tutorials/Setup.adoc[Setting Up] page!
 
 == Name and Description
 
@@ -65,7 +80,7 @@ Looking at the https://satisfactory.fandom.com/wiki/Leaves[Satisfactory Wiki],
 we can see in the infobox that the item's Blueprint Path is
 `/Game/FactoryGame/Resource/Parts/GenericBiomass/Desc_Leaves.Desc_Leaves_C`.
 
-This means that the name of the blueprint generated class,
+This means that the name of the item's blueprint generated class,
 which is used as the name of the Visual Kit, is `Desc_Leaves_C`.
 
 ContentLib will
@@ -110,6 +125,7 @@ Make sure to read the xref:Tutorials/Troubleshooting.adoc[Troubleshooting] page.
 * Nothing showing up at all in the logs
   ** Make sure your items are in the xref:BackgroundInfo/FolderNames.adoc[correct folder].
 * Item not showing up in-game
+  ** Did you give your Item or Recipe a Category? If not, it will only show up when searched for.
   ** This could be the fault of the item, or the custom recipe you made to grant it. Check the logs as described on the Troubleshooting page.
 
 == Next Steps

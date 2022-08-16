@@ -2,10 +2,10 @@
 
 [NOTE]
 ====
-You can find a WIP xref:Reference/JsonSchema.adoc[JSON Schema] for Recipes https://github.com/budak7273/ContentLib_Documentation/tree/main/JsonSchemas[here].
+You can find a xref:Reference/JsonSchema.adoc[JSON Schema] for Recipes https://github.com/budak7273/ContentLib_Documentation/tree/main/JsonSchemas[here].
 ====
 
-All Recipe JSON files must start with the prefix `Recipe_`
+All Recipe JSON files must start with the prefix `Recipe_`.
 
 xref:Tutorials/CreateRecipe.adoc[Create a Recipe Tutorial]
 
@@ -21,6 +21,7 @@ Below is an example recipe and a screenshot of it within the Item Codex in game.
 
 ```json
 {
+    "$schema": "https://raw.githubusercontent.com/budak7273/ContentLib_Documentation/main/JsonSchemas/CL_Recipe.json",
     "Name": "ContentLib BioFuel",
     "Ingredients": [
         {
@@ -52,6 +53,7 @@ Here's an example recipe for the Blender made by McGalleon.
 
 ```json
 {
+    "$schema": "https://raw.githubusercontent.com/budak7273/ContentLib_Documentation/main/JsonSchemas/CL_Recipe.json",
     "Name": "Synthetic Crystal",
     "Ingredients": [
         {

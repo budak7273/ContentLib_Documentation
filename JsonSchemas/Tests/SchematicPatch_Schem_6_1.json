@@ -1,0 +1,11 @@
+//Game/FactoryGame/Schematics/Progression/Schematic_6-1.Schematic_6-1_C
+{
+    "$schema": "./../CL_Schematic.json",
+    "ClearRecipes": true,
+    "Recipes": [
+        "Recipe_GeneratorFuel",
+        "Recipe_ConveyorBeltMk4",
+        "Recipe_ConveyorLiftMk4",
+        "Recipe_LiquidFuel"
+    ]
+}

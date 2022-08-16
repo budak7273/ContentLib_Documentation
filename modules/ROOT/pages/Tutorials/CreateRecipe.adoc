@@ -15,12 +15,13 @@ In order to write your own recipes, you will need the following:
 
 First, here's two example recipes to show some of what's possible:
 
-== Example Starter Recipe
+== Example Starter Simple Recipe
 
 Below is an example recipe and a screenshot of it within the Item Codex in game.
 
 ```json
 {
+    "$schema": "https://raw.githubusercontent.com/budak7273/ContentLib_Documentation/main/JsonSchemas/CL_Recipe.json",
     "Name": "BioFuel",
     "Ingredients": [
         {
@@ -46,12 +47,13 @@ Below is an example recipe and a screenshot of it within the Item Codex in game.
 
 image:https://i.imgur.com/ZUl6Mc5.png[Recipe]
 
-== Complex Recipe
+== Example Complex Recipe
 
 Here's an example recipe for the Blender made by McGalleon.
 
 ```json
 {
+    "$schema": "https://raw.githubusercontent.com/budak7273/ContentLib_Documentation/main/JsonSchemas/CL_Recipe.json",
     "Name": "Synthetic Crystal",
     "Ingredients": [
         {
@@ -85,7 +87,6 @@ Here's an example recipe for the Blender made by McGalleon.
 
 image:https://cdn.discordapp.com/attachments/771801486828896260/863510909476143184/unknown.png[Blender example ingame]
 
-
 == Setting Up
 
 After setting up your text editor,
@@ -99,13 +100,23 @@ do not conflict with the names of any existing assets.
 If a conflict is found, it will appear in the logs, which will be discussed later.
 For now, try to be unique and specific with your file names to avoid any possible conflicts.
 
+Notice the `$schema` line at the top of what we copied in -
+that tells your editor what kind of format the file will follow.
+
+If you've set up your editor correctly, you should be able to hover over fields to get a description of their purpose,
+or press Ctrl+Space, and your editor will suggest other fields you could add.
+
+If you don't see these, go get a good text editor as described on the xref:Tutorials/Setup.adoc[Setting Up] page!
+
+== Locate Asset Names
+
 Next, you need to find the item, building, and schematic names. These names are part of the 'blueprint path' of the items in the game's files. Thankfully, this mod will xref:BackgroundInfo/AutomaticNameResolving.adoc[automatically resolve] part of the blueprint path into the full name, saving you from having to type out the full name. You can exclude the "_C" from the end as well. 
 
 Find out how to track down asset names xref:Tutorials/FindAssetPath.adoc[here].
 
 Watch out - if you're using fluids in your recipes, you need to multiply the item count by 1000. Learn more on the xref:Tutorials/FluidsInfo.adoc[Fluids] page.
 
-Here are a few Vanilla building names:
+Here are a few Vanilla building names. You can also use the JSON Schema auto-suggest feature and your editor will auto-suggest them from a list.
 
 * Constructor: `Build_ConstructorMk1`
 * Assembler: `Build_AssemblerMk1`
@@ -131,7 +142,11 @@ Use the values you've selected and the example recipe above to create your recip
 
 == Next Steps
 
-There are a lot more fields you can use that this tutorial did not discuss. Check out the xref:Features/Recipes.adoc[Recipe] page for more info.
+There are a lot more fields you can use that this tutorial did not discuss.
+
+Check out the hover-tooltips and auto-suggested fields that the JSON schema provides to see some more possibilities.
+
+You can also out the xref:Features/Recipes.adoc[Recipe] page for more info.
 
 == Common Errors
 
@@ -141,3 +156,6 @@ Make sure to read the xref:Tutorials/Troubleshooting.adoc[Troubleshooting] page.
   ** Make sure your recipes are in the `FactoryGame/Configs/ContentLib/Recipes` directory.
 * `Wrong Naming Convention ! "Recipe" expected followed by a Name`
   ** Your recipe file should be names like this: `Recipe_YourNameHere.json`
+* Item not showing up in-game
+  ** Did you give your Item or Recipe a Category? If not, it will only show up when searched for.
+  ** This could be the fault of the item, or the custom recipe you made to grant it. Check the logs as described on the Troubleshooting page.

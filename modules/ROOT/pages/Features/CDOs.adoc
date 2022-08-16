@@ -2,7 +2,7 @@
 
 [NOTE]
 ====
-You can find a WIP xref:Reference/JsonSchema.adoc[JSON Schema] for CDOs https://github.com/budak7273/ContentLib_Documentation/tree/main/JsonSchemas[here].
+You can find a xref:Reference/JsonSchema.adoc[JSON Schema] for CDOs https://github.com/budak7273/ContentLib_Documentation/tree/main/JsonSchemas[here].
 ====
 
 You can also use ContentLib to perform (Class Default Object) CDO edits.
@@ -43,6 +43,7 @@ image:https://i.imgur.com/FIyBHQB.png[Gold example]
 
 ```json
 {
+  "$schema": "https://raw.githubusercontent.com/budak7273/ContentLib_Documentation/main/JsonSchemas/CL_CDO.json",
   "Class": "/Game/FactoryGame/Resource/Parts/GoldIngot/Desc_GoldIngot.Desc_GoldIngot_C",
   "Edits": [
     {
@@ -57,6 +58,7 @@ image:https://i.imgur.com/FIyBHQB.png[Gold example]
 
 ```json
 {
+  "$schema": "https://raw.githubusercontent.com/budak7273/ContentLib_Documentation/main/JsonSchemas/CL_CDO.json",
   "Class": "/Game/FactoryGame/Recipes/Blender/Recipe_FusedModularFrame.Recipe_FusedModularFrame_C",
   "Edits": [
     {
@@ -84,6 +86,7 @@ image:https://i.imgur.com/FIyBHQB.png[Gold example]
 
 ```json
 {
+  "$schema": "https://raw.githubusercontent.com/budak7273/ContentLib_Documentation/main/JsonSchemas/CL_CDO.json",
   "Class": "/Game/FactoryGame/-Shared/Material/MI_Factory_Base_01.MI_Factory_Base_01",
   "Edits": [
     {

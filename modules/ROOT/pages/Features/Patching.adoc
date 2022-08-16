@@ -28,6 +28,15 @@ covers how to find the path of an asset.
 For example, the line at the top of the file overriding the Turbofuel recipe must be
 `//Game/FactoryGame/Recipes/AlternateRecipes/Parts/Recipe_Alternate_Turbofuel.Recipe_Alternate_Turbofuel_C`
 
+== JSON Schema
+
+The xref:Reference/JsonSchema.adoc[JSON Schema] used for a Patch should be that of the asset type it is modifying.
+
+Your editor might complain about the patch target line being a comment, since comments are not normally supported in JSON.
+This is to be expected
+You can hide this error by following
+https://stackoverflow.com/questions/47834825/in-vs-code-disable-error-comments-are-not-permitted-in-json/[these steps].
+
 == Example Item Patch
 
 [WARNING]
@@ -52,6 +61,7 @@ but you can modify other fields, too.
 ```json
 //Game/FactoryGame/Resource/RawResources/OreGold/Desc_OreGold.Desc_OreGold_C
 {
+  "$schema": "https://raw.githubusercontent.com/budak7273/ContentLib_Documentation/main/JsonSchemas/CL_Item.json",
   "Name": "Gold Ore",
   "Description" : "Surely not Caterium Ore. Couldn't be!"
 }
@@ -67,6 +77,7 @@ Remember that Recipe Patches need to go in the correct xref:BackgroundInfo/Folde
 ```json
 //Game/FactoryGame/Recipes/Constructor/Recipe_Biofuel.Recipe_Biofuel_C
 {
+  "$schema": "https://raw.githubusercontent.com/budak7273/ContentLib_Documentation/main/JsonSchemas/CL_Recipe.json",
   "Name": "BioFuel Override",
   "Ingredients": [
     {
@@ -90,7 +101,52 @@ Remember that Recipe Patches need to go in the correct xref:BackgroundInfo/Folde
 Remember that Schematic Patches need to go in the correct xref:BackgroundInfo/FolderNames.adoc[Folder].
 ====
 
-TODO
+By default, schematic patches will only append unlocks and costs to what already exists,
+because this behavior provides the most compatibility with other mods.
+
+The ClearCost, ClearRecipes, and ClearDeps fields may be of use here.
+
+Here's an example schematic patch that also unlocks
+the 3 Turbofuel recipes at the same time as regular Fuel
+while still preserving the existing unlocks.
+
+```json
+//Game/FactoryGame/Schematics/Progression/Schematic_5-1.Schematic_5-1_C
+{
+    "$schema": "https://raw.githubusercontent.com/budak7273/ContentLib_Documentation/main/JsonSchemas/CL_Schematic.json",
+    "Recipes": [
+        "Recipe_Alternate_Turbofuel",
+        "Recipe_Alternate_TurboHeavyFuel",
+        "Recipe_Alternate_TurboBlendFuel"
+    ]
+}
+```
+
+Here's an example patch that makes it so the "Pretty Good Pioneering" statue does not show up in the AWESOME Shop unless specifically searched for:
+
+```json
+//Game/FactoryGame/Schematics/ResourceSink/ResourceSink_StatueSilverPioneer.ResourceSink_StatueSilverPioneer_C
+{
+    "$schema": "https://raw.githubusercontent.com/budak7273/ContentLib_Documentation/main/JsonSchemas/CL_Schematic.json",
+    "ClearSubCategories": true
+}
+```
+
+Here's an example schematic patch from RePan that replaces the unlocks of an existing schematic with another set:
+
+```json
+//Game/FactoryGame/Schematics/Progression/Schematic_6-1.Schematic_6-1_C
+{
+    "$schema": "https://raw.githubusercontent.com/budak7273/ContentLib_Documentation/main/JsonSchemas/CL_Schematic.json",
+    "ClearRecipes": true,
+    "Recipes": [
+        "Recipe_GeneratorFuel",
+        "Recipe_ConveyorBeltMk4",
+        "Recipe_ConveyorLiftMk4",
+        "Recipe_LiquidFuel"
+    ]
+}
+```
 
 == Background Info
 

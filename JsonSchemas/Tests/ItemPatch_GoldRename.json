@@ -1,0 +1,6 @@
+//Game/FactoryGame/Resource/RawResources/OreGold/Desc_OreGold.Desc_OreGold_C
+{
+    "$schema": "./../CL_Item.json",
+    "Name": "Gold Ore",
+    "Description": "Surely not Caterium Ore. Couldn't be!"
+}

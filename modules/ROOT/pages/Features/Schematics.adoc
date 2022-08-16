@@ -2,13 +2,13 @@
 
 [NOTE]
 ====
-TODO this schema isn't written yet.
-You can find a WIP xref:Reference/JsonSchema.adoc[JSON Schema] for Schematics https://github.com/budak7273/ContentLib_Documentation/tree/main/JsonSchemas[here].
+You can find a xref:Reference/JsonSchema.adoc[JSON Schema] for Schematics https://github.com/budak7273/ContentLib_Documentation/tree/main/JsonSchemas[here].
 ====
 
-You can use _ContentLib_ to create your own schematics, or edit existing ones!
+All Schematic JSON files must start with the prefix `Schematic_`.
+You may find it beneficial to add further detail in the prefix, such as `Schematic_HUB_` for HUB milestones and `Schematic_Node_` for MAM Nodes.
 
-In order to make them easy to identify among other assets, all Schematic JSON files should start with the prefix `Schematic_`. You may find it beneficial to add further detail in the prefix, such as `Schematic_HUB_` for HUB milestones and `Schematic_Node_` for MAM Nodes.
+You can use _ContentLib_ to create your own schematics, or edit existing ones!
 
 To specify schematic icons, use xref:Features/VisualKits.adoc[Visual Kits].
 
@@ -25,6 +25,7 @@ Here is an example schematic from the RePan Oil mod:
 
 ```json
 {
+  "$schema": "https://raw.githubusercontent.com/budak7273/ContentLib_Documentation/main/JsonSchemas/CL_Schematic.json",
   "Name": "RePan Acid Process",
   "Type": "Milestone",
   "Tier": 8,

@@ -1,0 +1,5 @@
+//Game/FactoryGame/Schematics/ResourceSink/ResourceSink_StatueSilverPioneer.ResourceSink_StatueSilverPioneer_C
+{
+    "$schema": "./../CL_Schematic.json",
+    "ClearSubCategories": true
+}

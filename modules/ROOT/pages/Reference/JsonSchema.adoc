@@ -29,3 +29,6 @@ To use a schema, simply include a property in your JSON file: `$schema` with the
 You can find the link to the schema in the `$id` field of the schema you want to follow.
 For example, the link to the Recipe schema is
 `https://raw.githubusercontent.com/budak7273/ContentLib_Documentation/main/JsonSchemas/CL_Recipe.json`
+
+You can directly open the schema file to see all of the possible fields, and their constraints, at a glance.
+To do this, simply open the link for the schema in a web browser.

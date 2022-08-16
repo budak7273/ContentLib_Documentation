@@ -1,0 +1,17 @@
+//Game/FactoryGame/Recipes/Constructor/Recipe_Biofuel.Recipe_Biofuel_C
+{
+  "$schema": "./../CL_Recipe.json",
+    "Name": "BioFuel Override",
+    "Ingredients": [
+      {
+        "Item": "Desc_Coal",
+        "Amount": 1
+      }
+    ],
+    "Products": [
+      {
+        "Item": "Desc_Biofuel",
+        "Amount": 10
+      }
+    ]
+  }

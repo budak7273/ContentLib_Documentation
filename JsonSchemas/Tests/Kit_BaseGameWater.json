@@ -1,0 +1,18 @@
+{
+    "$schema": "./../CL_VisualKit.json",
+    "Mesh": "/Game/FactoryGame/Resource/Parts/PackagedWater/SM_PackedWater_01.SM_PackedWater_01",
+    "BigIcon": "/Game/FactoryGame/Resource/RawResources/Water/UI/LiquidWater_Pipe_512.LiquidWater_Pipe_512",
+    "SmallIcon": "/Game/FactoryGame/Resource/RawResources/Water/UI/LiquidWater_Pipe_256.LiquidWater_Pipe_256",
+    "FluidColor": {
+        "r": 122,
+        "g": 176,
+        "b": 212,
+        "a": 255
+    },
+    "GasColor": {
+        "r": 122,
+        "g": 176,
+        "b": 212,
+        "a": 255
+    }
+}

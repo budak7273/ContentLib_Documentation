@@ -49,7 +49,6 @@
         },
         "Category": {
             "type": "string",
-            "$comment": "TODO mention ClearCats",
             "description": "Defines the category in which this schematic gets grouped into. Only AWESOME Shop schematics actually use this field. Either a base-game category, or a string which ContentLib will automatically turn into a category for you.",
             "minLength": 1,
             "examples": [
@@ -59,10 +58,9 @@
         },
         "SubCategories": {
             "type": "array",
-            "$comment": "TODO mention ClearCats",
+            "description": "Defines the Sub-categories in which this schematic gets grouped into. Only AWESOME Shop schematics actually use this field. Either a base-game category, or a string which ContentLib will automatically turn into a category for you. Use ClearSubCategories to wipe this instead of appending.",
             "items": {
                 "type": "string",
-                "description": "Defines the SUB-category in which this schematic gets grouped into. Only AWESOME Shop schematics actually use this field. Either a base-game category, or a string which ContentLib will automatically turn into a category for you.",
                 "examples": [
                     "SC_RSS_Biomass"
                 ]
@@ -70,53 +68,71 @@
         },
         "DependsOn": {
             "type": "array",
-            "$comment": "TODO mention ClearDeps"
+            "description": "Other schematics that this schematic requires to be purchased before it will display. Currently only one of these needs to be satisfied, if you want all, please request on the discord. Use ClearDeps to wipe this instead of appending.",
+            "items": {
+                "minimum": 1,
+                "$ref": "./Components/CL_NameResolvedAsset.json"
+            }
         },
         "MenuPriority": {
-            "type": "number"
+            "type": "number",
+            "description": "Only known working for the AWESOME Shop. Controls the order that schematics appear within their category. Lower values means earlier in the menu. Negatives and decimals allowed."
         },
         "Time": {
-            "type": "number"
+            "type": "number",
+            "description": "How long in seconds it takes the ship to return after a HUB Milestone, or a MAM research to complete",
+            "minimum": 0
         },
         "Tier": {
             "type": "integer",
+            "description": "The numeric tier the schematic is sorted into in the HUB. Unknown if this affects other types of schematic.",
             "minimum": 0
         },
         "InventorySlotsToGive": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Number of inventory slots to award the player with.",
+            "minimum": 1
         },
         "ArmSlotsToGive": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Number of hand equipment slots to award the player with.",
+            "minimum": 1
         },
         "Recipes": {
-            "type": "array"
+            "type": "array",
+            "description": "Recipes to unlock when the schematic is purchased. Appended to the existing by default, use ClearRecipes to change this.",
+            "items": {
+                "minimum": 1,
+                "$ref": "./Components/CL_NameResolvedAsset.json"
+            }
         },
         "ItemsToGive": {
             "type": "array",
             "description": "Items to give the player upon schematic purchase, only tested with Resource Sink (AWESOME Shop) schematics.",
             "items": {
+                "minimum": 1,
                 "$ref": "./Components/CL_ItemAmount.json"
             }
         },
-        "ClearCats": {
+        "ClearSubCategories": {
             "type": "boolean",
-            "description": "TODO"
+            "description": "When true, the existing Sub Categories of a schematic will be cleared. Used to wipe costs, or entirely replace them with the entries in the SubCategories field."
         },
         "ClearCost": {
             "type": "boolean",
-            "description": "TODO"
+            "description": "When true, the existing unlocks cost entries of a schematic will be cleared. Used to wipe costs, or entirely replace them with the entries in the Cost field."
         },
         "ClearRecipes": {
             "type": "boolean",
-            "description": "TODO"
+            "description": "When true, the existing recipe unlocks of a schematic will be cleared. Used to wipe unlocked recipes, or entirely replace them with the entries in the Recipes field."
         },
         "ClearDeps": {
             "type": "boolean",
-            "description": "TODO"
+            "description": "When true, the existing dependencies of a schematic will be cleared. Used to wipe dependencies, or entirely replace them with the entries in the DependsOn field."
         },
         "ClearItemsToGive": {
             "type": "boolean",
-            "description": "TODO"
+            "description": "When true, the existing item rewards of a schematic will be cleared. Used to wipe item rewards, or entirely replace them with the entries in the ItemsToGive field."
         },
         "ResearchTree": {
             "description": "I (Robb) have not investigated this field to find out if it still works. See https://github.com/Nogg-aholic/ContentLib/blob/master/Source/ContentLib/Private/CLSchematicBPFLib.cpp if you want to try it."
