@@ -1,7 +1,61 @@
 = C++ Libraries
 
-TODO
+In order to use ContentLib's cpp libraries you need to properly setup ContentLib as a dependency for your own cpp code. 
+First off you need to clone the https://github.com/Nogg-aholic/ContentLib[ContentLib] source code and add it to your SML plugins folder (side by side with your own Mod Reference folder).
 
-Follow xref:Tutorials/PublishMod.adoc[Publish your Work] to get dependencies set up correctly.
+=== Setting up the plugin dependencies
+Follow xref:Tutorials/PublishMod.adoc[Publish your Work] to get dependencies set up correctly so that your mods .uplugin's dependant plugins sections contains both SML and ContentLib as depencies.
+
+Example:ModReference.uplugin
+[source, json]
+----
+	"Plugins": [
+		{
+			"Name": "SML",
+			"Enabled": true,
+			"SemVersion": "^3.3.2"
+		},
+		{
+			"Name": "ContentLib",
+			"Enabled": true,
+			"SemVersion": "^1.0.0"
+		}
+	]
+----
+
+=== Setting up c++ depencies
+In order to include the ContentLib header files you need to set it up as a code dependency first, so the the UBT will be able to locate the headers correctly
+Goto your ModReference.Build.cs and add ContentLib as a public dependency next to "FactoryGame" and "SML"
+
+Example:ModReference.Build.cs
+[source, c#]
+----
+        PublicDependencyModuleNames.AddRange(new string[] {"FactoryGame", "SML", "ContentLib"});
+----
+
+=== Including headers
+Now you should be able to directly include the ContentLib header files
+
+Example:Someclass.h
+[source, cpp]
+----
+#include CLCDOBPFLib.h
+----
+Example:Someclass.cpp
+[source, cpp]
+----
+FSTRING json = TEXT(R"({
+  "$schema": "https://raw.githubusercontent.com/budak7273/ContentLib_Documentation/main/JsonSchemas/CL_CDO.json",
+  "Class": "/Game/FactoryGame/-Shared/Material/MI_Factory_Base_01.MI_Factory_Base_01",
+  "Edits": [
+    {
+      "Property": "Parent",
+      "Value": "/AdaptingGenerators/Assets/MM_FactoryCopy.MM_FactoryCopy"
+    }
+  ]
+})");
+
+UCLCDOBPFLib::GenerateCLCDOFromString(json, true);
+----
 
 Look at the Content Lib source code for usage examples
