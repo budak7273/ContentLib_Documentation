@@ -14,7 +14,7 @@ and have added your own {cpp} module to it.
 
 First off, you need to clone the
 https://github.com/Nogg-aholic/ContentLib[ContentLib] plugin source code
-and to your own Starter Project's Plugins folder.
+and add it to your own Starter Project's Plugins folder.
 It should be side by side with your own mod's plugin folder,
 and the name of the folder should be exactly `ContentLib`.
 
@@ -72,6 +72,8 @@ PublicDependencyModuleNames.AddRange(new string[] {
 ----
 
 === Including Headers and Calling Functions
+
+Now that you have updated your .uplugin and your .Build.cs file, its important that you rerun the https://docs.ficsit.app/satisfactory-modding/latest/Development/BeginnersGuide/project_setup.html#_generate_visual_studio_files["Generate visual studio build files"].
 
 Now you should be able to include the ContentLib header files in your own.
 
