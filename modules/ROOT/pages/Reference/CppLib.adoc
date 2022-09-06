@@ -10,44 +10,9 @@ and have added your own {cpp} module to it.
 
 == Set Up your Plugin to Use the Library
 
-=== Obtain the ContentLib Source Code
+== Get ContentLib in your Editor
 
-First off, you need to clone the
-https://github.com/Nogg-aholic/ContentLib[ContentLib] plugin source code
-and add it to your own Starter Project's Plugins folder.
-It should be side by side with your own mod's plugin folder,
-and the name of the folder should be exactly `ContentLib`.
-
-Make sure there are no extra folders in between.
-
-=== Setting up the Plugin Dependencies
-
-Follow the xref:Tutorials/PublishMod.adoc[Publish your Work] tutorial
-to get dependencies set up correctly
-so that your mod uplugin's "Plugins" sections contains both SML and ContentLib as dependencies.
-
-Example: `ModReference.uplugin`
-[source, json]
-----
-"Plugins": [
-	{
-		"Name": "SML",
-		"Enabled": true,
-		"SemVersion": "^3.3.2"
-	},
-	{
-		"Name": "ContentLib",
-		"Enabled": true,
-		"SemVersion": "^1.0.0"
-	}
-]
-----
-
-[WARNING]
-====
-The version numbers in the above examples are not necessarily correct.
-Make sure that you're using the latest versions of SML and ContentLib.
-====
+Follow the directions xref:Reference/SetUpEditor.adoc[here] to load the ContentLib libraries in your editor.
 
 === Setting up the {cpp} Dependencies
 
@@ -73,7 +38,8 @@ PublicDependencyModuleNames.AddRange(new string[] {
 
 === Including Headers and Calling Functions
 
-Now that you have updated your .uplugin and your .Build.cs file, its important that you rerun the https://docs.ficsit.app/satisfactory-modding/latest/Development/BeginnersGuide/project_setup.html#_generate_visual_studio_files["Generate visual studio build files"].
+Now that you have updated your uplugin and your `.Build.cs` file, its important that you
+https://docs.ficsit.app/satisfactory-modding/latest/Development/BeginnersGuide/project_setup.html#_generate_visual_studio_files[regenerate visual studio build files].
 
 Now you should be able to include the ContentLib header files in your own.
 

@@ -1,18 +1,26 @@
 = Blueprint Libraries
 
-TODO
-
-Follow xref:Tutorials/PublishMod.adoc[Publish your Work] to get dependencies set up correctly.
+====
+TODO - Add more examples and info on where to find available functions (reading the headers + function doc comments)
+====
 
 In addition to using the text-file-based JSON features of ContentLib,
-skilled modders can interact directly with ContentLib systems to make writing other mods easier.
+modders can also interact directly with ContentLib systems to make writing other mods easier.
 
-For example, the blueprint lib could be used to iterate over every defined item at launch and remove the radiation stat from them.
+For example, ContentLib's blueprint library could be used to iterate over every defined item at launch and remove the radiation stat from them.
 
 ContentLib offers both Blueprint and xref:Reference/CppLib.adoc[{cpp}] APIs with additional functionality.
 
 You can find examples of its usage by looking at the Content Lib mod's blueprint code for usage examples,
 or by looking at the source code of other mods using Content Lib, such as Aquilla's mods or SifVerT's Difficulty Tuner.
+
+== Set Up your Plugin to Use the Library
+
+=== Get ContentLib in your Editor
+
+Follow the directions xref:Reference/SetUpEditor.adoc[here] to set up the ContentLib blueprint libraries in your editor.
+
+If you want to use {cpp}, there are xref:Reference/CppLib.adoc[a few more steps].
 
 == Recipe Example
 
@@ -35,3 +43,12 @@ It applies a configurable cost multiplier to the ingredients of all in-game sche
 4. For each schematic, once all cost keys have been processed, the changes to the schematic are applied (saved/overwritten in this case) via the ContentLib blueprint library and take effect in game immediately. Before proceeding to the next schematic to modify, the temporary map is cleared, so that it is blank for use in the next schematic.
 
 ContentLib's Subsystem must be called for in order to use the entire CL feature. If you have any questions feel welcome to contact SifVerT#2610 on Discord for help. If the demo needs extra clarification please also come with feedback.
+
+== More Usage Examples
+
+ContentLib implements its "loading of text files into real content" functionality
+using the same blueprint library functions it exposes for use by any other mods.
+
+You can look at the ContentLib mod's blueprint source code for more examples of how each function is used.
+
+Please consider contributing more examples to the docs here if you have some time via 'Edit This Page' in the top right.
