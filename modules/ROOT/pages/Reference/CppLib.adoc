@@ -1,7 +1,89 @@
-= C++ Libraries
+= {cpp} Libraries
 
-TODO
+In order to use ContentLib's cpp libraries,
+you need to properly setup ContentLib as a dependency for your own mod.
+This has a few more steps for a {cpp} mod compared to a Blueprint mod.
 
-Follow xref:Tutorials/PublishMod.adoc[Publish your Work] to get dependencies set up correctly.
+This guide assumes you already have a working mod from following the
+https://docs.ficsit.app/satisfactory-modding/latest/Development/BeginnersGuide/index.html[Getting Started Guide]
+and have added your own {cpp} module to it.
 
-Look at the Content Lib source code for usage examples
+== Set Up your Plugin to Use the Library
+
+== Get ContentLib in your Editor
+
+Follow the directions xref:Reference/SetUpEditor.adoc[here] to load the ContentLib libraries in your editor.
+
+=== Setting up the {cpp} Dependencies
+
+In order to call ContentLib functions from your {cpp} files,
+you must first include the relevant header file in normal {cpp} fashion.
+However, in order for Unreal to recognize that your plugin needs to know about ContentLib code,
+you must first update the build script.
+
+In order to include the ContentLib header files you need to set it up as a code dependency first
+so that the Unreal Build Tool will be able to locate the headers correctly
+Go to your `ModReference.Build.cs`, which is in your mod's `/Source/ModReference` folder,
+and add ContentLib as a public dependency next to "FactoryGame" and "SML"
+
+Example: `ModReference.Build.cs`
+[source, c#]
+----
+PublicDependencyModuleNames.AddRange(new string[] {
+	"FactoryGame",
+	"SML",
+	"ContentLib"
+});
+----
+
+=== Including Headers and Calling Functions
+
+Now that you have updated your uplugin and your `.Build.cs` file, its important that you
+https://docs.ficsit.app/satisfactory-modding/latest/Development/BeginnersGuide/project_setup.html#_generate_visual_studio_files[regenerate visual studio build files].
+
+Now you should be able to include the ContentLib header files in your own.
+
+As an example, let's use the Content Lib Class Default Object Blueprint Function Library to make a CDO edit from a string.
+
+At the top of your header file:
+
+Example: `Someclass.h`
+[source, cpp]
+----
+#include CLCDOBPFLib.h
+----
+
+Now, in your class, you can call GenerateCLCDOFromString.
+
+This could be ran in a Game Instance Module's post init phase, for example.
+
+Example: `Someclass.cpp`
+[source, cpp]
+----
+// Set up some JSON for a CDO
+FSTRING json = TEXT(R"({
+  "$schema": "https://raw.githubusercontent.com/budak7273/ContentLib_Documentation/main/JsonSchemas/CL_CDO.json",
+  "Class": "/Game/FactoryGame/Resource/Parts/GoldIngot/Desc_GoldIngot.Desc_GoldIngot_C",
+  "Edits": [
+    {
+      "Property": "mDisplayName",
+      "Value": "Gold Ingot"
+    }
+  ]
+})");
+
+// Apply the CDO
+UCLCDOBPFLib::GenerateCLCDOFromString(json, true);
+----
+
+== Usage Examples
+
+ContentLib exposes most of the systems it uses internally
+to create the "loading of text files into real content" functionality
+for use by any other mods.
+
+You can also call all of the Blueprint Lib exposed functions from {cpp} as well.
+
+You can look at the ContentLib source code for more examples of how each function is used.
+
+Please consider contributing more examples to the docs here if you have some time via 'Edit This Page' in the top right.

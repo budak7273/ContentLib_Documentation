@@ -110,11 +110,8 @@ Proceed to the link:#_next_steps[Next Steps section].
 === Option 3 - Adding ContentLib Scripts to an Existing Mod
 
 If you already have a mod set up,
-and you want to add ContentLib functionality,
-you will have to modify your mod slightly.
-
-The full process is out of scope of this document,
-but some general steps will be covered below.
+and you want to add ContentLib JSON scripts to it,
+you will have to modify your mod's plugin setup slightly to ensure they are packaged with the mod.
 
 ==== Put Scripts in the Plugin Folders
 
@@ -140,7 +137,7 @@ and follow the directions
 https://docs-dev.ficsit.app/satisfactory-modding/latest/Development/BeginnersGuide/Adding_Ingame_Mod_Icon.html[here]
 to be sure that any json files you include in your mod files get packed into your final mod.
 
-Example `PluginSettings.ini`
+Example `PluginSettings.ini` after following those directions:
 
 ```
 [StageSettings]

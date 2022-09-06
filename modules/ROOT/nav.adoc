@@ -37,6 +37,6 @@
 
 * API Reference
 ** xref:Reference/JsonSchema.adoc[JSON Schemas]
+** xref:Reference/SetUpEditor.adoc[Using ContentLib APIs in Your Mod]
 ** xref:Reference/BpLib.adoc[Blueprint Library]
 ** xref:Reference/CppLib.adoc[C++ Library]
-
