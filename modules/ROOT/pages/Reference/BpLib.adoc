@@ -22,11 +22,39 @@ Follow the directions xref:Reference/SetUpEditor.adoc[here] to set up the Conten
 
 If you want to use {cpp}, there are xref:Reference/CppLib.adoc[a few more steps].
 
+== Examples of Blueprint Library Functions
+
+You can find out what blueprint library functions are available by looking at the
+https://github.com/Nogg-aholic/ContentLib/tree/master/Source/ContentLib/Public[header files] for the mod.
+
+Anything labeled `BlueprintCallable` or `BlueprintPure` can be used with blueprints,
+and fields with `BlueprintReadOnly` and `BlueprintReadWrite` can be accessed.
+
+To see some usage examples, you can look at ContentLib's own blueprint implementation.
+
+Since you have already set up the ContentLib source to be in your editor,
+you should see a `ContentLib Content` folder in your editor's content browser.
+You can open the blueprints there to see what functions they make use of.
+
+The `CL_<something>_Module` files are probably of particular interest to you.
+
+In general, the code in those files does the following:
+
+1. Fetch all of the JSON files in the relevant folder in all mods
+2. Run a function, probably called `Process <something>` to turn the text loaded from the file into an asset for the game
+3. Repeat steps 1-2 for items in the user's Configs folder
+4. Repeat steps 1-3 for the patch version of that asset (ex. first Items, then ItemPatches)
+
 == Recipe Example
 
-You can follow the examples below to load recipes from your mod's own custom directories, or create and register recipes from strings alone, or whatever you'd like!
+// You can follow the examples below to load recipes from your mod's own custom directories, or create and register recipes from strings alone, or whatever you'd like!
 
-image:https://i.imgur.com/p5TgndI.png[RecipeExample]
+// This image is from back when CL Recipes was a separate mod and is as such out of fate.
+// image:https://i.imgur.com/p5TgndI.png[RecipeExample]
+
+Here is an example of patching an existing recipe:
+
+image:https://i.imgur.com/bWVJKGA.png[RecipePatchExample]
 
 == Schematic Cost Modification Example from Difficulty Tuner
 
