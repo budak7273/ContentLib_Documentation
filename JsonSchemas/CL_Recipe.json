@@ -65,10 +65,18 @@
         },
         "UnlockedBy": {
             "type": "array",
-            "description": "Schematics to add this recipe to. Alternative way of tying recipes to schematics; the normal way is to use the schematic's 'Recipes' field. Useful if you don't want to also make a patch to add your recipe to a base-game schematic.",
+            "description": "Schematics to add this recipe to. Alternative way of tying recipes to schematics; the standard way is to use the schematic's 'Recipes' field. This is useful if you don't want to also make a patch to add your recipe to a base-game schematic. Something must unlock the recipe, else it will never be accessible in-game. If you want it to be unlocked by default, use Schematic_StartingRecipes.",
             "items": {
                 "$ref": "./Components/CL_NameResolvedAsset.json"
-            }
+            },
+            "examples": [
+                [
+                    "Schematic_StartingRecipes"
+                ],
+                [
+                    "Schematic_1-1"
+                ]
+            ]
         },
         "VariablePowerConsumptionFactor": {
             "type": "number",
