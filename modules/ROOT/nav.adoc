@@ -22,14 +22,17 @@
 ** xref:Tutorials/ConceptOverview.adoc[Start Here]
 ** xref:Tutorials/Setup.adoc[Setting Up]
 ** xref:Tutorials/Troubleshooting.adoc[Troubleshooting]
+
 ** Create New Content
 *** xref:Tutorials/CreateItem.adoc[Create an Item]
 *** xref:Tutorials/CreateRecipe.adoc[Create a Recipe]
 *** xref:Tutorials/CreateSchematic.adoc[Create a Schematic]
+
 ** Modify Existing Content
 *** xref:Tutorials/ItemPatching.adoc[Rename an Item]
 *** xref:Tutorials/RecipePatching.adoc[Modify a Recipe]
 *** xref:Tutorials/SchematicPatching.adoc[Modify a Milestone/MAM Node]
+
 ** xref:Tutorials/FindAssetPath.adoc[Finding Assets]
 ** xref:Tutorials/ContentInspector.adoc[Using ContentInspector]
 ** xref:Tutorials/FluidsInfo.adoc[Special Note on Fluids]

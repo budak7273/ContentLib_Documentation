@@ -6,9 +6,23 @@ For a number of fields, you can type a friendly name of what you want to refer t
 and ContentLib will try to resolve it for you. xref:BackgroundInfo/AutomaticNameResolving.adoc[Automatic Name Resolving]
 
 However, if you want to make a xref:Features/Patching.adoc[Patch],
-you will need to know the full path of the asset you're patching so that ContentLib knows what to modify.
-See the Patching page for more info as to why.
+you will need to know the full blueprint path of the asset you're patching
+so that ContentLib knows exactly what to modify.
+See the xref:Features/Patching.adoc[Patching] page for more info as to why.
 
-You can find this blueprint path from a https://github.com/Goz3rr/SatisfactorySaveEditor/blob/master/Reference%20Materials/[reference list],
-via a tool like https://www.gildor.org/en/projects/umodel[UModel],
-or by looking a mod's source code (either online or ingame with xref:Tutorials/ContentInspector.adoc[ContentInspector]).
+You can find this blueprint path from a number of sources.
+
+- The [Satisfactory Wiki]
+- docs.json, a file shipped with your game
+(found at `<SatisfactoryInstallDirectory>\CommunityResources\Docs\Docs.json`) 
+that also contains information on most assets such as name, description, fuel value, etc.
+- Looking at a community-maintianed
+https://github.com/Goz3rr/SatisfactorySaveEditor/blob/master/Reference%20Materials/[reference list]
+- Browsing content with xref:Tutorials/ContentInspector.adoc[ContentInspector]
+or https://www.gildor.org/en/projects/umodel[UModel] (usually the best option for mods)
+- Looking at the source code of a mod (if it's published)
+
+If you try to write a Patch with an incorrect blueprint path,
+the patch will have no effect in-game,
+and a xref:Tutorials/Troubleshooting.adoc[log message]
+should be present stating that the asset could not be found.
