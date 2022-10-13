@@ -12,7 +12,7 @@ and have added your own {cpp} module to it.
 
 == Get ContentLib in your Editor
 
-Follow the directions xref:Reference/SetUpEditor.adoc[here] to load the ContentLib libraries in your editor.
+Follow the directions xref:Reference/SetUpEditor.adoc[here] to set up the ContentLib libraries in your editor.
 
 === Setting up the {cpp} Dependencies
 

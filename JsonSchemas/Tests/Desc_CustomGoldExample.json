@@ -1,0 +1,8 @@
+{
+    "$schema": "https://raw.githubusercontent.com/budak7273/ContentLib_Documentation/main/JsonSchemas/CL_Item.json",
+    "$comment": "Comment lines will be ignored by the mod, and are a good place to leave yourself notes.",
+    "Name": "My Custom Item",
+    "VisualKit": "Desc_OreGold_C",
+    "Form": "Solid",
+    "Description": "This is a new custom Item which re-uses the visuals of Caterium Ore!"
+}

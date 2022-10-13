@@ -68,7 +68,7 @@
         },
         "DependsOn": {
             "type": "array",
-            "description": "Other schematics that this schematic requires to be purchased before it will display. Currently only one of these needs to be satisfied, if you want all, please request on the discord. Use ClearDeps to wipe this instead of appending.",
+            "description": "Other schematics that this schematic requires to be purchased before it will display. Use ClearDeps to wipe this list instead of appending. How many of these need to be satisfied depends on the asset's mRequireAllSchematicsToBePurchased field (a field not yet directly editable with ContentLib). For newly created Schematics, this is false -> only one needs to be purchased. For patches, it depends on what the asset originally specified (check with Content Inspector). For a patch, you can use ClearDeps to reset mRequireAllSchematicsToBePurchased to be false.",
             "items": {
                 "minimum": 1,
                 "$ref": "./Components/CL_NameResolvedAsset.json"
