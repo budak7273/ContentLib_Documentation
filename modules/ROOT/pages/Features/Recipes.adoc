@@ -5,6 +5,11 @@
 You can find a xref:Reference/JsonSchema.adoc[JSON Schema] for Recipes https://github.com/budak7273/ContentLib_Documentation/tree/main/JsonSchemas[here].
 ====
 
+In Satisfactory, recipes represent the required ingredients for
+producing something manually at the workbench,
+automatically in a machine like a Constructor or Blender,
+or for buildings with the Build Gun.
+
 All Recipe JSON files must start with the prefix `Recipe_`.
 
 xref:Tutorials/CreateRecipe.adoc[Create a Recipe Tutorial]

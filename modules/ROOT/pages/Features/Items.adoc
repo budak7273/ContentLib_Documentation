@@ -5,14 +5,18 @@
 You can find a xref:Reference/JsonSchema.adoc[JSON Schema] for Items https://github.com/budak7273/ContentLib_Documentation/tree/main/JsonSchemas[here].
 ====
 
-TODO
+In Satisfactory, items, fluids, gases, and some of the properties of buildings and equipment
+are represented by FGItemDescriptors, which ContentLib refers to as Items.
 
-All Item JSON files must start with the prefix `Desc_`
+All custom item JSON files must start with the prefix `Desc_`.
+Learn how to make them on the xref:Tutorials/CreateItem.adoc[Create an Item Tutorial] page.
 
-Items auto-generate the categories used in the `Category` field for you if you specify one that doesn't exist
-
-Auto-generated Category assets have their asset name (not the in-game name) start with `Cat_` for consistency with the base game, and identification.
-
-xref:Tutorials/CreateItem.adoc[Create an Item Tutorial]
+If you specify a value in the `Category` field that doesn't exist yet,
+ContentLib will auto-generate a new category for you.
+Auto-generated Category assets have their asset name (not the in-game name)
+start with `Cat_` for consistency with the base game, and identification.
 
 You can attempt to hot reload Items via the button on the Mod Configuration screen, or the `/CLItemReload` chat command. Hot reloading is a WIP feature.
+
+Due to a base-game bug/feature, schematics and items without assigned categories are usually not displayed in menus unless they are explicitly searched for.
+You can use this behavior to hide the recipes for items from display in machines.

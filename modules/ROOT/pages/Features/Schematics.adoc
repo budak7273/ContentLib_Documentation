@@ -14,6 +14,9 @@ To specify schematic icons, use xref:Features/VisualKits.adoc[Visual Kits].
 
 You can attempt to hot reload Schematics via the button on the Mod Configuration screen, or the `/CLSchemReload` chat command. Hot reloading is a WIP feature.
 
+Due to a base-game bug/feature, schematics and items without assigned categories are usually not displayed in menus unless they are explicitly searched for.
+You can use this behavior to hide schematics from display.
+
 [WARNING]
 ====
 Remember that custom Schematics need to go in the correct xref:BackgroundInfo/FolderNames.adoc[Folder].
