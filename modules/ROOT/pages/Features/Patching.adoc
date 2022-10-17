@@ -21,12 +21,17 @@ See xref:BackgroundInfo/FolderNames.adoc[Folder Names] for more info on where th
 The JSON syntax is mostly the same as creating the content,
 but you must put **an additional line at the start of the file** to specify what item to overwrite.
 This is called the 'patch target'.
-It's the target asset's class path, with the `+_C+` suffix, prefixed with an extra slash (`/`)
-xref:Tutorials/FindAssetPath.adoc[This page]
-covers how to find the path of an asset.
+It's the target asset's class path, with the `+_C+` suffix, prefixed with an extra slash (`/`).
+The xref:Tutorials/FindAssetPath.adoc[Finding Assets]
+page covers how to find this path.
 
 For example, the line at the top of the file overriding the Turbofuel recipe must be
 `//Game/FactoryGame/Recipes/AlternateRecipes/Parts/Recipe_Alternate_Turbofuel.Recipe_Alternate_Turbofuel_C`
+
+If the path you provide is invalid, a xref:Tutorials/Troubleshooting.adoc[log message] will be output.
+
+Just like when creating content, all fields in a patch (except the target) are optional.
+If you exclude a field, the patched asset will keep its original value from before the patch was applied.
 
 == JSON Schema
 
@@ -63,7 +68,7 @@ but you can modify other fields, too.
 {
   "$schema": "https://raw.githubusercontent.com/budak7273/ContentLib_Documentation/main/JsonSchemas/CL_Item.json",
   "Name": "Gold Ore",
-  "Description" : "Surely not Caterium Ore. Couldn't be!"
+  "Description": "Surely not Caterium Ore. Couldn't be!"
 }
 ```
 
@@ -73,6 +78,8 @@ but you can modify other fields, too.
 ====
 Remember that Recipe Patches need to go in the correct xref:BackgroundInfo/FolderNames.adoc[Folder].
 ====
+
+This patch changes the ingredients of the usual Solid Biofuel recipe to have a custom name and custom ingredients/products.
 
 ```json
 //Game/FactoryGame/Recipes/Constructor/Recipe_Biofuel.Recipe_Biofuel_C
@@ -122,6 +129,9 @@ while still preserving the existing unlocks.
 }
 ```
 
+Due to a base-game bug/feature, schematics and items without assigned categories are usually not displayed in menus unless they are explicitly searched for.
+You can use this behavior to hide schematics from display.
+
 Here's an example patch that makes it so the "Pretty Good Pioneering" statue does not show up in the AWESOME Shop unless specifically searched for:
 
 ```json
@@ -132,7 +142,7 @@ Here's an example patch that makes it so the "Pretty Good Pioneering" statue doe
 }
 ```
 
-Here's an example schematic patch from RePan that replaces the unlocks of an existing schematic with another set:
+Here's an example schematic patch from RePan that entirely replaces the recipe unlocks of an existing schematic with another set of recipe unlocks:
 
 ```json
 //Game/FactoryGame/Schematics/Progression/Schematic_6-1.Schematic_6-1_C

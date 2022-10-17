@@ -1,26 +1,28 @@
 = Finding Assets
 
-TODO
-
 For a number of fields, you can type a friendly name of what you want to refer to,
-and ContentLib will try to resolve it for you. xref:BackgroundInfo/AutomaticNameResolving.adoc[Automatic Name Resolving]
+and ContentLib will try to resolve it for you.
+See xref:BackgroundInfo/AutomaticNameResolving.adoc[Automatic Name Resolving]
+for more details on this system.
 
 However, if you want to make a xref:Features/Patching.adoc[Patch],
-you will need to know the full blueprint path of the asset you're patching
+you will need to specify the full blueprint path of the asset you're patching
 so that ContentLib knows exactly what to modify.
 See the xref:Features/Patching.adoc[Patching] page for more info as to why.
 
-You can find this blueprint path from a number of sources.
+You can find this blueprint path with a number of approaches.
 
-- The [Satisfactory Wiki]
-- docs.json, a file shipped with your game
+- Browsing content with xref:Tutorials/ContentInspector.adoc[ContentInspector]
+or https://www.gildor.org/en/projects/umodel[UModel].
+The path is usually obtainable by removing the text '`Default__`' from the value in the `JS_LibOuter` field,
+which is the Outer object which registered the asset.
+- The https://satisfactory.fandom.com/[Satisfactory Wiki] sometimes lists paths for items.
+- `docs.json`, a file shipped with your game.
 (found at `<SatisfactoryInstallDirectory>\CommunityResources\Docs\Docs.json`) 
 that also contains information on most assets such as name, description, fuel value, etc.
 - Looking at a community-maintianed
-https://github.com/Goz3rr/SatisfactorySaveEditor/blob/master/Reference%20Materials/[reference list]
-- Browsing content with xref:Tutorials/ContentInspector.adoc[ContentInspector]
-or https://www.gildor.org/en/projects/umodel[UModel] (usually the best option for mods)
-- Looking at the source code of a mod (if it's published)
+https://github.com/Goz3rr/SatisfactorySaveEditor/blob/master/Reference%20Materials/[reference list].
+- Looking at the source code of a mod, if it's published.
 
 If you try to write a Patch with an incorrect blueprint path,
 the patch will have no effect in-game,
