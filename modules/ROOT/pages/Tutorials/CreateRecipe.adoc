@@ -118,6 +118,7 @@ Watch out - if you're using fluids in your recipes, you need to multiply the ite
 
 Here are a few Vanilla building names. You can also use the JSON Schema auto-suggest feature and your editor will auto-suggest them from a list.
 
+* Smelter: `Build_SmelterMk1`
 * Constructor: `Build_ConstructorMk1`
 * Assembler: `Build_AssemblerMk1`
 * Foundry: `Build_FoundryMk1`
@@ -126,6 +127,8 @@ Here are a few Vanilla building names. You can also use the JSON Schema auto-sug
 * Packager: `Build_Packager`
 * Blender: `Build_Blender`
 * Particle Accelerator: `Build_HadronCollider`
+
+These particular base game buildings can all be found in subdirectories of `/Game/FactoryGame/Buildable/Factory/`.
 
 [NOTE]
 ====

@@ -32,6 +32,7 @@
                 "$ref": "./Components/CL_NameResolvedAsset.json",
                 "examples": [
                     "manual",
+                    "Build_SmelterMk1",
                     "Build_ConstructorMk1",
                     "Build_AssemblerMk1",
                     "Build_FoundryMk",
