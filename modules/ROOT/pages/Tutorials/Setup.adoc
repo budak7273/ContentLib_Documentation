@@ -6,22 +6,29 @@ Don't worry, it's still a lot faster than the full modding environment setup pro
 
 == Get a Good Text Editor
 
-Windows Notepad will actively make editing your scripts _more difficult_.
+Using Windows Notepad will actively make editing your scripts _more difficult_.
 Don't use it for working on your scripts!
 
-Notepad++ is an improvement, but we can do better.
+Notepad++ is better than Notepad, but there is a much better option.
 
 Get a text editor that supports xref:Reference/JsonSchema.adoc[JSON Schemas],
 or you can use the https://vscode.dev/[VSCode web editor]
 if you don't want to download anything.
 
+If you do this, you will reap the following benefits:
+
+- The editor will automatically check JSON syntax for you (~50% of errors people have with ContentLib are this)
+- You can hover over any part of the JSON and the editor will explain its purpose for you
+- The editor will provide example values for you as you type
+- You'll get nice syntax highlighting
+
 [WARNING]
 ====
-Don't use Notepad!
+Please don't use Notepad or Notepad++ to edit your scripts!
 
-I won't be mad, but I will be disappointed,
-if I see screenshots in the help channels of people using Notepad,
-and I will almost assuredly nag you to use something else instead.
+You are consciously choosing to make the process take longer if you stick with those editors.
+
+If you ask for help, my first question will be "does your editor say it matches the JSON Schema?"
 ====
 
 == Alternate Approach: Configs Folder
@@ -58,9 +65,14 @@ if you already have a name in mind for your mod.
 Once you have decided on a mod reference, you will have to:
 
 - Rename the folder (from `ExampleContentLibMod` to `YourModReferenceHere`)
-- Rename the .uplugin file inside the folder (from `ExampleContentLibMod.uplugin` to `YourModReferenceHere.uplugin`)
-- Edit the FriendlyName, Description, and CreatedBy fields of `YourModReferenceHere.uplugin`
-- You may need to change the SemVersion value of the SML plugin to the latest SML version number.
+- Rename the .uplugin file inside the folder
+  (from `ExampleContentLibMod.uplugin` to `YourModReferenceHere.uplugin`)
+- Edit the FriendlyName, Description,
+  and CreatedBy fields of `YourModReferenceHere.uplugin`
+- You may need to change the uplugin's SemVersion value of the SML dependency
+  to the latest SML version,
+  and/or the SemVersion of the dependency on ContentLib
+  to the latest ContentLib version.
 
 == Setting Up the Plugin Folder
 
@@ -76,6 +88,9 @@ For example, if your game was installed in the folder
 `D:\Programs\EpicGamesGames\SatisfactoryExperimental\`
 then the folder path to inside of the folder you moved in should be 
 `D:\Programs\EpicGamesGames\SatisfactoryExperimental\FactoryGame\Mods\YourModReferenceHere`
+
+Continuing the example, this means that the uplugin file will be located at
+`D:\Programs\EpicGamesGames\SatisfactoryExperimental\FactoryGame\Mods\YourModReferenceHere\YourModReferenceHere.uplugin`
 
 Beware that other modding tools (SMM CLI) could accidentally delete it,
 so keep backups!
