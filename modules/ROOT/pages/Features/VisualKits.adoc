@@ -7,7 +7,7 @@ You can find a xref:Reference/JsonSchema.adoc[JSON Schema] for Visual Kits https
 
 All Visual Kit JSON files must start with the prefix `Kit_`.
 
-_ContentLib_ introduces the concept of Visual Kits to prevent having to deal with long, verbose blueprint paths in Item definitions.
+_ContentLib_ introduces the concept of Visual Kits to prevent having to deal with long, verbose blueprint paths in Item and Schematic definitions.
 
 Visual Kits are automatically generated at Runtime for every pre-existing Item (including those from other mods) and can be accessed by using the ClassName of the item.
 
@@ -20,6 +20,8 @@ but `Desc_OreGold` resolves to the DefaultItemMesh (default)
 
 For example, a custom kit file named `Kit_CustomWater.json` can be used in Item definitions via the name "Kit_CustomWater".
 
+Visual Kits are also used to specify the icons used by Schematics.
+
 [WARNING]
 ====
 Remember that custom Visual Kits need to go in the correct xref:BackgroundInfo/FolderNames.adoc[Folder].
@@ -30,7 +32,7 @@ All Fields are optional.
 == VisualKit Exporting
 
 Nog previously wrote a chat command for exporting the VisualKits of all loaded items to text files.
-I (Robb) have not checked if this command is still working.
+This functionality still appears to be working, but it may have some bugs.
 
 You can attempt to use it via `/CLDumpVisualKits`, and it should output files to `FactoryGame/Mods/ContentLib/Configs/ItemVisualKits/DumpOutput/<KitName>.json` if it worked.
 
@@ -79,8 +81,41 @@ Note that if a Solid is given fluid/gas color properties, they will have no noti
 
 == Visual Kit overriding
 
-TODO is this functionality still around?
+[WARNING]
+====
+As of April 4th 2023, this feature is not fully working correctly.
+The override will apply for ContentLib-defined items
+that try to use the kit you overwrite, but if you try to override a vanilla/modded item,
+the changes will not be visibly applied to that item.
 
-If a Json file using this Schema is placed in the VisualKits Folder,
-the name of this file can be used by all Item definitions,
-and is preferred over any existing definitions of the same name (meaning base-game visual kits will be overwritten).
+If you want to override an existing item's kit, create a custom kit as normal,
+but also create an xref:Features/Patching.adoc[Item Patch]
+for the item you want to change that specifies your new kit via the `VisualKit` field.
+====
+
+If a Visual Kit shares the name of an existing definition,
+the last visual kit to load will overwrite the existing kit(s),
+including base-game ones!
+
+This means that you can replace the icons/meshes/fluid colors etc.
+of any mod's item or schematic by writing a Visual Kit that shares its exact name.
+
+The below example will replace the
+xref:Features/Icons.adoc[icon]
+for the Caterium Ore base game item.
+
+The file should be named exactly `Desc_OreGold_C.json`,
+otherwise it will not successfully override the existing Caterium Ore,
+and will instead create a separate visual kit.
+
+It requires that a file `MyIconName.png` be included in an
+xref:Features/Icons.adoc[Icons folder], for example,
+`\YourModReference\ContentLib\Icons\MyIconName.png`
+
+```json
+{
+    "$schema": "https://raw.githubusercontent.com/budak7273/ContentLib_Documentation/main/JsonSchemas/CL_VisualKit.json",
+    "BigIcon": "MyIconName",
+    "SmallIcon": "MyIconName"
+}
+```
