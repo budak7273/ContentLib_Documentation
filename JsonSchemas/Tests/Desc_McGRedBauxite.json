@@ -1,0 +1,9 @@
+{
+    "$schema": "./../CL_Item.json",
+    "Name": "Red Bauxite Residue",
+    "VisualKit": "Desc_OreGold_C",
+    "Description": "Commonly known as 'Red Mud', this iron-rich residual comes from bauxite refinement. Too corrosive to be discarded in the AWESOME Sink.",
+    "Form": "Solid",
+    "StackSize": "Big",
+    "CanBeDiscarded": true
+}
