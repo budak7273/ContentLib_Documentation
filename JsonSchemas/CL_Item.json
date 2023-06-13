@@ -69,7 +69,7 @@
         },
         "EnergyValue": {
             "type": "number",
-            "description": "Describes how much energy in megawatt Seconds (MWs, aka MJ) this item should release when burned in a generator or vehicle. You can find the fuel values of vanilla items on the wiki: https://satisfactory.fandom.com/wiki/Category:Fuels"
+            "description": "Describes how much energy in megawatt Seconds (MWs, aka MJ) this item should release when burned in a generator or vehicle. You can find the fuel values of vanilla items on the wiki: https://satisfactory.wiki.gg/wiki/Category:Fuels"
         },
         "RadioactiveDecay": {
             "type": "number",

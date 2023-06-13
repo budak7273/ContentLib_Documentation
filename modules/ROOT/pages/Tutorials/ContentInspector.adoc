@@ -42,7 +42,7 @@ but after that, their location depends on how the mod dev organized it.
 In our case, there's conveniently a folder called `SpaceElevatorParts`,
 but they're all numbered 1-9 and not named.
 We can either look at each one to try and figure it out, or we can...
-7. Check the https://satisfactory.fandom.com/wiki/Smart_Plating[Satisfactory Wiki]
+7. Check the https://satisfactory.wiki.gg/wiki/Smart_Plating[Satisfactory Wiki]
 (or use another xref:Tutorials/FindAssetPath.adoc[asset finding approach])
 to find out the internal name of the item.
 This name will probably appear in the name of the recipe asset as well.

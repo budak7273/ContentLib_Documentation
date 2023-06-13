@@ -76,7 +76,7 @@ on their xref:Features/VisualKits.adoc[respective page].
 You might already be able to guess from the template what the Leaves kit name would be,
 but it's not always so straightforward.
 
-Looking at the https://satisfactory.fandom.com/wiki/Leaves[Satisfactory Wiki],
+Looking at the https://satisfactory.wiki.gg/wiki/Leaves[Satisfactory Wiki],
 we can see in the infobox that the item's Blueprint Path is
 `/Game/FactoryGame/Resource/Parts/GenericBiomass/Desc_Leaves.Desc_Leaves_C`.
 
