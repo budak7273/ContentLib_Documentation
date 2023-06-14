@@ -16,7 +16,7 @@ You can find this blueprint path with a number of approaches.
 or https://www.gildor.org/en/projects/umodel[UModel].
 The path is usually obtainable by removing the text '`Default__`' from the value in the `JS_LibOuter` field,
 which is the Outer object which registered the asset.
-- The https://satisfactory.fandom.com/[Satisfactory Wiki] sometimes lists paths for items.
+- The https://satisfactory.wiki.gg/wiki/[Satisfactory Wiki] sometimes lists paths for items.
 - `docs.json`, a file shipped with your game.
 (found at `<SatisfactoryInstallDirectory>\CommunityResources\Docs\Docs.json`) 
 that also contains information on most assets such as name, description, fuel value, etc.
