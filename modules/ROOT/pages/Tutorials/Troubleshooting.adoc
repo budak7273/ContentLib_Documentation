@@ -2,14 +2,30 @@
 
 [NOTE]
 ====
-This page is still a work in progress. It currently consists of two sets of troubleshooting directions I wrote up in the past. Please be patient while I improve the docs.
+This page is still a work in progress. Please suggest changes on the Discord or via PRs.
 ====
 
 Although ContentLib is generally easier to use than setting up stuff in the Unreal editor,
 there is still room for mistakes.
 You should follow the steps below to set up for debugging your scripts.
 
+== Enable ContentLib Logging
+
 If an error is encountered while loading, the mod will print error information to the SML console and your log files.
+However, some of these logs are turned off by default for performance reasons.
+
+Go to the in-game Mod Configs screen for ContentLib and increase your Logging Detail Level to `Debug`.
+
+This means next time ContentLib tries to load your content it will print more detailed messages about it.
+You can trigger a reload of the content by either relaunching the game
+or using the WIP Hot Reload buttons.
+The hot reload feature is not perfect (read more further below), but it can help you iterate quickly to find out what the problem is.
+
+You can optionally learn more about the log system on the xref:BackgroundInfo/Logging.adoc[Logging page].
+
+== Where to Find Log Files
+
+The link:https://docs.ficsit.app/satisfactory-modding/latest/Development/ModLoader/Logging.html#_viewing_logs[modding documentation] explains where to find log files and how to enable a log-viewing console while the game is running.
 
 - Launch your game with the `-logs` flag so you can see the debug console while the game is running.
   Find out how to do this https://docs.ficsit.app/satisfactory-modding/latest/Development/ModLoader/Logging.html#_viewing_logs[here].
@@ -17,36 +33,65 @@ If an error is encountered while loading, the mod will print error information t
   such as Notepad++, so you can track down messages.
   The file is stored in your `%localappdata%` folder,
   for example, `<your user dir path>\AppData\Local\FactoryGame\Saved\Logs\FactoryGame.log`
-- You should get the **Content Inspector** mod
-  to check if your content has loaded correctly,
-  and to discover values and paths of base game and mod assets.
-  More info xref:Tutorials/ContentInspector.adoc[here].
-- Increase your Logging Detail Level to either
-  `Warnings and Info` or `Debug` in the Mod Configs screen for ContentLib
 
-Once you have these tools set up, the following tips/process should help you debug.
+== Reading Log Files
 
-- Check the logs for WARNING and ERROR level messages with the `LogContentLib` category,
-  or containing the text `[CL]`, these contain potentially useful messages.
-  More info on the xref:BackgroundInfo/Logging.adoc[Logging page].
-- Use Content Inspector (mentioned above) to check the data for loaded items and see if it matches what you expect
+The game's log files contain the informational messages that ContentLib has produced,
+but they also contain a bunch of other messages you probably don't care about.
 
-See xref:Tutorials/ContentInspector.adoc[Using ContentInspector] for how to check if your content is loaded or not without having to poke around in-game.
+Check the logs for WARNING and ERROR level messages with the `LogContentLib` category,
+or containing the text `[CL]`, these usually contain useful messages.
+
+Here is an example of the log messages that would be produced by a Recipe Patch that is missing its Patch Target line.
+
+image:Tutorials/Troubleshooting/ExampleLogs_EmptyPatch.png[image]
 
 == Hot Reloading Disclaimer
 
-Although ContentLib attempts to offer live reloading of JSON assets
-(when triggered by the chat commands or config widget) this hasn't really been tested much,
-and Satisfactory was not designed for it.
-You should probably fully re-launch the game to test if you're having trouble with assets showing up.
+Although ContentLib attempts to offer live reloading of JSON assets,
+which can be triggered by the chat commands or config widget,
+Satisfactory itself was not designed for it.
+You should consider fully re-launch the game to test if you're still having trouble with assets showing up.
 Hopefully this will improve in the future.
+
+== Inspecting your Content
+
+If you can't find any log messages about your content but something is still going wrong,
+you can inspect the values that actually got loaded by the game with the **Content Inspector** mod.
+More info xref:Tutorials/ContentInspector.adoc[here].
 
 == Frequent Problems
 
-* I created a new Item but it doesn't exist in*game
-  ** Remember that you need to have a Recipe that produces that item, and a Schematic to unlock that item, for it to exist in*game.
-  ** Check the logs as mentioned above to see if there were any errors in registering it
-  ** Make sure that you put your files in the correct folders. See the xref:BackgroundInfo/FolderNames.adoc[Folder Names] section.
-* I wrote a Patch, but it isn't changing anything!
-  ** Check the logs as mentioned above to see if there were any errors in registering it
-  ** Make sure that you put your files in the correct folders. See the xref:BackgroundInfo/FolderNames.adoc[Folder Names] section.
+[id="ContentNotLoading"]
+=== None of my scripts are loading
+
+==== If you're using the Config Folder approach:
+
+- Make sure that you put your files in the correct folders. See the xref:BackgroundInfo/FolderNames.adoc[Folder Names] section. Once your logging level is increased, ContentLib should print messages about every folder it scans.
+
+==== If you're using the Mod approach:
+
+- Make sure that you put your files in the correct folders. See the xref:BackgroundInfo/FolderNames.adoc[Folder Names] section. Once your logging level is increased, ContentLib should print messages about every folder it scans.
+- Check the game install directory to make sure that your built mod actually includes your ContentLib scripts folder. It could be missing if you didn't start xref:Tutorials/Setup.adoc#_download_the_example_plugin_skeleton[from the template].
+
+Here is an example of what the log messages would look like if you got the wrong folder name:
+image:Tutorials/Troubleshooting/ExampleLogs_FoundNothing.png[image]
+
+[id="MissingItem"]
+=== I created a new Item but it doesn't exist in game
+
+* Remember that you need to have a Recipe that produces that item, and a Schematic to unlock that item, for it to exist in game.
+* Check the logs as mentioned above to see if there were any errors in registering it
+* Make sure that you put your files in the correct folders. See the xref:BackgroundInfo/FolderNames.adoc[Folder Names] section.
+* Make sure that your item is valid json.
+  Here is an example of what the log messages would look like if it wasn't:
+  image:Tutorials/Troubleshooting/ExampleLogs_ItemBadJson.png[image]
+
+[id="DeadPatch"]
+=== I wrote a Patch, but it isn't changing anything
+
+* Check the logs as mentioned above to see if there were any errors in registering it
+* Make sure that you put your files in the correct folders. See the xref:BackgroundInfo/FolderNames.adoc[Folder Names] section.
+* Make sure that your xref:Features/Patching.adoc#_syntax[patch target] line points to an asset that exists.
+  Here is an example of what the log messages would look like for a nonexistant asset:
+  image:Tutorials/Troubleshooting/ExampleLogs_BadPatchAsset.png[image]

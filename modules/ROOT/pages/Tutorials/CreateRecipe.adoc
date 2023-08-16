@@ -134,7 +134,7 @@ These particular base game buildings can all be found in subdirectories of `/Gam
 ====
 There is currently a bug preventing the Craft Bench (`/Game/FactoryGame/Buildable/-Shared/WorkBench/BP_WorkBenchComponent`) and Equipment Workshop (`/Game/FactoryGame/Buildable/-Shared/WorkBench/BP_WorkshopComponent`) from being detected correctly by ContentLib. In the mean time, you can use the producer name `manual` (case sensitive) to add your Recipe to _every_ manual crafting station.
 
-I'm not really sure _why_ this works - McGalleon figured it out. This is not ideal, because it means every modded manual crafting station will also contain your recipe. I plan to add a warning message when it's used in the future. But it's a passable workaround for now.
+I'm not really sure _why_ this works - McGalleon figured it out. This bandaid is not ideal, because it means every modded manual crafting station will also contain your recipe. I plan to add a warning message when it's used in the future. But it's a passable workaround for now.
 ====
 
 Schematic names for HUB milestones will generally follow the format `Schematic_1-1`, but you can find out specific ones via the approaches described xref:Tutorials/FindAssetPath.adoc[here].

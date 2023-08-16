@@ -18,6 +18,17 @@ See xref:BackgroundInfo/FolderNames.adoc[Folder Names] for more info on where th
 
 == Syntax
 
+[IMPORTANT]
+====
+Make sure that you read about the JSON Schema for the asset you are patching
+before trying to patch it.
+
+- xref:Tutorials/CreateItem.adoc[Item Documentation]
+- xref:Tutorials/CreateRecipe.adoc[Recipe Documentation]
+- xref:Features/Schematics.adoc[Schematic Documentation]
+
+====
+
 The JSON syntax is mostly the same as creating the content,
 but you must put **an additional line at the start of the file** to specify what item to overwrite.
 This is called the 'patch target'.
@@ -162,6 +173,11 @@ Here's an example schematic patch from RePan that entirely replaces the recipe u
     ]
 }
 ```
+
+== Troubleshooting
+
+If your patch isn't working, don't fret, ContentLib logs a lot of information about what it's doing to help you track down the problem.
+Read more on the xref:Tutorials/Troubleshooting.adoc[Troubleshooting page].
 
 == Background Info
 

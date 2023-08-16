@@ -39,6 +39,8 @@ For example, if your game was installed in the folder
 then the folder path to the ContentLib Items folder should be
 `D:\Programs\EpicGamesGames\SatisfactoryExperimental\FactoryGame\Configs\ContentLib\Items` 
 
+image:ConfigFolderExample.png[image]
+
 === Packed with Mod
 
 If you're writing scripts to be shipped with a mod, these are the supported folder names as of 0.2.0, assuming your mod reference is `ModReferenceGoesHere`.
@@ -56,6 +58,13 @@ Mods/ModReferenceGoesHere/ContentLib/SchematicPatches/
 Mods/ModReferenceGoesHere/ContentLib/VisualKits/
 Mods/ModReferenceGoesHere/ContentLib/CDOs/
 ```
+
+For example, if your game was installed in the folder
+`D:\Programs\EpicGamesGames\SatisfactoryExperimental\`
+then the folder path to the ContentLib Items folder within your mod should be
+`D:\Programs\EpicGamesGames\SatisfactoryExperimental\FactoryGame\Mods\YourModReference\ContentLib\Items`
+
+image:ModFolderExample.png[image]
 
 == Folder Nesting
 
