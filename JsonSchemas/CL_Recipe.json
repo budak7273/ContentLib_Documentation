@@ -9,7 +9,7 @@
     "properties": {
         "Name": {
             "type": "string",
-            "description": "Override for the recipe's name, which is displayed inside the manual crafting bench, or any machines you set it to be used in. By default, recipes take the name of their first product item."
+            "description": "Override for the recipe's name, which is displayed inside the manual crafting bench, build gun, or any machines you set it to be used in. By default, recipes take the name of their first product item."
         },
         "Ingredients": {
             "type": "array",
@@ -27,7 +27,7 @@
         },
         "ProducedIn": {
             "type": "array",
-            "description": "Automatic name resolved asset. Machines which this recipe can be used in. The examples are not an exhaustive list. Use 'manual' for all manual workbenches; this is a workaround and will be fixed in the future. See 'ClearBuilders' to append instead of replace.",
+            "description": "Automatic name resolved asset. Machines/builders which this recipe can be used in. The examples are not an exhaustive list. Use 'manual' for all manual workbenches; this is a workaround and will be fixed in the future. See 'ClearBuilders' to append instead of replace.",
             "items": {
                 "$ref": "./Components/CL_NameResolvedAsset.json",
                 "examples": [
