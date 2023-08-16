@@ -1,0 +1,11 @@
+{
+    "$schema": "./../../CL_Recipe.json",
+    "$comment": "This fails because `manual` workaround should be used instead of FGWorkBench",
+    "ProducedIn": [
+        "FGWorkBench",
+        "Build_Workshop",
+        "Build_WorkBench",
+        "Build_WorkBenchIntegrated",
+        "BP_BuildGun"
+    ]
+}

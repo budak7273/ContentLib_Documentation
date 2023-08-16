@@ -41,9 +41,17 @@
                     "Build_Packager",
                     "Build_Blender",
                     "Build_HadronCollider",
-                    "BP_BuildGun",
-                    "Please read https://docs-dev.ficsit.app/contentlib/latest/BackgroundInfo/AutomaticNameResolving.html"
-                ]
+                    "BP_BuildGun"
+                ],
+                "not": {
+                    "$comment": "Use workaround value `manual` for these instead.",
+                    "enum": [
+                        "FGWorkBench",
+                        "Build_Workshop",
+                        "Build_WorkBench",
+                        "Build_WorkBenchIntegrated"
+                    ]
+                }
             }
         },
         "OverrideCategory": {
