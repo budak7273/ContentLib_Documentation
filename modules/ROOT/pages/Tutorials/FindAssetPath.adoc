@@ -12,10 +12,12 @@ See the xref:Features/Patching.adoc[Patching] page for more info as to why.
 
 You can find this blueprint path with a number of approaches.
 
+- Recipes and Items: https://ficsit.app/mod/TFIT#for-mod-developers[TFIT]'s debug mode allows you display and easily copy the paths of recipes in the Build Gun and Codex, and the paths of items in the Codex. Check out the "For Mod Developers" heading at that link.
+- Schematics: https://ficsit.app/mod/MAMTips#debugging-features[MAM Enhancer]'s debug mode will display the path of schematics in the HUB, MAM, and AWESOME Shop when you hover over the icon of the mod that added them or click the respective button. Check out the "For Developers" heading at that link.
 - Browsing content with xref:Tutorials/ContentInspector.adoc[ContentInspector]
-or https://www.gildor.org/en/projects/umodel[UModel].
+or https://docs.ficsit.app/satisfactory-modding/latest/Development/ExtractGameFiles.html#FModel[FModel].
 The path is usually obtainable by removing the text '`Default__`' from the value in the `JS_LibOuter` field,
-which is the Outer object which registered the asset.
+which is the Outer object which registered the asset. Remember that fields that start with `JS_` are not "real fields" on the object, they are extra info that ContentInspector adds for ease of viewing
 - The https://satisfactory.wiki.gg/wiki/[Satisfactory Wiki] sometimes lists paths for items.
 - `docs.json`, a file shipped with your game.
 (found at `<SatisfactoryInstallDirectory>\CommunityResources\Docs\Docs.json`) 
