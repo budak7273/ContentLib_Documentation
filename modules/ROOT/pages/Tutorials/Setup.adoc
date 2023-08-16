@@ -6,10 +6,9 @@ Don't worry, it's still a lot faster than the full modding environment setup pro
 
 == Get a Good Text Editor
 
-Using Windows Notepad will actively make editing your scripts _more difficult_.
-Don't use it for working on your scripts!
-
-Notepad++ is better than Notepad, but there is a much better option.
+Using Windows Notepad, or Notepad++, will actively make editing your scripts _more difficult_.
+Don't use those editors for working on your scripts!
+They are nice editors, but not for this purpose.
 
 Get a text editor that supports xref:Reference/JsonSchema.adoc[JSON Schemas],
 or you can use the https://vscode.dev/[VSCode web editor]
@@ -22,13 +21,16 @@ If you do this, you will reap the following benefits:
 - The editor will provide example values for you as you type
 - You'll get nice syntax highlighting
 
-[WARNING]
+[IMPORTANT]
 ====
-Please don't use Notepad or Notepad++ to edit your scripts!
+Don't use Notepad or Notepad++ to edit your scripts! Just don't!
 
-You are consciously choosing to make the process take longer if you stick with those editors.
+You are consciously, willingly, choosing to make the process take longer if you stick with those editors
+for no clear benefit.
 
 If you ask for help, my first question will be "does your editor say it matches the JSON Schema?"
+I (Robb) will not check JSON syntax for you, the schema does that automatically.
+People (me included) make mistakes, the schema checker doesn't.
 ====
 
 == Always Use CRLF Line Endings
