@@ -11,8 +11,8 @@ You should follow the steps below to set up for debugging your scripts.
 
 If an error is encountered while loading, the mod will print error information to the SML console and your log files.
 
-- In your SML configs, you should turn on the `consoleWindow` config option so you can see the debug console while the game is running.
-  Find out how to do this https://docs.ficsit.app/satisfactory-modding/latest/SMLConfiguration.html[here].
+- Launch your game with the `-logs` flag so you can see the debug console while the game is running.
+  Find out how to do this https://docs.ficsit.app/satisfactory-modding/latest/Development/ModLoader/Logging.html#_viewing_logs[here].
 - It can be beneficial to open the `FactoryGame.log` file in a text editor that has good searching capabilities,
   such as Notepad++, so you can track down messages.
   The file is stored in your `%localappdata%` folder,
