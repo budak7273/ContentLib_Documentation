@@ -81,12 +81,34 @@ Once you have decided on a mod reference, you will have to:
 - Rename the folder (from `ExampleContentLibMod` to `YourModReferenceHere`)
 - Rename the .uplugin file inside the folder
   (from `ExampleContentLibMod.uplugin` to `YourModReferenceHere.uplugin`)
-- Edit the FriendlyName, Description,
-  and CreatedBy fields of `YourModReferenceHere.uplugin`
-- You may need to change the uplugin's SemVersion value of the SML dependency
-  to the latest SML version,
-  and/or the SemVersion of the dependency on ContentLib
-  to the latest ContentLib version.
+- (Optional) Replace `/Resources/Icon128.png` with image of your choice for the mod icon
+
+Inside the .uplugin file:
+
+- Edit the FriendlyName, Description, and CreatedBy fields to your preferences
+- Replace the "SmlVersionReplaceMe" with the latest version number of SML found
+  link:https://ficsit.app/sml-versions[here], so that it follows the format `^The.Number.Here`.
+  Once you're done, that section will look similar to this:
+
+```
+{
+  "Name": "SML",
+  "Enabled": true,
+  "SemVersion": "^3.5.0"
+},
+```
+
+- Replace the "ContentLibVersionReplaceMe" with the latest version number of ContentLib found
+  link:https://ficsit.app/sml-versions[here], so that it follows the format `^The.Number.Here`.
+  Once you're done, that section will look similar to this:
+
+```
+{
+  "Name": "ContentLib",
+  "Enabled": true,
+  "SemVersion": "^1.1.0"
+},
+```
 
 == Setting Up the Plugin Folder
 

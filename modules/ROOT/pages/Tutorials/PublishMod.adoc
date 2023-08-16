@@ -8,15 +8,20 @@ to set up a plugin structure for your mod files.
 
 == Upload to SMR
 
-If you followed the xref:Tutorials/Setup.adoc[Setup document],
+If you followed the xref:Tutorials/Setup.adoc[Setup document]'s "Example Plugin Skeleton" approach
 your files should already be in mod format.
 
-You can now upload your mod to Satisfactory Mod Repository for anyone to download and use.
+However, if you used the "Configs Folder" approach, you will need to go back and set up the
+xref:Tutorials/Setup.adoc#_download_the_example_plugin_skeleton[Example Plugin Skeleton].
+Remember to move your old ContentLib files out of the config folder when testing your new mod skeleton!
 
+Once you have edited the skeleton to match your needs,
+you're ready to upload your mod to Satisfactory Mod Repository for anyone to download and use.
 You can follow the directions in the
 https://docs.ficsit.app/satisfactory-modding/latest/UploadToSMR.html[main modding documentation]
 to achieve this.
 
-Make sure your mod depends on ContentLib as described in the 
-xref:Tutorials/Setup.adoc[Setup document],
-or your mod won't do anything by itself!
+Make sure your mod uplugin specifies ContentLib as a dependency as described in the 
+xref:Tutorials/Setup.adoc[Setup document]
+or your mod won't do anything!
+If you used the skeleton, it should already depend on ContentLib.
