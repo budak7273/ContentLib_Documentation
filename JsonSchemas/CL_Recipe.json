@@ -27,7 +27,7 @@
         },
         "ProducedIn": {
             "type": "array",
-            "description": "Machines which this recipe can be used in. The examples are not an exhaustive list. Use 'manual' for all manual workbenches; this is a workaround and will be fixed in the future. See 'ClearBuilders' to append instead of replace.",
+            "description": "Automatic name resolved asset. Machines which this recipe can be used in. The examples are not an exhaustive list. Use 'manual' for all manual workbenches; this is a workaround and will be fixed in the future. See 'ClearBuilders' to append instead of replace.",
             "items": {
                 "$ref": "./Components/CL_NameResolvedAsset.json",
                 "examples": [
@@ -67,7 +67,7 @@
         },
         "UnlockedBy": {
             "type": "array",
-            "description": "Schematics to add this recipe to. Alternative way of tying recipes to schematics; the standard way is to use the schematic's 'Recipes' field. This is useful if you don't want to also make a patch to add your recipe to a base-game schematic. Something must unlock the recipe, else it will never be accessible in-game. If you want it to be unlocked by default, use Schematic_StartingRecipes.",
+            "description": "Automatic name resolved asset. Schematics to add this recipe to. Alternative way of tying recipes to schematics; the standard way is to use the schematic's 'Recipes' field. This is useful if you don't want to also make a patch to add your recipe to a base-game schematic. Something must unlock the recipe, else it will never be accessible in-game. If you want it to be unlocked by default, use Schematic_StartingRecipes.",
             "items": {
                 "$ref": "./Components/CL_NameResolvedAsset.json"
             },

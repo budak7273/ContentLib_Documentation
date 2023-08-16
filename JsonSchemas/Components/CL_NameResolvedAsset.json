@@ -3,10 +3,7 @@
     "$id": "https://raw.githubusercontent.com/budak7273/ContentLib_Documentation/main/JsonSchemas/CL_NameResolvedAsset.json",
     "title": "ContentLib Name Resolved Asset",
     "description": "An asset that can be specified either with a full path, or a shortened name for ContentLib to resolve. See more info here: https://docs-dev.ficsit.app/contentlib/latest/BackgroundInfo/AutomaticNameResolving.html",
-    "$comment": "This file does not represent ContentLib asset type! It's a resource used by other JSON Schemas.",
+    "$comment": "This file does not represent ContentLib asset type! It's a resource used by other JSON Schemas. Please read https://docs-dev.ficsit.app/contentlib/latest/BackgroundInfo/AutomaticNameResolving.html",
     "type": "string",
-    "minLength": 1,
-    "examples": [
-        "Please read https://docs-dev.ficsit.app/contentlib/latest/BackgroundInfo/AutomaticNameResolving.html"
-    ]
+    "minLength": 1
 }

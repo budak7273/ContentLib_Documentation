@@ -68,7 +68,7 @@
         },
         "DependsOn": {
             "type": "array",
-            "description": "Other schematics that this schematic requires to be purchased before it will display. Use ClearDeps to wipe this list instead of appending. How many of these need to be satisfied depends on the asset's mRequireAllSchematicsToBePurchased field (a field not yet directly editable with ContentLib). For newly created Schematics, this is false -> only one needs to be purchased. For patches, it depends on what the asset originally specified (check with Content Inspector). For a patch, you can use ClearDeps to reset mRequireAllSchematicsToBePurchased to be false.",
+            "description": "Automatic name resolved asset. Other schematics that this schematic requires to be purchased before it will display. Use ClearDeps to wipe this list instead of appending. How many of these need to be satisfied depends on the asset's mRequireAllSchematicsToBePurchased field (a field not yet directly editable with ContentLib). For newly created Schematics, this is false -> only one needs to be purchased. For patches, it depends on what the asset originally specified (check with Content Inspector). For a patch, you can use ClearDeps to reset mRequireAllSchematicsToBePurchased to be false.",
             "items": {
                 "minimum": 1,
                 "$ref": "./Components/CL_NameResolvedAsset.json"
@@ -100,7 +100,7 @@
         },
         "Recipes": {
             "type": "array",
-            "description": "Recipes to unlock when the schematic is purchased. Appended to the existing by default, use ClearRecipes to change this.",
+            "description": "Automatic name resolved asset. Recipes to unlock when the schematic is purchased. Appended to the existing by default, use ClearRecipes to change this.",
             "items": {
                 "minimum": 1,
                 "$ref": "./Components/CL_NameResolvedAsset.json"
