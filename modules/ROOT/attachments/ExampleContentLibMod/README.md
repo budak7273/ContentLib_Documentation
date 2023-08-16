@@ -32,7 +32,7 @@ Inside the .uplugin file:
 ```
 
 - Replace the "ContentLibVersionReplaceMe" with the latest version number of ContentLib found here:
-  https://ficsit.app/sml-versions, so that it follows the format `^The.Number.Here`.
+  https://ficsit.app/mod/ContentLib, so that it follows the format `^The.Number.Here`.
   Once you're done, that section will look similar to this:
 
 ```
