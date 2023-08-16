@@ -27,7 +27,7 @@
         },
         "ProducedIn": {
             "type": "array",
-            "description": "Machines which this recipe can be used in. Use 'manual' for all manual workbenches; this is a workaround and will be fixed in the future. See 'ClearBuilders' to append instead of replace.",
+            "description": "Machines which this recipe can be used in. The examples are not an exhaustive list. Use 'manual' for all manual workbenches; this is a workaround and will be fixed in the future. See 'ClearBuilders' to append instead of replace.",
             "items": {
                 "$ref": "./Components/CL_NameResolvedAsset.json",
                 "examples": [
@@ -41,6 +41,7 @@
                     "Build_Packager",
                     "Build_Blender",
                     "Build_HadronCollider",
+                    "BP_BuildGun",
                     "Please read https://docs-dev.ficsit.app/contentlib/latest/BackgroundInfo/AutomaticNameResolving.html"
                 ]
             }
