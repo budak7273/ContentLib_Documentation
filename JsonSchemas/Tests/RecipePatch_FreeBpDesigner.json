@@ -1,0 +1,5 @@
+//Game/FactoryGame/Recipes/Buildings/Recipe_BlueprintDesigner.Recipe_BlueprintDesigner_C
+{
+  "$schema": "./../CL_Recipe.json",
+  "ClearIngredients": true
+}

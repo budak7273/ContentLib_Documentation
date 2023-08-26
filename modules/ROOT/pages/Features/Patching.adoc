@@ -95,13 +95,15 @@ but you can modify other fields, too.
 Remember that Recipe Patches need to go in the correct xref:BackgroundInfo/FolderNames.adoc[Folder].
 ====
 
+=== Crafting Component Recipes
+
 This patch changes the ingredients of the usual Solid Biofuel recipe to have a custom name and custom ingredients/products.
 
 ```json
 //Game/FactoryGame/Recipes/Constructor/Recipe_Biofuel.Recipe_Biofuel_C
 {
   "$schema": "https://raw.githubusercontent.com/budak7273/ContentLib_Documentation/main/JsonSchemas/CL_Recipe.json",
-  "Name": "BioFuel Override",
+  "Name": "Coal-based BioFuel",
   "Ingredients": [
     {
       "Item": "Desc_Coal",
@@ -114,6 +116,23 @@ This patch changes the ingredients of the usual Solid Biofuel recipe to have a c
       "Amount": 10
     }
   ]
+}
+```
+
+=== Building Recipes
+
+Remember, the syntax for building recipes is the same as normal recipes
+as described on the xref:Features/Recipes.adoc#_building_recipes[Recipe Creation] page.
+
+This patch changes the the Blueprint Designer to not cost anything to build.
+Yes, it's that short.
+Remember - you don't need to repeat any information from the original asset that you aren't modifying!
+
+```json
+//Game/FactoryGame/Recipes/Buildings/Recipe_BlueprintDesigner.Recipe_BlueprintDesigner_C
+{
+  "$schema": "./../CL_Recipe.json",
+  "ClearIngredients": true
 }
 ```
 

@@ -91,3 +91,10 @@ Here's an example recipe for the Blender made by McGalleon.
 ```
 
 image:https://cdn.discordapp.com/attachments/771801486828896260/863510909476143184/unknown.png[Blender example ingame]
+
+== Building Recipes
+
+The syntax for building recipes is exactly the same as crafting components.
+Just remember that your recipe should have only one Product item,
+the descriptor of the buildable,
+and that ProducedIn should be `BP_BuildGun`.

@@ -20,10 +20,10 @@ Inside the .uplugin file:
 
 - Edit the FriendlyName, Description, and CreatedBy fields to your preferences
 - Replace the "SmlVersionReplaceMe" with the latest version number of SML found here:
-  https://ficsit.app/sml-versions, so that it follows the format `^The.Number.Here`.
+  <https://ficsit.app/sml-versions>, so that it follows the format `^The.Number.Here`.
   Once you're done, that section will look similar to this:
 
-```
+```json
 {
   "Name": "SML",
   "Enabled": true,
@@ -32,10 +32,10 @@ Inside the .uplugin file:
 ```
 
 - Replace the "ContentLibVersionReplaceMe" with the latest version number of ContentLib found here:
-  https://ficsit.app/mod/ContentLib, so that it follows the format `^The.Number.Here`.
+  <https://ficsit.app/mod/ContentLib>, so that it follows the format `^The.Number.Here`.
   Once you're done, that section will look similar to this:
 
-```
+```json
 {
   "Name": "ContentLib",
   "Enabled": true,
