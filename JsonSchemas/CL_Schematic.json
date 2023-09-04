@@ -76,7 +76,7 @@
         },
         "MenuPriority": {
             "type": "number",
-            "description": "Only known working for the AWESOME Shop. Controls the order that schematics appear within their category. Lower values means earlier in the menu. Negatives and decimals allowed."
+            "description": "Only tested for the HUB and AWESOME Shop. Controls the order that schematics appear within their category. Lower values means earlier in the menu. Negatives and decimals allowed."
         },
         "Time": {
             "type": "number",
