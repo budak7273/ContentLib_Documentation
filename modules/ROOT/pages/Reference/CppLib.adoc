@@ -22,7 +22,7 @@ However, in order for Unreal to recognize that your plugin needs to know about C
 you must first update the build script.
 
 In order to include the ContentLib header files you need to set it up as a code dependency first
-so that the Unreal Build Tool will be able to locate the headers correctly
+so that the Unreal Build Tool will be able to locate the headers correctly.
 Go to your `ModReference.Build.cs`, which is in your mod's `/Source/ModReference` folder,
 and add ContentLib as a public dependency next to "FactoryGame" and "SML"
 
