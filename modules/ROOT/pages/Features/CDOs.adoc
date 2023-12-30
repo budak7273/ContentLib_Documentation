@@ -43,9 +43,10 @@ Remember that CDOs need to go in the correct xref:BackgroundInfo/FolderNames.ado
 
 == Disclaimer
 
-It's possible to do a lot of cool things with this feature, but also *cause  crashes.*
+It's possible to do a lot of cool things with this feature, but also *cause crashes.*
 On the flip side, the modifications could have *absolutely no effect whatsoever*.
-ContentLib simply provides the tools to allow modifying the CDO - there is no guarantee that the asset you are modifying will still work correctly after the fact.
+ContentLib simply provides the tools to allow modifying the CDO
+- there is no guarantee that the asset you are modifying will still work correctly after the fact.
 
 == JSON Examples
 
@@ -98,7 +99,13 @@ image:https://i.imgur.com/FIyBHQB.png[Gold example]
 }
 ```
 
-=== Change Material Parent Class
+=== Change Material Instance Parent Class
+
+https://docs.unrealengine.com/5.2/en-US/creating-and-using-material-instances-in-unreal-engine/[Unreal material instances]
+store their parent Material as a field.
+This field can be changed with CDO edits,
+although it is rarely a good idea to do so.
+This point of this example is just to demonstrate editing an arbitrary field on an asset.
 
 ```json
 {
