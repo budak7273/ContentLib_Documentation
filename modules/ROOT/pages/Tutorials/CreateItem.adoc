@@ -26,7 +26,8 @@ We'll use it as a template to make our own item from.
   "Name": "My Custom Item",
   "VisualKit": "Desc_OreGold_C",
   "Form": "Solid",
-  "Description": "This is a new custom Item which re-uses the visuals of Caterium Ore!"
+  "Description": "This is a new custom Item which re-uses the visuals of Caterium Ore!",
+  "Category": "Cat_Other"
 }
 ```
 
