@@ -1,5 +1,8 @@
 = Creating a Schematic
 
-TODO
+Make sure to follow the
+xref:Tutorials/Setup.adoc[Setting Up]
+tutorial first!
 
-See xref:Features/Schematics.adoc[Schematic Creation] for now
+This page is not written yet;
+see the xref:Features/Schematics.adoc[Schematic feature page] for now.

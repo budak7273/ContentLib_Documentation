@@ -95,3 +95,11 @@ image:Tutorials/Troubleshooting/ExampleLogs_FoundNothing.png[image]
 * Make sure that your xref:Features/Patching.adoc#_syntax[patch target] line points to an asset that exists.
   Here is an example of what the log messages would look like for a nonexistant asset:
   image:Tutorials/Troubleshooting/ExampleLogs_BadPatchAsset.png[image]
+
+[id="MissingRecipe"]
+=== I created a Recipe, but it isn't showing up in game
+
+* Remember that Recipes must be unlocked by some schematic to exist. Either use the `UnlockedBy` field on CL Recipes, or create a Schematic to unlock it. If you want your recipe to exist all the time, use `Schematic_StartingRecipes` in the `UnlockedBy` recipe field.
+* Check the logs as mentioned above to see if there were any errors in registering it
+* Make sure that you specified at least one producer for the recipe
+* Make sure that you put your files in the correct folders. See the xref:BackgroundInfo/FolderNames.adoc[Folder Names] section.
