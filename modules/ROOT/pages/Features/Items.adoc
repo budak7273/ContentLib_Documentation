@@ -5,18 +5,37 @@
 You can find a xref:Reference/JsonSchema.adoc[JSON Schema] for Items https://github.com/budak7273/ContentLib_Documentation/tree/main/JsonSchemas[here].
 ====
 
-In Satisfactory, items, fluids, gases, and some of the properties of buildings and equipment
-are represented by FGItemDescriptors, which ContentLib refers to as Items.
+[TIP]
+====
+Consider checking out the xref:Tutorials/CreateItem.adoc[Creating an Item Tutorial] after reading this page.
+====
 
-All custom item JSON files must start with the prefix `Desc_`.
-Learn how to make them on the xref:Tutorials/CreateItem.adoc[Create an Item Tutorial] page.
+In Satisfactory, (solid) items, fluids, gases, and some of the properties of buildings and equipment
+are represented by FGItemDescriptors, which ContentLib refers to as **Items**.
+
+== Requirements
+
+- All custom item JSON files must start with the prefix `Desc_`
+- Remember that custom Items need to go in the correct xref:BackgroundInfo/FolderNames.adoc[Folder].
+- Items must be produced by at least one unlocked recipe to be obtainable without cheats
+- Although items don't _require_ a `Name`, you basically always want to give them one
+- Although items don't _require_ a `Category`, you basically always want to give them one
+    (read more in 'Notable Features')
+- Items will default to the `Form` of `Invalid` if you don't specify one
+
+== Notable Features
+
+Be sure to check out the tooltips of fields in the https://github.com/budak7273/ContentLib_Documentation/tree/main/JsonSchemas/CL_Item.json[item json schema] to learn about what options are available.
+
+Due to a base-game bug/feature, schematics and items without assigned categories are usually not displayed in menus unless they are explicitly searched for.
+You can use this behavior to hide the recipes for items from display in machines.
 
 If you specify a value in the `Category` field that doesn't exist yet,
 ContentLib will auto-generate a new category for you.
 Auto-generated Category assets have their asset name (not the in-game name)
 start with `Cat_` for consistency with the base game, and identification.
 
-You can attempt to hot reload Items via the button on the Mod Configuration screen, or the `/CLItemReload` chat command. Hot reloading is a WIP feature.
+Items get their icon and mesh from their associated xref:Features/VisualKits.adoc[Visual Kit].
 
-Due to a base-game bug/feature, schematics and items without assigned categories are usually not displayed in menus unless they are explicitly searched for.
-You can use this behavior to hide the recipes for items from display in machines.
+You can attempt to hot reload Items via the button on the Mod Configuration screen, or the `/CLItemReload` chat command.
+Hot reloading is an experimental feature and it may not work properly.

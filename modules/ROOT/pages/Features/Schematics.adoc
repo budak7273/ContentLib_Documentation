@@ -5,24 +5,39 @@
 You can find a xref:Reference/JsonSchema.adoc[JSON Schema] for Schematics https://github.com/budak7273/ContentLib_Documentation/tree/main/JsonSchemas[here].
 ====
 
-All Schematic JSON files must start with the prefix `Schematic_`.
-You may find it beneficial to add further detail in the prefix, such as `Schematic_HUB_` for HUB milestones and `Schematic_Node_` for MAM Nodes.
+// [TIP]
+// ====
+// Consider checking out the xref:Tutorials/CreateSchematic.adoc[Create a Schematic Tutorial] after reading this page.
+// ====
 
-You can use _ContentLib_ to create your own schematics, or edit existing ones!
+In Satisfactory, schematics are used to represent unlockables in the HUB (milestones), MAM (research nodes), AWESOME Shop (both one-time and repeatable purchases), and hard drive scans.
+
+== Requirements
+
+- All Schematic JSON files must start with the prefix `Schematic_`.
+You may find it beneficial to add further detail in the prefix, such as `Schematic_HUB_` for HUB milestones and `Schematic_Node_` for MAM Nodes.
+- Remember that custom Schematics need to go in the correct xref:BackgroundInfo/FolderNames.adoc[Folder].
+- The `Type` field determines where the schematic will be available for purchase.
+  - Note that custom MAM nodes require custom Research Trees to be established as well. ContentLib research tree support exists but is undocumented and has not been tested for a long time.
+- AWESOME Shop Schematics without Categories are invisible unless searched for (read more in 'Notable Features')
+
+== Notable Features
+
+Be sure to check out the tooltips of fields in the https://github.com/budak7273/ContentLib_Documentation/tree/main/JsonSchemas/CL_Schematic.json[schematic json schema] to learn about what options are available.
 
 To specify schematic icons, use xref:Features/VisualKits.adoc[Visual Kits].
 
-You can attempt to hot reload Schematics via the button on the Mod Configuration screen, or the `/CLSchemReload` chat command. Hot reloading is a WIP feature.
+Schematics auto-generate the categories used in the `Category` and `SubCategories` field for you if you specify one that doesn't exist.
+Auto-generated Category assets have their asset name (not the in-game name) start with `Cat_` for consistency with the base game, and for identification purposes.
+
+// cspell:ignore CLSchemReload
+You can attempt to hot reload Schematics via the button on the Mod Configuration screen, or the `/CLSchemReload` chat command.
+Hot reloading is an experimental feature and it may not work properly.
 
 Due to a base-game bug/feature, schematics and items without assigned categories are usually not displayed in menus unless they are explicitly searched for.
 You can use this behavior to hide schematics from display.
 
-[WARNING]
-====
-Remember that custom Schematics need to go in the correct xref:BackgroundInfo/FolderNames.adoc[Folder].
-====
-
-== Schematic Example
+== Examples
 
 Here is an example schematic from the RePan Oil mod: 
 

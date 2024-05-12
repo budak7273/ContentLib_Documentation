@@ -5,22 +5,43 @@
 You can find a xref:Reference/JsonSchema.adoc[JSON Schema] for Recipes https://github.com/budak7273/ContentLib_Documentation/tree/main/JsonSchemas[here].
 ====
 
+[TIP]
+====
+Consider checking out the xref:Tutorials/CreateRecipe.adoc[Create a Recipe Tutorial] after reading this page.
+====
+
 In Satisfactory, recipes represent the required ingredients for
 producing something manually at the workbench,
 automatically in a machine like a Constructor or Blender,
 or for buildings with the Build Gun.
 
-All Recipe JSON files must start with the prefix `Recipe_`.
+== Requirements
 
-xref:Tutorials/CreateRecipe.adoc[Create a Recipe Tutorial]
+- All Recipe JSON files must start with the prefix `Recipe_`
+- Remember that custom Recipes need to go in the correct xref:BackgroundInfo/FolderNames.adoc[Folder].
+- Recipes must be unlocked by some schematic to be usable in game
+- Recipes should have at least one producer (`ProducedIn`) specified to be useful
 
-Recipes auto-generate the categories used in the `CategoryOverride` field for you if you specify one that doesn't exist
+== Notable Features
 
-Auto-generated Category assets have their asset name (not the in-game name) start with `Cat_` for consistency with the base game, and identification.
+Be sure to check out the tooltips of fields in the https://github.com/budak7273/ContentLib_Documentation/tree/main/JsonSchemas/CL_Recipe.json[recipe json schema] to learn about what options are available.
 
-You can attempt to hot reload Recipes via the button on the Mod Configuration screen, or the `/CLRecipeReload` chat command. Hot reloading is a WIP feature.
+Recipes auto-generate the categories used in the `CategoryOverride` field for you if you specify one that doesn't exist.
+Auto-generated Category assets have their asset name (not the in-game name) start with `Cat_` for consistency with the base game, and for identification purposes.
 
-== Simple Recipe
+You can attempt to hot reload Recipes via the button on the Mod Configuration screen, or the `/CLRecipeReload` chat command.
+Hot reloading is an experimental feature and it may not work properly.
+
+== Building Recipes
+
+The syntax for building recipes is exactly the same as crafting components.
+Just remember that your recipe should have only one Product item,
+the descriptor of the buildable,
+and that ProducedIn should be `BP_BuildGun`.
+
+== Examples
+
+=== Simple Recipe
 
 Below is an example recipe and a screenshot of it within the Item Codex in game.
 
@@ -52,7 +73,7 @@ Below is an example recipe and a screenshot of it within the Item Codex in game.
 
 image:https://i.imgur.com/ZUl6Mc5.png[Recipe]
 
-== Complex Recipe
+=== Complex Recipe
 
 Here's an example recipe for the Blender made by McGalleon.
 
@@ -91,10 +112,3 @@ Here's an example recipe for the Blender made by McGalleon.
 ```
 
 image:Features/BlenderRecipeExample.png[Blender example ingame]
-
-== Building Recipes
-
-The syntax for building recipes is exactly the same as crafting components.
-Just remember that your recipe should have only one Product item,
-the descriptor of the buildable,
-and that ProducedIn should be `BP_BuildGun`.
