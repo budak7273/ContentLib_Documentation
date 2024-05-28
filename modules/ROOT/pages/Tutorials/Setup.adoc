@@ -4,10 +4,16 @@ Before you can get started using ContentLib,
 there's a few things you'll have to set up.
 Don't worry, it's still a lot faster than the full modding environment setup process.
 
+== Install ContentLib in your Game Client
+
+If you haven't already done so, use
+https://docs.ficsit.app/satisfactory-modding/latest/ForUsers/SatisfactoryModManager.html[Satisfactory Mod Manager]
+to https://ficsit.app/mod/ContentLib[install ContentLib in your game client].
+
 == Get a Good Text Editor
 
 Using Windows Notepad, or Notepad++, will actively make editing your scripts _more difficult_.
-Don't use those editors for working on your scripts!
+Don't use those editors for working on your ContentLib scripts!
 They are nice editors, but not for this purpose.
 
 Get a text editor that supports xref:Reference/JsonSchema.adoc[JSON Schemas],
@@ -16,7 +22,7 @@ if you don't want to download anything.
 
 If you do this, you will reap the following benefits:
 
-- The editor will automatically check JSON syntax for you (~50% of errors people have with ContentLib are this)
+- The editor will automatically check JSON syntax for you (~50% of errors people make with ContentLib are this)
 - You can hover over any part of the JSON and the editor will explain its purpose for you
 - The editor will provide example values for you as you type
 - You'll get nice syntax highlighting
@@ -33,33 +39,22 @@ I (Robb) will not check JSON syntax for you, the schema does that automatically.
 People (me included) make mistakes, the schema checker doesn't.
 ====
 
-== Always Use CRLF Line Endings
-
-If you're on a Windows computer, you shouldn't have to worry about this -
-it should only be an issue if you're writing scripts from a non-Windows machine or if you're generating them programatically.
-
-ContentLib will get confused if you use
-https://kuantingchen04.github.io/line-endings/[LF line endings instead of CRLF line endings].
-A telltale sign of this mistake is if you see curly braces showing up in the error log in unexpected places (ex. class names).
-
-In VSCode you can convert whatever the current file's line endings are into CRLF by using
-'Change All End Of Line Sequence' in the Command Pallette (Ctrl+Shift+P).
-
 == Alternate Approach: Configs Folder
 
-These steps will walk you through setting up a mini mod to test your scripts with,
-but you can also just write your scripts inside of the respective ContentLib
-xref:BackgroundInfo/FolderNames.adoc[Config Folders].
+This tutorial walks you through setting up a mini mod to hold your scripts.
+This keeps your files organized and makes it simple to distribute your tweaks to other users later.
 
-If you decide to go this route,
-all of your scripts will instead go in those folders
-instead of inside of the plugin folders.
-The docs are written assuming that your files are in a plugin folder, though.
+If you don't care about that, it's possible to put your scripts inside of your
+xref:BackgroundInfo/FolderNames.adoc#ConfigsFolderLocations[configuration folders] instead.
 
-== Download the Example Plugin Skeleton
+The tutorials are written assuming that your files are in a mod folder, though.
 
-Download the empty mod plugin skeleton zip
+[id="DownloadSkeleton"]
+== Download the Example Mod Skeleton
+
+Download the empty mod skeleton zip from
 link:{attachmentsdir}/ExampleContentLibMod.zip[here].
+It contains a basic set of folders and files to make your modding experience easier.
 
 Extract this zip to a temporary location;
 we will be moving the folder in another section.
@@ -110,7 +105,7 @@ Inside the .uplugin file:
 },
 ```
 
-== Setting Up the Plugin Folder
+== Setting Up the Mod Folder
 
 === Option 1 - No Unreal Editor
 
@@ -118,7 +113,7 @@ Before you decide to follow this section,
 I suggest considering Option 2,
 since it helps if you ever decide to go further in modding.
 
-Put the folder in the `Mods` folder of your Satisfactory game install.
+Put the skeleton folder in the `Mods` folder of your Satisfactory game install.
 
 For example, if your game was installed in the folder
 `D:\Programs\EpicGamesGames\SatisfactoryExperimental\`
@@ -128,7 +123,9 @@ then the folder path to inside of the folder you moved in should be
 Continuing the example, this means that the uplugin file will be located at
 `D:\Programs\EpicGamesGames\SatisfactoryExperimental\FactoryGame\Mods\YourModReferenceHere\YourModReferenceHere.uplugin`
 
-Beware that other modding tools (SMM CLI) could accidentally delete it,
+You will be developing your script files in this mod folder.
+
+Beware that other modding tools could accidentally delete it,
 so keep backups!
 
 Proceed to the link:#_next_steps[Next Steps section].
@@ -137,7 +134,7 @@ Proceed to the link:#_next_steps[Next Steps section].
 
 If you have a copy of the editor,
 you probably already know what you're doing,
-and you can put this in the Plugins folder,
+and you can put the skeleton mod in the project's `Mods/` folder,
 after which you can Alpakit like any other mod.
 
 If you don't have a copy of the editor,
@@ -146,15 +143,20 @@ https://docs.ficsit.app/[normal modding setup docs]
 to get one, and follow the modding starter project set up.
 This will take some time,
 but if you ever want to add more advanced functionality to your mod,
-you will have to do this.
+you will have to do this anyways.
 
-When the docs ask you to create a plugin,
-you can skip that step, and instead bring in the skeleton plugin folder.
+When the docs ask you to create a mod,
+you can skip that step, and instead bring in the skeleton mod folder.
 
-Your script files will go in your modding project's plugin folder.
-In order to package your changes for the game,
-and for distribution as a mod,
+Your will develop your script files in the modding project's mod folder.
+In order to try your changes out in the game,
+and distribute your mod to others,
 use Alpakit as described in the main modding docs.
+
+In order to package your mod, you will also have to bring in the ContentLib source code.
+Follow the steps https://docs.ficsit.app/satisfactory-modding/latest/Development/BeginnersGuide/ImportingAnotherMod.html[here] to do this.
+Alternatively, you can temporarily remove the ContentLib dependency from your mod's uplugin file (since there are no hard direct code dependencies between your mod's json files and ContentLib)
+although you _must_ remember to fix this before uploading your mod to the mod portal, else it will not work when people try to download it.
 
 Proceed to the link:#_next_steps[Next Steps section].
 

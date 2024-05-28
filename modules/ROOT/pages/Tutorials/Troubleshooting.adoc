@@ -60,6 +60,18 @@ If you can't find any log messages about your content but something is still goi
 you can inspect the values that actually got loaded by the game with the **Content Inspector** mod.
 More info xref:Tutorials/ContentInspector.adoc[here].
 
+== Always Use CRLF Line Endings
+
+If you're on a Windows computer, you shouldn't have to worry about this -
+it should only be an issue if you're writing scripts from a non-Windows machine or if you're generating them programatically.
+
+ContentLib will get confused if you use
+https://kuantingchen04.github.io/line-endings/[LF line endings instead of CRLF line endings].
+A telltale sign of this mistake is if you see curly braces showing up in the error log in unexpected places (ex. class names).
+
+In VSCode you can convert whatever the current file's line endings are into CRLF by using
+'Change All End Of Line Sequence' in the Command Pallette (Ctrl+Shift+P).
+
 == Frequent Problems
 
 [id="ContentNotLoading"]
@@ -72,7 +84,7 @@ More info xref:Tutorials/ContentInspector.adoc[here].
 ==== If you're using the Mod approach:
 
 - Make sure that you put your files in the correct folders. See the xref:BackgroundInfo/FolderNames.adoc[Folder Names] section. Once your logging level is increased, ContentLib should print messages about every folder it scans.
-- Check the game install directory to make sure that your built mod actually includes your ContentLib scripts folder. It could be missing if you didn't start xref:Tutorials/Setup.adoc#_download_the_example_plugin_skeleton[from the template].
+- Check the game install directory to make sure that your built mod actually includes your ContentLib scripts folder. It could be missing if you didn't start xref:Tutorials/Setup.adoc#DownloadSkeleton[from the template].
 
 Here is an example of what the log messages would look like if you got the wrong folder name:
 image:Tutorials/Troubleshooting/ExampleLogs_FoundNothing.png[image]
@@ -92,7 +104,7 @@ image:Tutorials/Troubleshooting/ExampleLogs_FoundNothing.png[image]
 
 * Check the logs as mentioned above to see if there were any errors in registering it
 * Make sure that you put your files in the correct folders. See the xref:BackgroundInfo/FolderNames.adoc[Folder Names] section.
-* Make sure that your xref:Features/Patching.adoc#_syntax[patch target] line points to an asset that exists.
+* Make sure that your xref:Features/Patching.adoc#PatchSyntax[patch target] line points to an asset that exists.
   Here is an example of what the log messages would look like for a nonexistant asset:
   image:Tutorials/Troubleshooting/ExampleLogs_BadPatchAsset.png[image]
 

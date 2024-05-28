@@ -7,11 +7,12 @@ Make sure to follow the
 xref:Tutorials/Setup.adoc[Setting Up]
 tutorial first!
 
-In order to write your own Items, you will need the following:
+In order to create your own Items, you will need the following.
+All of these will be explained in more details below.
 
 * If you want to _re-use existing (modded or vanilla) item icons and meshes_, the internal name of the item whose Visual Kit you want to re-use.
 * If you want to use your own _icons_, PNG images for the icons.
-* If you want to use your own _meshes_, an packaged mod with those files contained within (the reasoning for this is explained further down).
+* If you want to use your own _meshes_, a packaged mod with those mesh files contained within (the reasoning for this is explained further down).
 * A way to define a recipe for obtaining your item, usually a ContentLib Recipe.
 
 == Custom Item Example
@@ -35,12 +36,13 @@ image:https://i.imgur.com/T7OC3vq.jpg[Item In Game]
 
 == Setting Up
 
-Inside of your plugin's `ContentLib/Items/` folder,
+Inside of your mod's `ContentLib/Items/` folder,
 create a new file called `Desc_DocsCustomLeaves.json`
 
 It's important to make sure that the names of your files
 do not conflict with the names of any existing assets.
-If a conflict is found, it will appear in the logs, which will be discussed later.
+If a conflict is found, it will appear in the logs.
+Viewing logs will be discussed later.
 For now, try to be unique and specific with your file names to avoid any possible conflicts.
 
 Copy in the "Custom Item Example" JSON from above to the file.
@@ -53,7 +55,7 @@ for example, and get a description of what it does:
 
 image:Tutorials/Item_DescriptionHover.png[image]
 
-Or, you can press Ctrl+Space, and your editor will suggest more fields you could add:
+Or, you can press `Ctrl+Space`, and your editor will suggest more fields you could add:
 
 image:Tutorials/Item_AutoSuggest.png[image]
 
@@ -131,6 +133,10 @@ Make sure to read the xref:Tutorials/Troubleshooting.adoc[Troubleshooting] page.
 
 == Next Steps
 
+As described in the "Get the Item In Game" section,
+you'll need to create a Recipe to obtain your item.
+Do that first if you haven't yet.
+
 === Custom Icon
 
 If you want to use custom icons for your new item, you can create your own xref:Features/VisualKits.adoc[Visual Kit].
@@ -147,7 +153,7 @@ If you're making a Liquid or Gas, be sure to read the xref:Tutorials/FluidsInfo.
 "Why do I need to use a ContentLib Recipe so that I can obtain my item? Can't I just spawn it in?"
 ====
 
-As a performance measure, an Item is generally not available in Satisfactory unless a Recipe exists to register it. When you create a new item with _ContentLib_, there are no Recipes that produce it, so the game does not know to register it as existing. Writing a recipe with a ContentLib Recipe is the simplest way to create a recipe for it. Depending on how your item spawning mod locates items, it may or may not be able to find this otherwise hidden item and register it for you.
+As a performance measure, an Item is generally not available in Satisfactory unless a Recipe exists to register it. When you create a new item with _ContentLib_, there are no Recipes that produce it, so the game does not know to register it as existing. Writing a recipe with a ContentLib Recipe is the simplest way to create a recipe for it. Depending on how your item spawning mod of choice locates items, it may or may not be able to find this otherwise hidden item and register it for you.
 
 
 === Why A Packaged Mod is Needed for Custom Meshes

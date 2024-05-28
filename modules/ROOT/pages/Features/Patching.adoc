@@ -7,26 +7,29 @@ both base-game and those added by other mods.
 
 == File Naming Scheme and Location
 
+Each patch file can modify exactly one asset.
+If you want to patch multiple assets, use multiple patch files.
+
 Patch JSON file names do not need to follow any specific pattern,
 as they are modifying an existing asset as opposed to creating a new one,
 but it is advised that you start them with the prefix of the type of asset you are patching.
 For example, recipe patches should start with `+Recipe_+` and item patches with `+Desc_+`
 
-The json file must go in a Patches directory instead of the usual asset folder.
+Patch JSON files must go in the specific Patches directory instead of the content's usual asset folder.
 For example, an Item patch would go in `ItemPatches`.
 See xref:BackgroundInfo/FolderNames.adoc[Folder Names] for more info on where the file should go.
 
+[id="PatchSyntax"]
 == Syntax
 
 [IMPORTANT]
 ====
-Make sure that you read about the JSON Schema for the asset you are patching
+Make sure to read the documentation pages and JSON Schema for the asset you are patching
 before trying to patch it.
 
 - xref:Tutorials/CreateItem.adoc[Item Documentation]
 - xref:Tutorials/CreateRecipe.adoc[Recipe Documentation]
 - xref:Features/Schematics.adoc[Schematic Documentation]
-
 ====
 
 The JSON syntax is mostly the same as creating the content,
@@ -44,17 +47,12 @@ If the path you provide is invalid, a xref:Tutorials/Troubleshooting.adoc[log me
 Just like when creating content, all fields in a patch (except the target) are optional.
 If you exclude a field, the patched asset will keep its original value from before the patch was applied.
 
-Since comments aren't normally allowed in JSON files,
-your editor may mark the line as an error.
-You can set up VSCode to ignore it by following the directions
-https://www.techiediaries.com/enable-json-comments-vs-code/[here].
-
 == JSON Schema
 
 The xref:Reference/JsonSchema.adoc[JSON Schema] used for a Patch should be that of the asset type it is modifying.
 
 Your editor might complain about the patch target line being a comment, since comments are not normally supported in JSON.
-This is to be expected
+This is to be expected.
 You can hide this error by following
 https://stackoverflow.com/questions/47834825/in-vs-code-disable-error-comments-are-not-permitted-in-json/[these steps].
 
@@ -122,7 +120,7 @@ This patch changes the ingredients of the usual Solid Biofuel recipe to have a c
 === Building Recipes
 
 Remember, the syntax for building recipes is the same as normal recipes
-as described on the xref:Features/Recipes.adoc#_building_recipes[Recipe Creation] page.
+as described on the xref:Features/Recipes.adoc#BuildingRecipes[Recipe Creation] page.
 
 This patch changes the the Blueprint Designer to not cost anything to build.
 Yes, it's that short.

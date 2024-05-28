@@ -39,6 +39,7 @@ If you'd like to package your own ContentLib scripts for distribution as a mod o
 * xref:Tutorials/PublishMod.adoc[Publish your Work]
 * More coming soon™
 
+[id="ForAdvancedDevelopers"]
 == For Advanced Developers
 
 If you'd like the use ContentLib's blueprint and C++ APIs, these pages may be of use to you.
@@ -54,12 +55,12 @@ ContentLib also has some capabilities not accessible via JSON, and useful for cr
 - Reverse lookup (ex. "What recipes can I use to make this item?")
 - Recipe power cost analysis
 
-To use these features, you will need to set up a full modding project by following the https://docs.ficsit.app/satisfactory-modding/latest/Development/BeginnersGuide/index.html[Getting Started Guide] and bring in the ContentLib, JsonStructs, and ContentInspector plugins to your project.
+To use these features, you will need to set up a full modding project by following the https://docs.ficsit.app/satisfactory-modding/latest/Development/BeginnersGuide/index.html[Getting Started Guide] and bring in the ContentLib, JsonStructs, and ContentInspector mods to your project.
 
 Ask on the Discord for further help doing this, since these docs are still a work in progress.
 
-* You will need the source of ContentLib loaded in your editor. The https://github.com/Nogg-aholic/ContentLib[git repo] is the plugin source folder.
-* You **must** also have source of the updated versions of the JsonStructs and ContentInspector mods as loaded plugins, else packaging will fail
+* You will need the source of ContentLib loaded in your editor. The https://github.com/Nogg-aholic/ContentLib[git repo] is the mod source folder.
+* You **must** also have source of the updated versions of the JsonStructs and ContentInspector mods, else packaging will fail
   ** JsonStructs source can be found https://ficsit.app/mod/JsonStructs[here]
   ** ContentInspector source can be found https://ficsit.app/mod/ContentInspector[here]
 * xref:Reference/BpLib.adoc[Blueprint Library]

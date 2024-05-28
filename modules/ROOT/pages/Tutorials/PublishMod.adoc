@@ -12,7 +12,7 @@ If you followed the xref:Tutorials/Setup.adoc[Setup document]'s "Example Plugin 
 your files should already be in mod format.
 
 However, if you used the "Configs Folder" approach, you will need to go back and set up the
-xref:Tutorials/Setup.adoc#_download_the_example_plugin_skeleton[Example Plugin Skeleton].
+xref:Tutorials/Setup.adoc#DownloadSkeleton[Example Plugin Skeleton].
 Remember to move your old ContentLib files out of the config folder when testing your new mod skeleton!
 
 Once you have edited the skeleton to match your needs,

@@ -14,7 +14,7 @@ ContentLib offers both Blueprint and xref:Reference/CppLib.adoc[{cpp}] APIs with
 You can find examples of its usage by looking at the Content Lib mod's blueprint code for usage examples,
 or by looking at the source code of other mods using Content Lib, such as Aquilla's mods or SifVerT's Difficulty Tuner.
 
-== Set Up your Plugin to Use the Library
+== Set Up your Mod to Use the Library
 
 === Get ContentLib in your Editor
 

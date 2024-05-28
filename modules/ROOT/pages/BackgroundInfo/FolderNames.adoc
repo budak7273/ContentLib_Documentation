@@ -1,15 +1,7 @@
 = ContentLib Folder Names
 
-As of ContentLib 0.2.0, the directory structure has been changed
-to be more informative and consistent with a packaged mod.
-This is so that making the transition to a full mod is easier later on.
-
-When outside of a custom mod,
-ContentLib scripts should all be placed within specific folders within your Mod Configs folder,
-for example, `<game install directory>/Configs/ContentLib/Items`
-
-Note that ContentLib **does not create these folders for you**
-- you will have to create new empty folders in the correct location if you want to use them.
+ContentLib requires you to place your JSON files in specific folders.
+This helps you keep your files organized and allows ContentLib to determine what to do with them.
 
 To see the full list of supported directories,
 check your logs after going to the ContentLib mod configs screen in-game.
@@ -18,32 +10,11 @@ https://docs.ficsit.app/satisfactory-modding/latest/SMLConfiguration.html[this o
 
 == Folder Layout
 
-=== Configs Folder
-
-If you're writing scripts to go in your configs folder, these are the supported folder names as of 0.2.0
-
-```
-Configs/ContentLib/Items/
-Configs/ContentLib/Icons/
-Configs/ContentLib/Recipes/
-Configs/ContentLib/RecipePatches/
-Configs/ContentLib/ItemPatches/
-Configs/ContentLib/Schematics/
-Configs/ContentLib/SchematicPatches/
-Configs/ContentLib/VisualKits/
-Configs/ContentLib/CDOs/
-```
-
-For example, if your game was installed in the folder
-`D:\Programs\EpicGamesGames\SatisfactoryExperimental\`
-then the folder path to the ContentLib Items folder should be
-`D:\Programs\EpicGamesGames\SatisfactoryExperimental\FactoryGame\Configs\ContentLib\Items` 
-
-image:ConfigFolderExample.png[image]
-
 === Packed with Mod
 
-If you're writing scripts to be shipped with a mod, these are the supported folder names as of 0.2.0, assuming your mod reference is `ModReferenceGoesHere`.
+If you're writing scripts to be shipped with a mod,
+or using the example skeleton provided by the tutorial,
+these are the supported folder names, assuming your mod reference is `ModReferenceGoesHere`.
 
 Make sure you see the xref:Tutorials/PublishMod.adoc[tutorial] about how to ensure these files are packaged correctly to be included with your mod.
 
@@ -66,14 +37,48 @@ then the folder path to the ContentLib Items folder within your mod should be
 
 image:ModFolderExample.png[image]
 
+[id="ConfigsFolderLocations"]
+=== Configs Folder
+
+When outside of a specific mod's folders,
+the ContentLib folder tree should be placed within your Mod Configs folder,
+for example, `<game install directory>/Configs/ContentLib/Items`
+
+Note that ContentLib **does not create these folders for you**
+- you will have to create new empty folders in the correct location if you want to use them.
+
+If you're writing scripts to go in your configs folder, these are the supported folder names:
+
+```
+Configs/ContentLib/Items/
+Configs/ContentLib/Icons/
+Configs/ContentLib/Recipes/
+Configs/ContentLib/RecipePatches/
+Configs/ContentLib/ItemPatches/
+Configs/ContentLib/Schematics/
+Configs/ContentLib/SchematicPatches/
+Configs/ContentLib/VisualKits/
+Configs/ContentLib/CDOs/
+```
+
+For example, if your game was installed in the folder
+`D:\Programs\EpicGamesGames\SatisfactoryExperimental\`
+then the folder path to the ContentLib Items folder should be
+`D:\Programs\EpicGamesGames\SatisfactoryExperimental\FactoryGame\Configs\ContentLib\Items` 
+
+image:ConfigFolderExample.png[image]
+
 == Folder Nesting
 
-As long as your JSON files are within the correct content-type directory as mentioned above, you are allowed to create **sub-folders** to further organize your files. 
+As long as your JSON files are within the correct content-type directory as mentioned above,
+you are allowed to create **sub-folders** to further organize your files. 
 
 For example, the following folder structure is valid:
 
-`Mods/ModReferenceGoesHere/ContentLib/Items/Solids/Desc_CoolItem.json`
-`Mods/ModReferenceGoesHere/ContentLib/Items/Gases/Desc_NitrogenGas.json`
-`Mods/ModReferenceGoesHere/ContentLib/Items/Liquids/Desc_LiquidPropene.json`
+- `Mods/ModReferenceGoesHere/ContentLib/Items/Solids/Desc_CoolItem.json`
+- `Mods/ModReferenceGoesHere/ContentLib/Items/Gases/Desc_NitrogenGas.json`
+- `Mods/ModReferenceGoesHere/ContentLib/Items/Liquids/Desc_LiquidPropene.json`
 
-ContentLib does not enforce any limit on the number of levels of sub-directories, but it's probably possible to have problems with Unreal asset path limits if you start using a ton of levels.
+ContentLib does not enforce any limit on the number of levels of sub-directories,
+but it's probably possible to have problems with Unreal asset path length limits
+if you start using a ton of levels.

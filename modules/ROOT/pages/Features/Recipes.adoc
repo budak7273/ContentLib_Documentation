@@ -32,6 +32,7 @@ Auto-generated Category assets have their asset name (not the in-game name) star
 You can attempt to hot reload Recipes via the button on the Mod Configuration screen, or the `/CLRecipeReload` chat command.
 Hot reloading is an experimental feature and it may not work properly.
 
+[id="BuildingRecipes"]
 == Building Recipes
 
 The syntax for building recipes is exactly the same as crafting components.
