@@ -33,12 +33,12 @@ Example: `ModReference.uplugin`
 	{
 		"Name": "SML",
 		"Enabled": true,
-		"SemVersion": "^3.3.2"
+		"SemVersion": "^3.7.0"
 	},
 	{
 		"Name": "ContentLib",
 		"Enabled": true,
-		"SemVersion": "^1.0.0"
+		"SemVersion": "^1.4.0"
 	}
 ]
 ----

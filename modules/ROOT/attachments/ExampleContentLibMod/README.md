@@ -27,7 +27,7 @@ Inside the .uplugin file:
 {
   "Name": "SML",
   "Enabled": true,
-  "SemVersion": "^3.5.0"
+  "SemVersion": "^3.7.0"
 },
 ```
 
@@ -39,6 +39,6 @@ Inside the .uplugin file:
 {
   "Name": "ContentLib",
   "Enabled": true,
-  "SemVersion": "^1.1.0"
+  "SemVersion": "^1.4.0"
 },
 ```
