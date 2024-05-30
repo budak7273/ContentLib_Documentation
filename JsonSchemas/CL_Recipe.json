@@ -137,6 +137,25 @@
             "description": "For patches, should the Recipe this is used on have its existing ProducedIn array cleared before adding to it? Default is true when 'ProducedIn' exists, false when not."
         }
     },
+    "allOf": [
+        {
+            "$comment": "Manual recipes should only have one product",
+            "if": {
+                "$comment": "More than one Product entry exists and ProducedIn contains 'manual'",
+                "properties": {
+                    "Products": {
+                        "minItems": 2
+                    },
+                    "ProducedIn": {
+                        "contains": {
+                            "const": "manual"
+                        }
+                    }
+                }
+            },
+            "then": false
+        }
+    ],
     "patternProperties": {
         "schema": {
             "$comment": "Allow the $schema line in files",
