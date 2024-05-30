@@ -16,7 +16,8 @@
         },
         "Amount": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 0,
+            "description": "Integer specifying the quantity of item(s). Remember that remember that 1000 fluid units displays as 1 Liter ingame."
         }
     }
 }

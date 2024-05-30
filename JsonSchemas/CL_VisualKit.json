@@ -9,14 +9,14 @@
     "properties": {
         "Mesh": {
             "type": "string",
-            "description": "Asset path to the Mesh for belts and dropped items. Must be inside a packaged mod",
+            "description": "Full asset path to the Mesh for dropped item and belt display. The path must be inside a packaged mod or the base game",
             "examples": [
                 "/Game/FactoryGame/Resource/Parts/PackagedWater/SM_PackedWater_01.SM_PackedWater_01"
             ]
         },
         "BigIcon": {
             "type": "string",
-            "description": "File name of a PNG in your mod's /ContentLib/Icons folder, OR asset path to an Icon texture, inside a packaged mod",
+            "description": "File name of a PNG in your mod's /ContentLib/Icons folder, OR full asset path to an Icon texture, inside a packaged mod",
             "examples": [
                 "/Game/FactoryGame/Resource/RawResources/Water/UI/LiquidWater_Pipe_512.LiquidWater_Pipe_512",
                 "MyIconName_512"
@@ -24,7 +24,7 @@
         },
         "SmallIcon": {
             "type": "string",
-            "description": "File name of a PNG in your mod's /ContentLib/Icons folder, OR asset path to an Icon texture inside a packaged mod",
+            "description": "File name of a PNG in your mod's /ContentLib/Icons folder, OR full asset path to an Icon texture inside a packaged mod",
             "examples": [
                 "/Game/FactoryGame/Resource/RawResources/Water/UI/LiquidWater_Pipe_256.LiquidWater_Pipe_256",
                 "MyIconName_256"

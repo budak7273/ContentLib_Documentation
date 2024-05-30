@@ -1,5 +1,6 @@
 //Game/FactoryGame/Schematics/ResourceSink/ResourceSink_StatueSilverPioneer.ResourceSink_StatueSilverPioneer_C
 {
     "$schema": "./../CL_Schematic.json",
-    "ClearSubCategories": true
+    "ClearSubCategories": true,
+    "$comment": "Hides this AWESOME Shop milestone unless it is directly searched for because of how base-game milestone display works"
 }

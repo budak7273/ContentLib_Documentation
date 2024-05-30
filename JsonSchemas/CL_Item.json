@@ -17,7 +17,7 @@
         },
         "Form": {
             "type": "string",
-            "description": "Type of item, controls what can move it. Solids move on belts and can be put in the inventory. Liquid and Gas must be moved with pipes. Heat and Invalid do not function correctly as of U6.",
+            "description": "Type of item, controls what can move it. Solids move on belts and can be put in the inventory. Liquid and Gas must be moved with pipes. Heat and Invalid are not useful as items as of U8.",
             "enum": [
                 "Solid",
                 "Liquid",
@@ -102,12 +102,18 @@
             "properties": {
                 "SpentFuelClass": {
                     "$ref": "Components/CL_NameResolvedAsset.json",
-                    "description": "Item to return when done burning"
+                    "description": "Item to return when done burning",
+                    "examples": [
+                        "Desc_NuclearWaste_C"
+                    ]
                 },
                 "AmountOfWaste": {
                     "type": "integer",
                     "description": "Quantity of the waste item to return",
-                    "minimum": 0
+                    "minimum": 0,
+                    "examples": [
+                        1
+                    ]
                 }
             }
         }

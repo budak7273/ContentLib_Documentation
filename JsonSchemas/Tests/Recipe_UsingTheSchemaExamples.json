@@ -1,0 +1,27 @@
+{
+    "$schema": "./../CL_Recipe.json",
+    "Name": "ContentLib BioFuel",
+    "Ingredients": [
+        {
+            "Item": "Desc_CopperIngot_C",
+            "Amount": 1
+        },
+        {
+            "Item": "Desc_IronIngot_C",
+            "Amount": 1
+        }
+    ],
+    "Products": [
+        {
+            "Item": "Desc_Biofuel",
+            "Amount": 10
+        }
+    ],
+    "ManufacturingDuration": 1,
+    "ProducedIn": [
+        "Build_ConstructorMk1"
+    ],
+    "UnlockedBy": [
+        "Schematic_1-1"
+    ]
+}

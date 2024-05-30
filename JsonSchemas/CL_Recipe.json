@@ -13,17 +13,37 @@
         },
         "Ingredients": {
             "type": "array",
-            "description": "ItemAmounts which form the ingredients. Be sure to not exceed an item's stack size, and remember that 1000 fluid units is 1 Liter ingame. See 'ClearIngredients' to append instead of replace.",
+            "description": "ItemAmounts which form the ingredients. Be sure to not exceed an item's stack size, and remember that 1000 fluid units displays as 1 Liter ingame. See 'ClearIngredients' to append instead of replace.",
             "items": {
                 "$ref": "./Components/CL_ItemAmount.json"
-            }
+            },
+            "examples": [
+                [
+                    {
+                        "Item": "Desc_CopperIngot",
+                        "Amount": 1
+                    },
+                    {
+                        "Item": "Desc_IronIngot",
+                        "Amount": 1
+                    }
+                ]
+            ]
         },
         "Products": {
             "type": "array",
-            "description": "ItemAmounts which form the recipe outputs. Be sure to not exceed an item's stack size, and remember that 1000 fluid units is 1 Liter ingame. See 'ClearProducts' to append instead of replace.",
+            "description": "ItemAmounts which form the recipe outputs. Be sure to not exceed an item's stack size, and remember that 1000 fluid units displays as 1 Liter ingame. Manual recipes should only have 1 product. See 'ClearProducts' to append instead of replace.",
             "items": {
                 "$ref": "./Components/CL_ItemAmount.json"
-            }
+            },
+            "examples": [
+                [
+                    {
+                        "Item": "Desc_Biofuel",
+                        "Amount": 10
+                    }
+                ]
+            ]
         },
         "ProducedIn": {
             "type": "array",
