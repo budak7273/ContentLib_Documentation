@@ -10,23 +10,143 @@ you will need to specify the full blueprint path of the asset you're patching
 so that ContentLib knows exactly what to modify.
 See the xref:Features/Patching.adoc[Patching] page for more info as to why.
 
-You can find this blueprint path with a number of approaches.
-
-- Recipes and Items: https://ficsit.app/mod/TFIT#for-mod-developers[TFIT]'s debug mode allows you display and easily copy the paths of recipes in the Build Gun and Codex, and the paths of items in the Codex. Check out the "For Mod Developers" heading at that link.
-- Schematics: https://ficsit.app/mod/MAMTips#debugging-features[MAM Enhancer]'s debug mode will display the path of schematics in the HUB, MAM, and AWESOME Shop when you hover over the icon of the mod that added them or click the respective button. Check out the "For Developers" heading at that link.
-- Browsing content with xref:Tutorials/ContentInspector.adoc[ContentInspector]
-or https://docs.ficsit.app/satisfactory-modding/latest/Development/ExtractGameFiles.html#FModel[FModel].
-The path is usually obtainable by removing the text '`Default__`' from the value in the `JS_LibOuter` field,
-which is the Outer object which registered the asset. Remember that fields that start with `JS_` are not "real fields" on the object, they are extra info that ContentInspector adds for ease of viewing
-- The https://satisfactory.wiki.gg/wiki/[Satisfactory Wiki] sometimes lists paths for items.
-- `docs.json`, a file shipped with your game.
-(found at `<SatisfactoryInstallDirectory>\CommunityResources\Docs\Docs.json`) 
-that also contains information on most assets such as name, description, fuel value, etc.
-- Looking at a community-maintianed
-https://github.com/Goz3rr/SatisfactorySaveEditor/blob/master/Reference%20Materials/[reference list].
-- Looking at the source code of a mod, if it's published.
-
 If you try to write a Patch with an incorrect blueprint path,
 the patch will have no effect in-game,
 and a xref:Tutorials/Troubleshooting.adoc[log message]
 should be present stating that the asset could not be found.
+
+Below, a number of tools for finding asset paths will be presented,
+followed by a list of content types and suggested approaches for 
+
+== Content Types
+
+Each heading below contains a numbered list of approaches for finding content paths
+_sorted in order of how easy I think they are for new developers to use_.
+Click the links on these approaches to be taken to headings with more information about them.
+
+=== Items
+
+Find item names and paths via these approaches:
+
+. link:#Tool_SFWiki[Satisfactory Wiki]
+. link:#Tool_TFIT[TFIT]
+. link:#Tool_ContentInspector[Content Inspector]
+. link:#Tool_ReferenceList[Community Reference List]
+. link:#Tool_FModel[FModel]
+. link:#Tool_SourceCode[Source Code]
+. link:#Tool_DocsJson[docs.json]
+
+=== Recipes
+
+Find recipe names and paths via these approaches:
+
+. link:#Tool_TFIT[TFIT]
+. link:#Tool_ContentInspector[Content Inspector]
+. link:#Tool_ReferenceList[Community Reference List]
+. link:#Tool_FModel[FModel]
+. link:#Tool_SourceCode[Source Code]
+. link:#Tool_DocsJson[docs.json]
+
+=== Schematics
+
+Find schematic names and paths via these approaches:
+
+. link:#Tool_MAMTips[MAM Enhancer]
+. link:#Tool_ContentInspector[Content Inspector]
+. link:#Tool_ReferenceList[Community Reference List]
+. link:#Tool_FModel[FModel]
+. link:#Tool_SourceCode[Source Code]
+. link:#Tool_DocsJson[docs.json]
+
+== Tools and Approaches
+
+This section contains a list of information about the tools mentioned in the "Content Types" section subheadings.
+
+[id="Tool_TFIT"]
+=== TFIT - The Ficsit Information Tool
+
+https://ficsit.app/mod/TFIT#for-mod-developers[TFIT]'s debugging features
+display information about content for you while the game is running.
+The mod displays and enables copying recipe paths out of the Codex and Build Gun,
+and the paths of Items from log files.
+Check out the "For Mod Developers" heading at that link for more info.
+
+Visit https://docs.ficsit.app/satisfactory-modding/latest/faq.html#Files_Logs[this page] to learn where your log files are located.
+
+For the best development experience, turn on the following mod options:
+
+* `Asset Path` tooltip handler: True
+** Item tooltips will now display the path of the item you're hovering over. Check the logs to copy it
+* `Asset Path` recipe handler: True
+** The Codex will now display the path of the recipes, click to copy. Item tooltips also show this but can't be copied.
+* `Recipe Asset Path` buildgun handler: True
+** The buildgun menu will now display the path of the building recipe you're hovering; click to copy
+* `Tooltips: Logging` option: True
+** Enable this setting so that you can copy paths out of your log files
+
+You may also wish to get the https://ficsit.app/mod/NogsCheats[Nog's Cheats] mod so that your codex always displays every item 
+
+[id="Tool_ContentInspector"]
+=== ContentInspector
+
+You can use ContentInspector to browse game and mod assets while the game is running,
+in addition to other useful debugging features.
+
+Check out the xref:Tutorials/ContentInspector.adoc[Using ContentInspector] guide to set it up and 
+
+The path is usually obtainable by removing the text '`Default__`' from the value in the `JS_LibOuter` field,
+which is the Outer object which registered the asset. Remember that fields that start with `JS_` are not "real fields" on the object, they are extra info that ContentInspector adds for ease of viewing
+
+[id="Tool_FModel"]
+=== FModel File Inspection
+
+The third-party tool FModel allows you to explore the data inside base-game and mod package files as if they were "normal" folders.
+You can find a tutorial on how to set up and use FModel here:
+https://docs.ficsit.app/satisfactory-modding/latest/Development/ExtractGameFiles.html#FModel
+
+[id="Tool_MAMTips"]
+=== MAM Enhancer
+
+https://ficsit.app/mod/MAMTips#debugging-features[MAM Enhancer]'s debug mode will display the path of schematics in the HUB, MAM, and AWESOME Shop when you hover over the icon of the mod that added them or click the respective button. Check out the "For Developers" heading at that link.
+
+You can also use the mod's debugging features to quickly grant or revoke Schematics to test their unlocks.
+
+For the best development experience, set the following mod options:
+
+* `Reveal Details of Hidden Nodes`: True
+** Allows you to see MAM nodes before they are unlocked
+* `(Old) Debugging Features`: True
+** Displays schematic path information in the HUB. Click to copy.
+* `Show 'Milestone Added By' for Base-Game Milestones`: True
+** Enable to also display schematic path information for base-game schematics
+
+[id="Tool_SFWiki"]
+=== Satisfactory Wiki
+
+The https://satisfactory.wiki.gg/wiki/[Satisfactory Wiki] sometimes lists paths for items.
+These are usually set by wiki editors manually, so the item you care about may not be displaying it.
+
+[id="Tool_DocsJson"]
+=== docs.json
+
+`docs.json`, a file shipped with your game
+(found at `<SatisfactoryInstallDirectory>\CommunityResources\Docs\Docs.json`) 
+contains information on most **base-game** assets such as name, description, fuel value, etc.
+It's a gigantic file and hard to walk through without existing knowledge of how the game files are structured,
+but some lucky ctrl-f'ing might help find stuff.
+
+[id="Tool_SourceCode"]
+=== Source Code
+
+Looking at the source code of a mod, if it's available, can help you find the path of assets.
+Even without loading the mod in an editor you can browse its file tree on GitHub to figure out what things are named.
+
+Learn more about this approach here:
+https://docs.ficsit.app/satisfactory-modding/latest/Development/BeginnersGuide/ImportingAnotherMod.html#_find_the_source_code
+
+[id="Tool_ReferenceList"]
+=== Community Reference List
+
+Community-maintained reference lists, such as
+https://github.com/Goz3rr/SatisfactorySaveEditor/blob/master/Reference%20Materials/[this one]
+may have the information you're looking for - assuming they're up to date.

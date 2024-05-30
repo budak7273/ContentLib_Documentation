@@ -48,7 +48,7 @@ to find out the internal name of the item.
 This name will probably appear in the name of the recipe asset as well.
 At the very least, it will appear in the Products section of the recipe,
 since it's what is being produced.
-According the Blueprint Path field in the wiki's info box,
+According the `Class name` field in the wiki's info box,
 it's called `Desc_SpaceElevatorPart_1`
 We got lucky, since Smart Plating is the first elevator part,
 but sometimes the names don't line up like this.

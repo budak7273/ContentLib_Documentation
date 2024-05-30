@@ -17,6 +17,11 @@ You can check the output logs,
 or look at the content in xref:Tutorials/ContentInspector.adoc[ContentInspector]
 to find out what class a path actually resolved to after ContentLib loads it.
 
+== Finding Names
+
+See the xref:Tutorials/FindAssetPath.adoc[Finding Assets] page
+to learn how to find the names of content, and the full path of an asset if needed.
+
 == Class Name Prefixes and Suffixes
 
 === Prefix
@@ -31,7 +36,8 @@ For example, the shorthand "ConstructorMk1" would match the following assets:
 - The FGRecipe `/Game/FactoryGame/Buildable/Factory/ConstructorMk1/Recipe_ConstructorMk1`
 - The FGDecorationTemplate `/Game/FactoryGame/Buildable/Factory/ConstructorMk1/Deco_ConstructorMk1`
 
-... but the only one you care about is `Desc_ConstructorMk1`.
+// Backslash to stop indented list handling
+\... but the only one you care about is `Desc_ConstructorMk1`.
 
 In this cause, you _must_ include the prefix in order to specify which of these assets you're referring to.
 
