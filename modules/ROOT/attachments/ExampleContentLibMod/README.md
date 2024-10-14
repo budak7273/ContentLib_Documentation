@@ -42,3 +42,10 @@ Inside the .uplugin file:
   "SemVersion": "^1.4.0"
 },
 ```
+
+- Replace the "GameVersion" with the latest game version number so it follows the format `>=GameCLVersionReplaceMe`.
+  You can find the latest game version number in the "Game Versions" column of the [SML mod page's Versions tab](https://ficsit.app/mod/SML). Once you're done, it will look similar to this:
+
+```json
+"GameVersion": ">=365306",
+```
