@@ -48,6 +48,20 @@ On the flip side, the modifications could have *absolutely no effect whatsoever*
 ContentLib simply provides the tools to allow modifying the CDO
 - there is no guarantee that the asset you are modifying will still work correctly after the fact.
 
+For example, it is possible to use a CDO
+to change the `mManufacturingSpeed` and `mExtractCycleTime` properties of miners.
+xref:Tutorials/ContentInspector.adoc[Content Inspector] will confirm that the values have been changed,
+but the miner's behavior in-game will not be affected.
+This is not because the CDO edit has failed,
+but because something about the miner's implementation is causing it to not use the values in a way we expected.
+Other modders have found out through experimentation and research with a decompiler
+that miner behavior can be changed via
+https://docs.ficsit.app/satisfactory-modding/latest/Development/Cpp/hooking.html[hooking],
+an advanced technique that requires a regular mod to use.
+
+In this specific case, the same outcome (increased miner speed)
+can be achieved by using a CDO to modify the `mCollectSpeedMultiplier` of the resource item instead.
+
 == JSON Examples
 
 === Rename an Item
