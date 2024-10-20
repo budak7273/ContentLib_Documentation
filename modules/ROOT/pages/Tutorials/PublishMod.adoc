@@ -1,27 +1,79 @@
 = Publish your Mod
 
-This page directs you to the correct docs for how to publish ContentLib scripts you have created as mod for others to use.
+This page explains how to publish ContentLib scripts you have created as mod for others to use
+by uploading them as a mod to the Satisfactory Mod Repository (ficsit.app).
 
-Check out the 
-xref:Tutorials/Setup.adoc[Setup document]
-to set up a plugin structure for your mod files.
+== Prepare your Files
 
-== Upload to SMR
+=== Plugin Skeleton
 
 If you followed the xref:Tutorials/Setup.adoc[Setup document]'s "Example Plugin Skeleton" approach
 your files should already be in mod format.
-
 However, if you used the "Configs Folder" approach, you will need to go back and set up the
 xref:Tutorials/Setup.adoc#DownloadSkeleton[Example Plugin Skeleton].
-Remember to move your old ContentLib files out of the config folder when testing your new mod skeleton!
-
-Once you have edited the skeleton to match your needs,
-you're ready to upload your mod to Satisfactory Mod Repository for anyone to download and use.
-You can follow the directions in the
-https://docs.ficsit.app/satisfactory-modding/latest/UploadToSMR.html[main modding documentation]
-to achieve this.
+Remember to move your old ContentLib files out of the configs folder when testing your new mod skeleton!
 
 Make sure your mod uplugin specifies ContentLib as a dependency as described in the 
 xref:Tutorials/Setup.adoc[Setup document]
 or your mod won't do anything!
 If you used the skeleton, it should already depend on ContentLib.
+
+=== Supporting Dedicated Servers
+
+The mod repository expects mods to be uploaded in a certain structure
+to indicate which sets of files are for which platform (the game client versus dedicated servers).
+ContentLib mods are unique in that they contain json files and not typical mod assets,
+making putting our mod files in this structure feel a bit redundant,
+but it is still necessary for the mod repository to accept our mod.
+
+To prepare your files for upload:
+
+1. Create a temporary folder somewhere
+2. Inside that folder, create 3 folders with exactly these names: `Windows`, `WindowsServer`, and `LinuxServer`
+3. Copy your actual mod files inside of each of those folders
+4. Zip the 3 folders together into 1 zip file named your mod reference (the same name as your .uplugin file).
+   The zip file should directly contain the 3 folders with no extra layers of folders in beteween.
+
+Check your work by comparing the structure of your zip file to
+an existing published ContentLib mod like https://ficsit.app/mod/Mycological_Studies[this one].
+To download a zip to compare against, go to the `View Versions` tab and select `Download... ` > `Download Multi-Target`.
+Open this `.smod` file with any zip editor to compare the structure.
+
+== Create a Mod Page
+
+Once you have prepared your files for upload
+you're ready to create a page on the Satisfactory Mod Repository for your mod.
+
+Follow the directions in the
+https://docs.ficsit.app/satisfactory-modding/latest/UploadToSMR.html[main modding documentation]
+to achieve this.
+Stop reading that page when you get to the "Package your Mod" section because you already did that in the "Prepare your Files" step.
+
+== Upload to SMR
+
+Once you're ready to upload,
+go to your mod's page on ficsit.app and select `New Version`.
+Upload the multi-target zip file you created in the "Supporting Dedicated Servers" step.
+If everything is correct the page will show text similar to the following:
+
+```
+File Type: application/x-zip-compressed
+File Size: 55.56 KB
+
+Version: 1
+SemVersion: 1.0.0
+Game version: >=365306
+
+Targets: LinuxServer, Windows, WindowsServer
+Dependencies:
+SML: ^3.8.0
+ContentLib: ^1.0.0
+```
+
+Next, write a changelog for your mod.
+The first few lines of the changelog will be shown as a summary in the modding discord's #mod-updates channel.
+
+If this is your first version upload,
+consider reusing the text of your mod page for the changelog.
+
+Once you're ready, press "Create" and your mod should be live shortly!

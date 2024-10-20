@@ -85,11 +85,11 @@ Inside the .uplugin file:
   link:https://ficsit.app/sml-versions[here], so that it follows the format `^The.Number.Here`.
   Once you're done, that section will look similar to this:
 
-```
+```json
 {
   "Name": "SML",
   "Enabled": true,
-  "SemVersion": "^3.7.0"
+  "SemVersion": "^3.8.0"
 },
 ```
 
@@ -97,12 +97,19 @@ Inside the .uplugin file:
   link:https://ficsit.app/mod/ContentLib[here], so that it follows the format `^The.Number.Here`.
   Once you're done, that section will look similar to this:
 
-```
+```json
 {
   "Name": "ContentLib",
   "Enabled": true,
-  "SemVersion": "^1.4.0"
+  "SemVersion": "^1.5.0"
 },
+```
+
+- Replace the "GameVersion" with the latest game version number so it follows the format `>=GameCLVersionReplaceMe`.
+  You can find the latest game version number in the "Game Versions" column of the link:https://ficsit.app/mod/SML[SML mod page's Versions tab]. Once you're done, it will look similar to this:
+
+```json
+"GameVersion": ">=365306",
 ```
 
 == Setting Up the Mod Folder
