@@ -129,7 +129,7 @@ Remember - you don't need to repeat any information from the original asset that
 ```json
 //Game/FactoryGame/Recipes/Buildings/Recipe_BlueprintDesigner.Recipe_BlueprintDesigner_C
 {
-  "$schema": "./../CL_Recipe.json",
+  "$schema": "https://raw.githubusercontent.com/budak7273/ContentLib_Documentation/main/JsonSchemas/CL_Recipe.json",
   "ClearIngredients": true
 }
 ```
@@ -162,8 +162,8 @@ while still preserving the existing unlocks.
 }
 ```
 
-Due to a base-game bug/feature, schematics and items without assigned categories are usually not displayed in menus unless they are explicitly searched for.
-You can use this behavior to hide schematics from display.
+Due to a base-game bug/feature, AWESOME Shop schematics and items without assigned categories are usually not displayed in menus unless they are explicitly searched for.
+You can use this behavior to hide AWESOME Shop schematics from display.
 
 Here's an example patch that makes it so the "Pretty Good Pioneering" statue does not show up in the AWESOME Shop unless specifically searched for:
 
