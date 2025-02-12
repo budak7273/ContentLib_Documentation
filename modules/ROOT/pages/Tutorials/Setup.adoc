@@ -82,7 +82,7 @@ Inside the .uplugin file:
 
 - Edit the FriendlyName, Description, and CreatedBy fields to your preferences
 - Replace the "SmlVersionReplaceMe" with the latest version number of SML found
-  link:https://ficsit.app/sml-versions[here], so that it follows the format `^The.Number.Here`.
+  link:https://ficsit.app/mod/SML[here], so that it follows the format `^The.Number.Here`.
   Once you're done, that section will look similar to this:
 
 ```json
