@@ -31,8 +31,8 @@ To prepare your files for upload:
 1. Create a temporary folder somewhere
 2. Inside that folder, create 3 folders with exactly these names: `Windows`, `WindowsServer`, and `LinuxServer`
 3. Copy your actual mod files inside of each of those folders
-4. Zip the 3 folders together into 1 zip file named your mod reference (the same name as your .uplugin file).
-   The zip file should directly contain the 3 folders with no extra layers of folders in beteween.
+4. Zip the 3 folders together into 1 zip file named your mod reference (the same name as your .uplugin file)
+5. Check your zip file to ensure that it directly contains the 3 aforementioned folders with no extra layers of folder in between
 
 Check your work by comparing the structure of your zip file to
 an existing published ContentLib mod like https://ficsit.app/mod/Mycological_Studies[this one].
