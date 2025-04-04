@@ -127,6 +127,8 @@ Here are a few Vanilla building names. You can also use the JSON Schema auto-sug
 * Packager: `Build_Packager`
 * Blender: `Build_Blender`
 * Particle Accelerator: `Build_HadronCollider`
+* Converter: `Build_Converter`
+* Quantum Encoder: `Build_QuantumEncoder`
 
 These particular base game buildings can all be found in subdirectories of `/Game/FactoryGame/Buildable/Factory/`.
 
