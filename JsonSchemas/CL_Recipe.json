@@ -63,7 +63,8 @@
                     "Build_HadronCollider",
                     "Build_Blender",
                     "Build_Converter",
-                    "Build_QuantumEncoder"
+                    "Build_QuantumEncoder",
+                    "BP_BuildGun"
                 ],
                 "not": {
                     "$comment": "Use workaround value `manual` for these instead.",
