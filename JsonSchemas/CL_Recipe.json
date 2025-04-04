@@ -61,6 +61,8 @@
                     "Build_Packager",
                     "Build_Blender",
                     "Build_HadronCollider",
+                    "Build_Converter",
+                    "Build_QuantumEncoder",
                     "BP_BuildGun"
                 ],
                 "not": {
