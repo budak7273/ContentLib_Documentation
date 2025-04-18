@@ -1,0 +1,5 @@
+{
+  "$schema": "./../../CL_Schematic.json",
+  "$comment": "This fails because `HardDrive` should almost always not be used, use `Alternate` instead.",
+  "Type": "HardDrive"
+}

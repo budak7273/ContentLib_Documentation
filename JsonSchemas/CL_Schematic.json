@@ -25,7 +25,11 @@
                 "ResourceSink",
                 "HardDrive",
                 "Prototype"
-            ]
+            ],
+            "not": {
+                "$comment": "The `HardDrive` schematic type is an internal type used just for the 'Scan a Hard Drive' feature. You almost certainly want to use `Alternate` instead.",
+                "const": "HardDrive"
+            }
         },
         "VisualKit": {
             "type": "string",
