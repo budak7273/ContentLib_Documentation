@@ -36,7 +36,7 @@ To prepare your files for upload:
 
 Check your work by comparing the structure of your zip file to
 an existing published ContentLib mod like https://ficsit.app/mod/Mycological_Studies[this one].
-To download a zip to compare against, go to the `View Versions` tab and select `Download... ` > `Download Multi-Target`.
+To download a zip to compare against, go to the `View Versions` tab and select `Download...` > `Download Multi-Target`.
 Open this `.smod` file with any zip editor to compare the structure.
 
 == Create a Mod Page
