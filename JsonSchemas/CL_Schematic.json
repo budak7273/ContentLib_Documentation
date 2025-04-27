@@ -26,10 +26,17 @@
                 "HardDrive",
                 "Prototype"
             ],
-            "not": {
-                "$comment": "The `HardDrive` schematic type is an internal type used just for the 'Scan a Hard Drive' feature. You almost certainly want to use `Alternate` instead.",
-                "const": "HardDrive"
-            }
+            "allOf": [
+                {
+                    "$comment": "The `HardDrive` schematic type is an internal type used just for the 'Scan a Hard Drive' feature. You almost certainly want to use `Alternate` instead.",
+                    "if": {
+                        "const": "HardDrive"
+                    },
+                    "then": {
+                        "const": "Alternate"
+                    }
+                }
+            ]
         },
         "VisualKit": {
             "type": "string",
@@ -139,9 +146,27 @@
             "description": "When true, the existing item rewards of a schematic will be cleared. Used to wipe item rewards, or entirely replace them with the entries in the ItemsToGive field."
         },
         "ResearchTree": {
-            "description": "I (Robb) have not investigated this field to find out if it still works. See https://github.com/Nogg-aholic/ContentLib/blob/master/Source/ContentLib/Private/CLSchematicBPFLib.cpp if you want to try it."
+            "type": "object",
+            "description": "I (Robb) have not investigated this field to find out if it still works. See https://github.com/Nogg-aholic/ContentLib/blob/master/Source/ContentLib/Private/CLSchematicBPFLib.cpp if you want to try it. See ContentLib discord conversation https://discord.com/channels/771801486828896258/864639223599726612/1365851261060124713"
         }
     },
+    "allOf": [
+        {
+            "$comment": "ResearchTree only allowed with Type: MAM",
+            "if": {
+                "required": [
+                    "ResearchTree"
+                ]
+            },
+            "then": {
+                "properties": {
+                    "Type": {
+                        "const": "MAM"
+                    }
+                }
+            }
+        }
+    ],
     "patternProperties": {
         "schema": {
             "$comment": "Allow the $schema line in files",

@@ -48,6 +48,7 @@
         "ProducedIn": {
             "type": "array",
             "description": "Automatic name resolved asset. Machines/builders which this recipe can be used in. The examples are not an exhaustive list. Use 'manual' for all manual workbenches; this is a workaround and will be fixed in the future. See 'ClearBuilders' to append instead of replace.",
+            "uniqueItems": true,
             "items": {
                 "$ref": "./Components/CL_NameResolvedAsset.json",
                 "examples": [
@@ -65,15 +66,30 @@
                     "Build_QuantumEncoder",
                     "BP_BuildGun"
                 ],
-                "not": {
-                    "$comment": "Use workaround value `manual` for these instead.",
-                    "enum": [
-                        "FGWorkBench",
-                        "Build_Workshop",
-                        "Build_WorkBench",
-                        "Build_WorkBenchIntegrated"
-                    ]
-                }
+                "allOf": [
+                    {
+                        "$comment": "The `manual` workaround should be used instead of these (see the docs https://docs.ficsit.app/contentlib/latest/Tutorials/CreateRecipe.html).",
+                        "if": {
+                            "anyOf": [
+                                {
+                                    "const": "FGWorkBench"
+                                },
+                                {
+                                    "const": "Build_Workshop"
+                                },
+                                {
+                                    "const": "Build_WorkBench"
+                                },
+                                {
+                                    "const": "Build_WorkBenchIntegrated"
+                                }
+                            ]
+                        },
+                        "then": {
+                            "const": "manual"
+                        }
+                    }
+                ]
             }
         },
         "OverrideCategory": {
@@ -143,11 +159,7 @@
         {
             "$comment": "Manual recipes should only have one product",
             "if": {
-                "$comment": "More than one Product entry exists and ProducedIn contains 'manual'",
                 "properties": {
-                    "Products": {
-                        "minItems": 2
-                    },
                     "ProducedIn": {
                         "contains": {
                             "const": "manual"
@@ -155,7 +167,13 @@
                     }
                 }
             },
-            "then": false
+            "then": {
+                "properties": {
+                    "Products": {
+                        "maxItems": 1
+                    }
+                }
+            }
         }
     ],
     "patternProperties": {

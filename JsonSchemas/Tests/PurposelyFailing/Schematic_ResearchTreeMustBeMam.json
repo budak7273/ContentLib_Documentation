@@ -1,0 +1,6 @@
+{
+  "$schema": "./../../CL_Schematic.json",
+  "$comment": "This fails because type must be `MAM` when `ResearchTree` is set.",
+  "Type": "Milestone",
+  "ResearchTree": {}
+}
