@@ -6,15 +6,16 @@ You can find a xref:Reference/JsonSchema.adoc[JSON Schema] for CDOs
 https://github.com/budak7273/ContentLib_Documentation/tree/main/JsonSchemas[here].
 ====
 
-You can also use ContentLib to perform (Class Default Object) CDO edits.
+You can also use ContentLib to perform (Class Default Object) CDO edits,
+to a limited degree, by overwriting property values.
 
 To learn more about what a CDO is, see
 https://docs.unrealengine.com/4.26/en-US/ProgrammingAndScripting/ProgrammingWithCPP/UnrealArchitecture/Objects/[this]
 Unreal Engine documentation page.
 
-This is an advanced feature that can modify pretty much any field on any asset,
-as long as you know where the asset is and what field to look for.
-It can also do things like change the parent classes of blueprint assets.
+This is an advanced feature that can modify most fields on any asset,
+as long as you know where the asset is, what field to look for,
+and understand the structure of the data type you are modifying.
 
 In order to find the names of fields,
 you probably will need to either have a set up modding project,
@@ -35,6 +36,8 @@ changing the appearance of anything using that material.
 You can see the field types supported by ContentLib CDOs
 by looking at the `UCLCDOBPFLib::EditCDO` implementation
 https://github.com/Nogg-aholic/ContentLib/blob/master/Source/ContentLib/Private/CLCDOBPFLib.cpp[here].
+It attempts to convert what you've entered as a string into structs and other types as needed,
+but it is far from perfect.
 
 [WARNING]
 ====
@@ -67,6 +70,8 @@ can be achieved by using a CDO to modify the `mCollectSpeedMultiplier` of the re
 === Rename an Item
 
 This renames Caterium Ingots to Gold Ingots.
+You should use Item Patches instead of CDOs for this in practice.
+This is just an example with a field you're likely already familiar with.
 
 This is an example of a CDO edit that works with hot reloading.
 
@@ -85,7 +90,169 @@ image:https://i.imgur.com/FIyBHQB.png[Gold example]
 }
 ```
 
+=== Drone Port Fuels
+
+This demonstrates the CDO feature's ability to work with arbitrary structs, to a degree.
+Note that using a ContentLib CDO here overwrites the entire `mFuelTypes` array,
+which is not desirable for compatibility with other mods.
+Unfortunately, ContentLib CDOs do not currently have a to append to the array.
+
+From the link:https://ficsit.app/mod/FlexFuelDrones[FlexFuel Drones] mod,
+developed in link:https://discord.com/channels/555424930502541343/1301957088536170607[this conversation] on the link:https://discord.ficsit.app/[modding discord].
+
+```json
+{
+  "$schema": "https://raw.githubusercontent.com/budak7273/ContentLib_Documentation/main/JsonSchemas/CL_CDO.json",
+  "Class": "/Game/FactoryGame/Buildable/Factory/DroneStation/BP_DroneTransport.BP_DroneTransport_C",
+  "Edits": [
+    {
+      "Property": "mFuelTypes",
+      "Value": [
+        {
+          "Item": "/Game/FactoryGame/Resource/Parts/Battery/Desc_Battery.Desc_Battery_C",
+          "ThrusterColor": {
+            "R": 0,
+            "G": 128,
+            "B": 255,
+            "A": 255
+          },
+          "ThrusterEndColor": {
+              "R": 255,
+              "G": 200,
+              "B": 64,
+              "A": 255
+            },
+          "FlightSpeed": 1500.0,
+          "TravelSpeed": 7500.0
+        },
+        {
+          "Item": "/Game/FactoryGame/Resource/Parts/BioFuel/Desc_PackagedBiofuel.Desc_PackagedBiofuel_C",
+          "ThrusterColor": {
+            "R": 59,
+            "G": 83,
+            "B": 44,
+            "A": 255
+          },
+          "ThrusterEndColor": {
+              "R": 85,
+              "G": 189,
+              "B": 44,
+              "A": 255
+            },
+          "FlightSpeed": 1500.0,
+          "TravelSpeed": 7500.0
+        },
+        {
+          "Item": "/Game/FactoryGame/Resource/Parts/Fuel/Desc_Fuel.Desc_Fuel_C",
+          "ThrusterColor": {
+            "R": 255,
+            "G": 149,
+            "B": 0,
+            "A": 255
+          },
+          "ThrusterEndColor": {
+              "R": 255,
+              "G": 212,
+              "B": 125,
+              "A": 255
+            },
+          "FlightSpeed": 1000.0,
+          "TravelSpeed": 5000.0
+        },
+        {
+          "Item": "/Game/FactoryGame/Resource/Parts/Turbofuel/Desc_TurboFuel.Desc_TurboFuel_C",
+          "ThrusterColor": {
+            "R": 255,
+            "G": 32,
+            "B": 0,
+            "A": 255
+          },
+          "ThrusterEndColor": {
+              "R": 255,
+              "G": 100,
+              "B": 100,
+              "A": 255
+            },
+          "FlightSpeed": 1000.0,
+          "TravelSpeed": 6000.0
+        },
+        {
+          "Item": "/Game/FactoryGame/Resource/Parts/RocketFuel/Desc_PackagedRocketFuel.Desc_PackagedRocketFuel_C",
+          "ThrusterColor": {
+            "R": 255,
+            "G": 0,
+            "B": 0,
+            "A": 255
+          },
+          "ThrusterEndColor": {
+              "R": 255,
+              "G": 240,
+              "B": 0,
+              "A": 255
+            },
+          "FlightSpeed": 1000.0,
+          "TravelSpeed": 7500.0
+        },
+        {
+          "Item": "/Game/FactoryGame/Resource/Parts/IonizedFuel/Desc_PackagedIonizedFuel.Desc_PackagedIonizedFuel_C",
+          "ThrusterColor": {
+            "R": 255,
+            "G": 102,
+            "B": 0,
+            "A": 255
+          },
+          "ThrusterEndColor": {
+              "R": 255,
+              "G": 182,
+              "B": 0,
+              "A": 255
+            },
+          "FlightSpeed": 1000.0,
+          "TravelSpeed": 10000.0
+        },
+        {
+          "Item": "/Game/FactoryGame/Resource/Parts/NuclearFuelRod/Desc_NuclearFuelRod.Desc_NuclearFuelRod_C",
+          "ThrusterColor": {
+            "R": 0,
+            "G": 255,
+            "B": 0,
+            "A": 255
+          },
+          "ThrusterEndColor": {
+              "R": 192,
+              "G": 255,
+              "B": 64,
+              "A": 255
+            },
+          "FlightSpeed": 1000.0,
+          "TravelSpeed": 9000.0
+        },
+        {
+          "Item": "/Game/FactoryGame/Resource/Parts/PlutoniumFuelRods/Desc_PlutoniumFuelRod.Desc_PlutoniumFuelRod_C",
+          "ThrusterColor": {
+            "R": 248,
+            "G": 255,
+            "B": 255,
+            "A": 255
+          },
+          "ThrusterEndColor": {
+              "R": 95,
+              "G": 151,
+              "B": 255,
+              "A": 255
+            },
+          "FlightSpeed": 1000.0,
+          "TravelSpeed": 10000.0
+        }
+      ]
+    }
+  ]
+}
+```
+
 === Recipe Ingredients Quantity Change
+
+You should use Recipe Patches instead of CDOs for this; this is just a proof of concept.
 
 ```json
 {
