@@ -31,7 +31,6 @@ Find item names and paths via these approaches:
 . link:#Tool_SFWiki[Satisfactory Wiki]
 . link:#Tool_TFIT[TFIT]
 . link:#Tool_ContentInspector[Content Inspector]
-. link:#Tool_ReferenceList[Community Reference List]
 . link:#Tool_FModel[FModel]
 . link:#Tool_SourceCode[Source Code]
 . link:#Tool_DocsJson[docs.json]
@@ -42,7 +41,6 @@ Find recipe names and paths via these approaches:
 
 . link:#Tool_TFIT[TFIT]
 . link:#Tool_ContentInspector[Content Inspector]
-. link:#Tool_ReferenceList[Community Reference List]
 . link:#Tool_FModel[FModel]
 . link:#Tool_SourceCode[Source Code]
 . link:#Tool_DocsJson[docs.json]
@@ -53,7 +51,6 @@ Find schematic names and paths via these approaches:
 
 . link:#Tool_MAMTips[MAM Enhancer]
 . link:#Tool_ContentInspector[Content Inspector]
-. link:#Tool_ReferenceList[Community Reference List]
 . link:#Tool_FModel[FModel]
 . link:#Tool_SourceCode[Source Code]
 . link:#Tool_DocsJson[docs.json]
@@ -143,10 +140,3 @@ Even without loading the mod in an editor you can browse its file tree on GitHub
 
 Learn more about this approach here:
 https://docs.ficsit.app/satisfactory-modding/latest/Development/BeginnersGuide/ImportingAnotherMod.html#_find_the_source_code
-
-[id="Tool_ReferenceList"]
-=== Community Reference List
-
-Community-maintained reference lists, such as
-https://github.com/Goz3rr/SatisfactorySaveEditor/blob/master/Reference%20Materials/[this one]
-may have the information you're looking for - assuming they're up to date.
