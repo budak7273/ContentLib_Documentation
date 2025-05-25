@@ -61,7 +61,7 @@ Example: `Someclass.cpp`
 [source, cpp]
 ----
 // Set up some JSON for a CDO
-FSTRING json = TEXT(R"({
+FString json = TEXT(R"({
   "$schema": "https://raw.githubusercontent.com/budak7273/ContentLib_Documentation/main/JsonSchemas/CL_CDO.json",
   "Class": "/Game/FactoryGame/Resource/Parts/GoldIngot/Desc_GoldIngot.Desc_GoldIngot_C",
   "Edits": [

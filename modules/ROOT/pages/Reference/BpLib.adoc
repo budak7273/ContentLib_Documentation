@@ -12,7 +12,7 @@ For example, ContentLib's blueprint library could be used to iterate over every 
 ContentLib offers both Blueprint and xref:Reference/CppLib.adoc[{cpp}] APIs with additional functionality.
 
 You can find examples of its usage by looking at the Content Lib mod's blueprint code for usage examples,
-or by looking at the source code of other mods using Content Lib, such as Aquilla's mods or SifVerT's Difficulty Tuner.
+or by looking at the source code of other mods using Content Lib, such as Aquila's mods or SifVerT's Difficulty Tuner.
 
 == Set Up your Mod to Use the Library
 
