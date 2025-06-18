@@ -64,7 +64,9 @@
                     "Build_HadronCollider",
                     "Build_Converter",
                     "Build_QuantumEncoder",
-                    "BP_BuildGun"
+                    "BP_BuildGun",
+                    "BP_WorkBenchComponent",
+                    "BP_WorkshopComponent"
                 ],
                 "allOf": [
                     {
