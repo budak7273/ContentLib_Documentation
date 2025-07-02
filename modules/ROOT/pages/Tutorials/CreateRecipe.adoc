@@ -85,7 +85,7 @@ Here's an example recipe for the Blender made by McGalleon.
 }
 ```
 
-image:Features/BlenderRecipeExample.png[Blender example ingame]
+image:Features/BlenderRecipeExample.png[Blender example in-game]
 
 == Setting Up
 
