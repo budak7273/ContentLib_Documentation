@@ -90,12 +90,48 @@ image:https://i.imgur.com/FIyBHQB.png[Gold example]
 }
 ```
 
+=== Adjust Hover Pack Power Consumption
+
+// cspell:ignore Izeau
+Created by Izeau.
+
+```json
+{
+  "$schema": "https://raw.githubusercontent.com/budak7273/ContentLib_Documentation/main/JsonSchemas/CL_CDO.json",
+  "Class": "/Game/FactoryGame/Equipment/HoverPack/Equip_HoverPack.Equip_HoverPack_C",
+  "Edits": [
+    {
+      "Property": "mPowerConsumption",
+      "Value": "10.0"
+    }
+  ]
+}
+```
+
+=== Replace Chainsaw Fuel Type
+
+Created by leatherneck6017.
+Note that the base game implements this field is a single class field, so trying to add multiple classes via an array will fail.
+
+```json
+{
+  "$schema": "https://raw.githubusercontent.com/budak7273/ContentLib_Documentation/main/JsonSchemas/CL_CDO.json",
+  "Class": "/SuperChainsaw/Equipment/SuperChainsaw/Equip_SuperChainsaw.Equip_SuperChainsaw_C",
+  "Edits": [
+    {
+      "Property": "mFuelClass",
+      "Value": "/Game/FactoryGame/Resource/Parts/BioFuel/Desc_Biofuel.Desc_Biofuel_C"
+    }
+  ]
+}
+```
+
 === Drone Port Fuels
 
 This demonstrates the CDO feature's ability to work with arbitrary structs, to a degree.
 Note that using a ContentLib CDO here overwrites the entire `mFuelTypes` array,
 which is not desirable for compatibility with other mods.
-Unfortunately, ContentLib CDOs do not currently have a to append to the array.
+Unfortunately, ContentLib CDOs do not currently offer a way to append to arrays instead of replacing them.
 
 From the link:https://ficsit.app/mod/FlexFuelDrones[FlexFuel Drones] mod,
 developed in link:https://discord.com/channels/555424930502541343/1301957088536170607[this conversation] on the link:https://discord.ficsit.app/[modding discord].
