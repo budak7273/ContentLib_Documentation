@@ -24,8 +24,8 @@
                         "Amount": 1
                     },
                     {
-                        "Item": "Desc_IronIngot",
-                        "Amount": 1
+                        "Item": "Desc_Water",
+                        "Amount": 5000
                     }
                 ]
             ]
@@ -157,12 +157,20 @@
     },
     "allOf": [
         {
-            "$comment": "Manual recipes should only have one product",
+            "$comment": "Manual and buildgun recipes should only have one product",
             "if": {
+                "required": ["ProducedIn"],
                 "properties": {
                     "ProducedIn": {
                         "contains": {
-                            "const": "manual"
+                            "anyOf": [
+                                {
+                                    "const": "manual"
+                                },
+                                {
+                                    "const": "BP_BuildGun"
+                                }
+                            ]
                         }
                     }
                 }
