@@ -105,7 +105,7 @@ image:Tutorials/Troubleshooting/ExampleLogs_FoundNothing.png[image]
 * Check the logs as mentioned above to see if there were any errors in registering it
 * Make sure that you put your files in the correct folders. See the xref:BackgroundInfo/FolderNames.adoc[Folder Names] section.
 * Make sure that your xref:Features/Patching.adoc#PatchSyntax[patch target] line points to an asset that exists.
-  Here is an example of what the log messages would look like for a nonexistant asset:
+  Here is an example of what the log messages would look like for a nonexistent asset:
   image:Tutorials/Troubleshooting/ExampleLogs_BadPatchAsset.png[image]
 
 [id="MissingRecipe"]
