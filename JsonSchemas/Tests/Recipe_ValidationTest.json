@@ -1,0 +1,30 @@
+{
+    "$schema": "./../CL_Recipe.json",
+    "Name": "ContentLib Recipe Validation Test",
+    "$comment": "Intended for testing the RequireItemValidation feature in game. When true, the recipe should error and not be created.",
+    "Ingredients": [
+        {
+            "Item": "Desc_Coal",
+            "Amount": 1
+        },
+		{
+            "Item": "GrumbleBobulin",
+            "Amount": 1
+        }
+    ],
+    "Products": [
+        {
+            "Item": "Desc_Biofuel",
+            "Amount": 10
+        }
+    ],
+    "ManufacturingDuration": 1,
+    "ProducedIn": [
+        "Build_ConstructorMk1",
+        "BP_WorkBenchComponent_C"
+    ],
+    "UnlockedBy": [
+        "Schematic_1-1"
+    ],
+    "RequireItemValidation": true
+}
