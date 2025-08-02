@@ -10,7 +10,7 @@ tutorial first!
 In order to write your own recipes, you will need the following:
 
 - The internal names of the ingredients and products in your recipe
-- The internal name of the building(s) that can use your recipe (a few are listed below)
+- The internal name of the building(s) that can use your recipe
 - The internal name of the schematic that will unlock your recipe
 
 First, here's two example recipes to show some of what's possible:
@@ -37,7 +37,8 @@ Below is an example recipe and a screenshot of it within the Item Codex in game.
     ],
     "ManufacturingDuration": 1,
     "ProducedIn": [
-        "Build_ConstructorMk1"
+        "Build_ConstructorMk1",
+        "BP_WorkBenchComponent"
     ],
     "UnlockedBy": [
         "Schematic_1-1"
@@ -110,14 +111,24 @@ If you don't see these, go get a good text editor as described on the xref:Tutor
 
 == Locate Asset Names
 
-Next, you need to find the item, building, and schematic names. These names are part of the 'blueprint path' of the items in the game's files. Thankfully, this mod will xref:BackgroundInfo/AutomaticNameResolving.adoc[automatically resolve] part of the blueprint path into the full name, saving you from having to type out the full name. You can exclude the "_C" from the end as well. 
+Next, you need to find the item, production building, and schematic names.
+These names are part of the 'blueprint path' of the items in the game's files.
+Thankfully, this mod will xref:BackgroundInfo/AutomaticNameResolving.adoc[automatically resolve] part of the blueprint path into the full name, saving you from having to type out the full name.
+You can exclude the "_C" from the end as well. 
 
-Find out how to track down asset names xref:Tutorials/FindAssetPath.adoc[here].
+=== Item Names
 
-Watch out - if you're using fluids in your recipes, you need to multiply the item count by 1000. Learn more on the xref:Tutorials/FluidsInfo.adoc[Fluids] page.
+Find out how to track down asset names xref:Tutorials/FindAssetPath.adoc[in the Finding Assets tutorial].
 
-Here are a few Vanilla building names. You can also use the JSON Schema auto-suggest feature and your editor will auto-suggest them from a list.
+=== Production Building Names
 
+For the `ProducedIn` field, all entries must be valid recipe producers.
+ContentLib automatically logs the names of all producers it finds when the game starts, so you can find these in your log files - search for `All detected`.
+
+Here's an example of a few:
+
+* Workbench: `BP_WorkBenchComponent`
+* Equipment Workshop: `BP_WorkshopComponent`
 * Smelter: `Build_SmelterMk1`
 * Constructor: `Build_ConstructorMk1`
 * Assembler: `Build_AssemblerMk1`
@@ -130,16 +141,13 @@ Here are a few Vanilla building names. You can also use the JSON Schema auto-sug
 * Converter: `Build_Converter`
 * Quantum Encoder: `Build_QuantumEncoder`
 
-These particular base game buildings can all be found in subdirectories of `/Game/FactoryGame/Buildable/Factory/`.
 
-[NOTE]
-====
-There is currently a bug preventing the Craft Bench (`/Game/FactoryGame/Buildable/-Shared/WorkBench/BP_WorkBenchComponent`) and Equipment Workshop (`/Game/FactoryGame/Buildable/-Shared/WorkBench/BP_WorkshopComponent`) from being detected correctly by ContentLib. In the mean time, you can use the producer name `manual` (case sensitive) to add your Recipe to _every_ manual crafting station.
+Alternatively, your text editor's JSON Schema auto-suggest feature can auto-suggest some of the base game ones for you.
+The `_C` suffix is optional.
 
-I'm not really sure _why_ this works - McGalleon figured it out. This bandaid is not ideal, because it means every modded manual crafting station will also contain your recipe. I plan to add a warning message when it's used in the future. But it's a passable workaround for now.
-====
+=== Schematic Names
 
-Schematic names for HUB milestones will generally follow the format `Schematic_1-1`, but you can find out specific ones via the approaches described xref:Tutorials/FindAssetPath.adoc[here].
+Schematic names for HUB milestones will generally follow the format `Schematic_1-1`, but you can find out specific ones via the approaches described xref:Tutorials/FindAssetPath.adoc[in the Finding Assets tutorial].
 
 You can also create your own schematic to unlock the recipe by following the xref:Tutorials/CreateSchematic.adoc[Create a Schematic] tutorial.
 
@@ -150,6 +158,8 @@ Use the values you've selected and the example recipe above to create your recip
 There are a lot more fields you can use that this tutorial did not discuss.
 
 Check out the hover-tooltips and auto-suggested fields that the JSON schema provides to see some more possibilities.
+
+Watch out - if you're using fluids in your recipes, you need to multiply the item count by 1000. Learn more on the xref:Tutorials/FluidsInfo.adoc[Fluids] page.
 
 You can also out the xref:Features/Recipes.adoc[Recipe] page for more info.
 

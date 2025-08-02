@@ -47,12 +47,14 @@
         },
         "ProducedIn": {
             "type": "array",
-            "description": "Automatic name resolved asset. Machines/builders which this recipe can be used in. The examples are not an exhaustive list. Use 'manual' for all manual workbenches; this is a workaround and will be fixed in the future. See 'ClearBuilders' to append instead of replace.",
+            "description": "Automatic name resolved asset. Machines/builders which this recipe can be used in. The examples are not an exhaustive list, see game logs for a list of all detected producers. See 'ClearBuilders' to append instead of replace.",
             "uniqueItems": true,
             "items": {
                 "$ref": "./Components/CL_NameResolvedAsset.json",
                 "examples": [
-                    "manual",
+                    "BP_WorkBenchComponent",
+                    "BP_WorkshopComponent",
+                    "BP_ManualManufacturingComponent",
                     "Build_SmelterMk1",
                     "Build_ConstructorMk1",
                     "Build_AssemblerMk1",
@@ -68,14 +70,20 @@
                 ],
                 "allOf": [
                     {
-                        "$comment": "The `manual` workaround should be used instead of these (see the docs https://docs.ficsit.app/contentlib/latest/Tutorials/CreateRecipe.html).",
+                        "$comment": "The `manual` workaround is no longer needed, use the actual crafting component name.",
+                        "if": {
+                            "const": "manual"
+                        },
+                        "then": {
+                            "const": "<`manual` workaround no longer needed! Use BP_WorkBenchComponent or BP_WorkshopComponent instead!>"
+                        }
+                    },
+                    {
+                        "$comment": "[Crafting Bench] Manual crafting must use the crafting component name, not the build name.",
                         "if": {
                             "anyOf": [
                                 {
                                     "const": "FGWorkBench"
-                                },
-                                {
-                                    "const": "Build_Workshop"
                                 },
                                 {
                                     "const": "Build_WorkBench"
@@ -86,7 +94,16 @@
                             ]
                         },
                         "then": {
-                            "const": "manual"
+                            "const": "BP_WorkBenchComponent"
+                        }
+                    },
+                    {
+                        "$comment": "[Workshop] Manual crafting must use the crafting component name, not the build name.",
+                        "if": {
+                            "const": "Build_Workshop"
+                        },
+                        "then": {
+                            "const": "BP_WorkshopComponent"
                         }
                     }
                 ]
@@ -159,13 +176,21 @@
         {
             "$comment": "Manual and buildgun recipes should only have one product",
             "if": {
-                "required": ["ProducedIn"],
+                "required": [
+                    "ProducedIn"
+                ],
                 "properties": {
                     "ProducedIn": {
                         "contains": {
                             "anyOf": [
                                 {
-                                    "const": "manual"
+                                    "const": "BP_WorkBenchComponent"
+                                },
+                                {
+                                    "const": "BP_WorkshopComponent"
+                                },
+                                {
+                                    "const": "BP_ManualManufacturingComponent"
                                 },
                                 {
                                     "const": "BP_BuildGun"

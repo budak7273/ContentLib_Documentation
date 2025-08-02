@@ -64,7 +64,8 @@ Below is an example recipe and a screenshot of it within the Item Codex in game.
     ],
     "ManufacturingDuration": 1,
     "ProducedIn": [
-        "Build_ConstructorMk1"
+        "Build_ConstructorMk1",
+        "BP_WorkBenchComponent"
     ],
     "UnlockedBy": [
         "Schematic_1-1"

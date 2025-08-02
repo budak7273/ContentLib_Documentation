@@ -1,6 +1,6 @@
 {
     "$schema": "./../../CL_Recipe.json",
-    "$comment": "This fails because `manual` recipes should only have 1 product",
+    "$comment": "This fails because buildgun recipes should only have 1 product",
     "ProducedIn": [
         "Build_Blender",
         "BP_BuildGun"

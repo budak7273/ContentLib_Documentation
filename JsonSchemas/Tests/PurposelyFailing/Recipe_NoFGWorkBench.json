@@ -1,11 +1,10 @@
 {
     "$schema": "./../../CL_Recipe.json",
-    "$comment": "This fails because `manual` workaround should be used instead of FGWorkBench",
+    "$comment": "These fail because the crafting component name should be used instead",
     "ProducedIn": [
         "FGWorkBench",
         "Build_Workshop",
         "Build_WorkBench",
-        "Build_WorkBenchIntegrated",
-        "BP_BuildGun"
+        "Build_WorkBenchIntegrated"
     ]
 }

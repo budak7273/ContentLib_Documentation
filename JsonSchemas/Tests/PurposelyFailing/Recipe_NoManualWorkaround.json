@@ -1,0 +1,7 @@
+{
+    "$schema": "./../../CL_Recipe.json",
+    "$comment": "This fails because `manual` workaround is going to be removed eventually",
+    "ProducedIn": [
+        "manual"
+    ]
+}

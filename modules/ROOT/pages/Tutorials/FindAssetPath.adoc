@@ -89,7 +89,7 @@ You may also wish to get the https://ficsit.app/mod/NogsCheats[Nog's Cheats] mod
 You can use ContentInspector to browse game and mod assets while the game is running,
 in addition to other useful debugging features.
 
-Check out the xref:Tutorials/ContentInspector.adoc[Using ContentInspector] guide to set it up and 
+Check out the xref:Tutorials/ContentInspector.adoc[Using ContentInspector] guide to set it up and track down an example recipe asset.
 
 The path is usually obtainable by removing the text '`Default__`' from the value in the `JS_LibOuter` field,
 which is the Outer object which registered the asset. Remember that fields that start with `JS_` are not "real fields" on the object, they are extra info that ContentInspector adds for ease of viewing
