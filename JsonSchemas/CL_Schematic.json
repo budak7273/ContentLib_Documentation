@@ -117,6 +117,14 @@
                 "$ref": "./Components/CL_NameResolvedAsset.json"
             }
         },
+        "Schematics": {
+            "type": "array",
+            "description": "Automatic name resolved asset. Schematics to unlock when the schematic is purchased. Appended to the existing by default, use ClearSchematics to change this.",
+            "items": {
+                "minimum": 1,
+                "$ref": "./Components/CL_NameResolvedAsset.json"
+            }
+        },
         "ItemsToGive": {
             "type": "array",
             "description": "Items to give the player upon schematic purchase, only tested with Resource Sink (AWESOME Shop) schematics.",
@@ -136,6 +144,10 @@
         "ClearRecipes": {
             "type": "boolean",
             "description": "When true, the existing recipe unlocks of a schematic will be cleared. Used to wipe unlocked recipes, or entirely replace them with the entries in the Recipes field."
+        },
+        "ClearSchematics": {
+            "type": "boolean",
+            "description": "When true, the existing schematic unlocks of a schematic will be cleared. Used to wipe unlocked schematics, or entirely replace them with the entries in the Schematics field."
         },
         "ClearDeps": {
             "type": "boolean",

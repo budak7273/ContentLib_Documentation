@@ -144,7 +144,7 @@ Remember that Schematic Patches need to go in the correct xref:BackgroundInfo/Fo
 By default, schematic patches will only append unlocks and costs to what already exists,
 because this behavior provides the most compatibility with other mods.
 
-The ClearCost, ClearRecipes, and ClearDeps fields may be of use here.
+The ClearCost, ClearRecipes, ClearSchematics, and ClearDeps fields may be of use here.
 
 Here's an example schematic patch that also unlocks
 the 3 Turbofuel recipes at the same time as regular Fuel
@@ -190,6 +190,22 @@ Here's an example schematic patch from RePan that entirely replaces the recipe u
     ]
 }
 ```
+
+Schematics can also unlock other schematics.
+Here's an example schematic patch that will automatically unlock the "Charcoal" schematic when the "Biocoal" schematic is unlock:
+
+```json
+//Game/FactoryGame/Schematics/Alternate/Parts/Schematic_Alternate_Coal1.Schematic_Alternate_Coal1_C
+{
+    "$schema": "https://raw.githubusercontent.com/budak7273/ContentLib_Documentation/main/JsonSchemas/CL_Schematic.json",
+    "ClearSchematics": false,
+    "Schematics": [
+        "Schematic_Alternate_Coal2_C"
+    ]
+}
+```
+
+Note: This will not automatically work the otherway around, you would need to patch "Schematic_Alternate_Coal2" as well if that's the behavior you wanted.
 
 == Troubleshooting
 
