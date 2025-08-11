@@ -198,7 +198,6 @@ Here's an example schematic patch that will automatically unlock the "Charcoal" 
 //Game/FactoryGame/Schematics/Alternate/Parts/Schematic_Alternate_Coal1.Schematic_Alternate_Coal1_C
 {
     "$schema": "https://raw.githubusercontent.com/budak7273/ContentLib_Documentation/main/JsonSchemas/CL_Schematic.json",
-    "ClearSchematics": false,
     "Schematics": [
         "Schematic_Alternate_Coal2_C"
     ]
