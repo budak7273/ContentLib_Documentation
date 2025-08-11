@@ -119,7 +119,7 @@
         },
         "Schematics": {
             "type": "array",
-            "description": "Automatic name resolved asset. Schematics to unlock when the schematic is purchased. Appended to the existing by default, use ClearSchematics to change this.",
+            "description": "Automatic name resolved asset. Other schematics to unlock when the schematic is purchased. Note that these have *absolutely no visual representation within the game*, you will have to confirm their successful addition by testing, checking the logs, or using ContentInspector. Appended to the existing by default, use ClearSchematics to change this.",
             "items": {
                 "minimum": 1,
                 "$ref": "./Components/CL_NameResolvedAsset.json"
