@@ -5,6 +5,10 @@ a helpful template that both explains the structure of the file
 and allows your favorite editors to automatically check your syntax for you.
 The schema itself is human-readable, so you can also read it to learn about the supported fields.
 
+It's important to note that the JSON Schemas **do not control the behavior of ContentLib**
+and modifying them can't change what the ContentLib mod is capable of.
+It is a tool that helps you write valid JSON files that ContentLib can read.
+
 == How to Use a Schema
 
 A JSON schema is *not* a template you should copy-paste into an empty file to start off
@@ -15,11 +19,10 @@ and correctly set up editing software will perform some syntax checking,
 get field documentation on hover,
 and auto-suggestions (ex. when you press Ctrl-Space in Visual Studio Code).
 
-As an editor, you can use
-https://youtu.be/m30JiCuW42U[Visual Studio Code],
-https://www.jetbrains.com/help/idea/json.html#ws_json_schema_add_custom[any JetBrains editor],
-or more.
-Those links go to documentation on how to use schemas in said editors.
+Examples of using JSON Schemas in editors:
+
+- https://youtu.be/m30JiCuW42U[Visual Studio Code (YouTube video)],
+- https://www.jetbrains.com/help/idea/json.html#ws_json_schema_add_custom[JetBrains editor (documentation)],
 
 == ContentLib Schemas
 

@@ -39,7 +39,10 @@ You can use this behavior to hide schematics from display.
 
 == Examples
 
-Here is an example schematic from the RePan Oil mod: 
+=== RePan Oil Milestone
+
+Here is an example schematic from the RePan Oil mod.
+The visual kit it references is not included here for brevity.
 
 // cspell:ignore UREX
 ```json
@@ -65,5 +68,72 @@ Here is an example schematic from the RePan Oil mod:
     }
   ],
   "Recipes": [ "Recipe_CatalyticNitricAcid", "Recipe_PickledSteelIngots", "Recipe_PickledSteelBeam", "Recipe_BlowMoldedTank", "Recipe_EtchedBoards", "Recipe_ReprocessedUranium", "Recipe_UREXCells" ]
+}
+```
+
+=== Schematics Unlocking Other Schematics
+
+// cspell:ignore BlueBeka
+Here is an example from BlueBeka that uses the Schematic Unlock feature to hide the water unpackaging recipe from the user-visible milestone.
+It consists of 2 separate schematics.
+
+Note that the schematics' file names are numbered to ensure the hidden one is processed before the visible one to avoid [this bug](https://github.com/Nogg-aholic/ContentLib/issues/8).
+
+==== Visual Kit (`Kit_FluidPackaging`):
+
+The xref:Features/VisualKits.adoc[Visual Kit] used by the visible schematic.
+
+```json
+{
+  "$schema": "https://raw.githubusercontent.com/budak7273/ContentLib_Documentation/main/JsonSchemas/CL_VisualKit.json",
+  "BigIcon": "/Game/FactoryGame/Buildable/Factory/TradingPost/UI/SchematicIcons/TXUI_SIcon_ProductionPackager.TXUI_SIcon_ProductionPackager",
+  "SmallIcon": "/Game/FactoryGame/Buildable/Factory/TradingPost/UI/SchematicIcons/TXUI_SIcon_ProductionPackager.TXUI_SIcon_ProductionPackager"
+}
+```
+
+==== Hidden Schematic (`1Schematic_HUB_EarlyFluidPackaging_Extra`):
+
+The hidden unlock is of type `Custom`, meaning it is not displayed to the player anywhere.
+
+```json
+{
+  "$schema": "https://raw.githubusercontent.com/budak7273/ContentLib_Documentation/main/JsonSchemas/CL_Schematic.json",
+  "Name": "Fluid Packaging (Hidden)",
+  "Type": "Custom",
+  "Recipes": ["Recipe_UnpackageWater_C"]
+}
+```
+
+==== HUB Milestone (`2Schematic_HUB_EarlyFluidPackaging`):
+
+```json
+{
+  "$schema": "https://raw.githubusercontent.com/budak7273/ContentLib_Documentation/main/JsonSchemas/CL_Schematic.json",
+  "Name": "Fluid Packaging",
+  "VisualKit": "Kit_FluidPackaging",
+  "Type": "Milestone",
+  "Tier": 2,
+  "MenuPriority": 3,
+  "Time": 300,
+  "Cost": [
+    {
+      "Item": "Desc_IronPlateReinforced_C",
+      "Amount": 100
+    },
+    {
+      "Item": "Desc_Rotor_C",
+      "Amount": 50
+    },
+    {
+      "Item": "Desc_CopperSheet_C",
+      "Amount": 100
+    }
+  ],
+  "Recipes": [
+    "Recipe_Packager_C",
+    "Recipe_Alternate_CoatedIronCanister_C",
+    "Recipe_PackagedWater_C"
+  ],
+  "Schematics": ["1Schematic_HUB_EarlyFluidPackaging_Extra"]
 }
 ```

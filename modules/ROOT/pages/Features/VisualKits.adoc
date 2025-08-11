@@ -7,34 +7,31 @@ You can find a xref:Reference/JsonSchema.adoc[JSON Schema] for Visual Kits https
 
 _ContentLib_ introduces the concept of Visual Kits to prevent having to deal with long, verbose blueprint paths in Item and Schematic definitions.
 
-Visual Kits are automatically generated at Runtime for every pre-existing Item (including those from other mods) and can be accessed by using the ClassName of the item.
+Visual Kits are automatically generated at runtime for every pre-existing item and schematic (including those from other mods).
 
-You can also define your own Visual Kits using JSON files. In custom visual kits, you can re-use base game content, refer to content from other mods, or (in the case of icons only) use xref:Features/Icons.adoc[Icons] that have been loaded by ContentLib.
-
-All Visual Kit JSON files must start with the prefix `Kit_`.
-
-If you want to refer to the kit of an existing item,
-use its descriptor name, *with the `+_C+` suffix*,
+If you want to refer to the kit of existing content,
+use its asset name *with the `_C` suffix*,
 For example, `Desc_OreGold_C` resolves to the Caterium Ore kit,
-but `Desc_OreGold` resolves to the DefaultItemMesh (default)
+but `Desc_OreGold` does not resolve.
+`ResourceSink_CyberWagon_C` resolves to the Cyber Wagon AWESOME Shop unlock schematic.
 
+You can also define your own Visual Kits using JSON files.
+**All Visual Kit JSON files must start with the prefix `Kit_`.**
+In custom visual kits, you can re-use base game content, refer to content from other mods, or (in the case of icons only) use xref:Features/Icons.adoc[Icons] that have been loaded by ContentLib.
 For example, a custom kit file named `Kit_CustomWater.json` can be used in Item definitions via the name "Kit_CustomWater".
 
-Visual Kits are also used to specify the icons used by Schematics.
+All fields of a custom visual kit are optional.
+Schematic visual kits of course do not need to specify a mesh or colors since those are irrelevant to schematics.
 
 [WARNING]
 ====
 Remember that custom Visual Kits need to go in the correct xref:BackgroundInfo/FolderNames.adoc[Folder].
 ====
 
-All Fields are optional.
-
 == VisualKit Exporting
 
-Nog previously wrote a chat command for exporting the VisualKits of all loaded items to text files.
-This functionality still appears to be working, but it may have some bugs.
-
-You can attempt to use it via `/CLDumpVisualKits`, and it should output files to `FactoryGame/Mods/ContentLib/Configs/ItemVisualKits/DumpOutput/<KitName>.json` if it worked.
+A debugging chat command exists to export all loaded Visual Kits to JSON files for ease of viewing.
+Trigger it via `/CLDumpVisualKits`. It will output files to `FactoryGame/Mods/ContentLib/Output/VisualKits/DumpOutput/<KitName>.json`.
 
 == Schematic Visual Kit Example
 
