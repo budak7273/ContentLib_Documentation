@@ -126,6 +126,42 @@ Note that the base game implements this field is a single class field, so trying
 }
 ```
 
+=== Data Asset Modification
+
+This CDO Edit by McGalleon is used by Satisfactory Plus to edit a Data Asset that controls Refiner Power boiler behaviors.
+
+// cspell:ignore Datas
+```json
+{
+  "Class": "/SatisfactoryPlus/AssetDatas/RRD/RP/Boiler/PDA_SFP_Boiler_Mk1_Water.PDA_SFP_Boiler_Mk1_Water",
+  "Edits": [
+    {
+      "Property": "mInput",
+      "Value": {
+        "ItemClass": "/Game/FactoryGame/Resource/RawResources/Water/Desc_Water.Desc_Water_C",
+        "amount": 1500
+      }
+    },
+    {
+      "Property": "mOutput",
+      "Value": {
+        "ItemClass": "/KLib/Assets/Ressources/Raw/Gas/Desc_Gas_Steam_Hot.Desc_Gas_Steam_Hot_C",
+        "amount": 3000
+      }
+    },
+    {
+      "Property": "mDuration",
+      "Value": 6
+    },
+    {
+      "Property": "mPriority",
+      "Value": 1
+    }
+
+  ]
+}
+```
+
 === Drone Port Fuels
 
 This demonstrates the CDO feature's ability to work with arbitrary structs, to a degree.
