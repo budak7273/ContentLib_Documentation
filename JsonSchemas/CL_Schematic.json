@@ -123,7 +123,12 @@
             "items": {
                 "minimum": 1,
                 "$ref": "./Components/CL_NameResolvedAsset.json"
-            }
+            },
+            "examples": [
+                [
+                    "Schematic_Goat"
+                ]
+            ]
         },
         "ItemsToGive": {
             "type": "array",

@@ -1,0 +1,32 @@
+{
+    "$schema": "./../CL_Schematic.json",
+    "Name": "Goats and Fluid Packaging",
+    "VisualKit": "Schematic_5-4_C",
+    "Type": "Milestone",
+    "Tier": 2,
+    "MenuPriority": 3,
+    "Time": 300,
+    "Cost": [
+        {
+            "Item": "Desc_IronPlateReinforced_C",
+            "Amount": 100
+        },
+        {
+            "Item": "Desc_Rotor_C",
+            "Amount": 50
+        },
+        {
+            "Item": "Desc_CopperSheet_C",
+            "Amount": 100
+        }
+    ],
+    "Recipes": [
+        "Recipe_Packager_C",
+        "Recipe_Alternate_CoatedIronCanister_C",
+        "Recipe_PackagedWater_C"
+    ],
+    "$comment": "Should also unlock the goat tape",
+    "Schematics": [
+        "Schematic_Goat"
+    ]
+}
