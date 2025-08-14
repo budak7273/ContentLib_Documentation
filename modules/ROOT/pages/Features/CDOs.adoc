@@ -322,6 +322,35 @@ developed in link:https://discord.com/channels/555424930502541343/13019570885361
 }
 ```
 
+=== Curve Point Overwriting
+
+The points on curve assets can be overwritten with CDOs.
+Look at a curve asset with xref:Tutorials/ContentInspector.adoc[Content Inspector] to learn more about the structure of the data.
+// cspell:ignore BlueBeka
+This example from BlueBeka makes Portals consume fewer Singularity Cells per minute (0.25 instead of 2)
+Unfortunately the CDO edit feature's implementation does not allow modifying specific keys or appending new keys -
+you must replace the entire array.
+For this particular curve, that doesn't matter, as the curve only has one key.
+
+```json
+{
+  "$schema": "https://raw.githubusercontent.com/budak7273/ContentLib_Documentation/main/JsonSchemas/CL_CDO.json",
+  "Class": "/Game/FactoryGame/Buildable/Factory/Portal/Curves/Curve_PortalFuelConsumption.Curve_PortalFuelConsumption",
+  "Edits": [
+    {
+      "Property": "FloatCurve",
+      "Value": {
+        "Keys": [
+          {
+            "Value": 0.25
+          }
+        ]
+      }
+    }
+  ]
+}
+```
+
 === Recipe Ingredients Quantity Change
 
 You should use Recipe Patches instead of CDOs for this; this is just a proof of concept.
