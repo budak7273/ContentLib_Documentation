@@ -128,7 +128,7 @@ Note that the base game implements this field is a single class field, so trying
 
 === Data Asset Modification
 
-This CDO Edit by McGalleon is used by Satisfactory Plus to edit a Data Asset that controls Refiner Power boiler behaviors.
+This CDO Edit by McGalleon is used by Satisfactory Plus to edit a Data Asset that controls Refined Power boiler behaviors.
 
 // cspell:ignore Datas
 ```json
