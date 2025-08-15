@@ -144,7 +144,7 @@ Remember that Schematic Patches need to go in the correct xref:BackgroundInfo/Fo
 By default, schematic patches will only append unlocks and costs to what already exists,
 because this behavior provides the most compatibility with other mods.
 
-The ClearCost, ClearRecipes, ClearSchematics, and ClearDeps fields may be of use here.
+The ClearCost, ClearRecipes, ClearSchematics, ClearScannableResources, and ClearDeps fields may be of use here.
 
 Here's an example schematic patch that also unlocks
 the 3 Turbofuel recipes at the same time as regular Fuel
@@ -209,6 +209,25 @@ it simply adds an additional possible way to unlock it.
 However, since `Schematic_Alternate_Coal2_C` is of type Alternate and this patch causes it to be unlocked,
 `Schematic_Alternate_Coal2_C` will be removed from the alternate pool upon unlocking `Schematic_Alternate_Coal1_C`.
 Unless there was already an unclaimed hard drive with `Schematic_Alternate_Coal2_C`, in which case selecting it would give you nothing new.
+
+To unlock scannable resources, you can use the `ScannableResources` field.
+Simply specific the resource you want to unlock and the type of node that should be scanned for.
+Here's an example schematic patch that unlocks the "Uranium" schematic when the "Biocoal" schematic is unlock:
+
+```json
+//Game/FactoryGame/Schematics/Progression/Schematic_5-1.Schematic_5-1_C
+{
+    "$schema": "https://raw.githubusercontent.com/budak7273/ContentLib_Documentation/main/JsonSchemas/CL_Schematic.json",
+    "ScannableResources": [
+        {
+            "Resource": "Desc_LiquidOil_C",
+            "NodeType": "FrackingCore"
+        }
+    ]
+}
+```
+
+To unlock geysers, use `Geyser` as the node type and `Desc_Geyser_C` as the resource.
 
 == Troubleshooting
 
