@@ -1,0 +1,11 @@
+//Game/FactoryGame/Schematics/Progression/Schematic_3-1.Schematic_3-1_C
+{
+    "$schema": "./../CL_Schematic.json",
+    "ClearScannableResources": true,
+    "ScannableResources": [
+        {
+            "Resource": "Desc_OreGold_C",
+            "NodeType": "Node"
+        }
+    ]
+}

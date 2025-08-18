@@ -4,6 +4,7 @@
     "Type": "Milestone",
     "Tier": 1,
     "MenuPriority": 10,
+    "VisualKit": "Schematic_1-3_C",
     "Time": 300,
     "Cost": [
         {

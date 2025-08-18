@@ -40,10 +40,11 @@
         },
         "VisualKit": {
             "type": "string",
-            "description": "Name of the Visual Kit to use. If you want to refer to the kit of an existing asset, use its descriptor name, with the _C suffix. TODO test if base-game schematics get kits genned?",
+            "description": "Name of the Visual Kit to use. If you want to refer to the kit of an existing asset, use its descriptor name, with the _C suffix.",
             "examples": [
-                "Desc_OreGold_C",
-                "Desc_Water_C",
+                "Schematic_Tutorial5_C",
+                "Schematic_1-3_C",
+                "Schematic_2-1_C",
                 "Kit_MyCustomVisualKitName"
             ]
         },
