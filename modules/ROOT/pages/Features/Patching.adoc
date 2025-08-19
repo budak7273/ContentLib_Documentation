@@ -227,7 +227,7 @@ Here's an example schematic patch that unlocks the "Uranium" schematic when the 
 }
 ```
 
-To unlock geysers, use `Geyser` as the node type and `Desc_Geyser_C` as the resource.
+To unlock geyser scanning, use `Geyser` as the node type and `Desc_Geyser_C` as the resource.
 
 == Troubleshooting
 
