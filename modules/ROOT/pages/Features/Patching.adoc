@@ -212,7 +212,7 @@ Unless there was already an unclaimed hard drive with `Schematic_Alternate_Coal2
 
 To unlock scannable resources, you can use the `ScannableResources` field.
 Simply specific the resource you want to unlock and the type of node that should be scanned for.
-Here's an example schematic patch that unlocks the "Uranium" schematic when the "Biocoal" schematic is unlock:
+Here's an example schematic patch that adds the ability to scan for Sulfur Nodes to the "Oil Processing" milestone in Tier 5:
 
 ```json
 //Game/FactoryGame/Schematics/Progression/Schematic_5-1.Schematic_5-1_C
@@ -220,8 +220,8 @@ Here's an example schematic patch that unlocks the "Uranium" schematic when the 
     "$schema": "https://raw.githubusercontent.com/budak7273/ContentLib_Documentation/main/JsonSchemas/CL_Schematic.json",
     "ScannableResources": [
         {
-            "Resource": "Desc_LiquidOil_C",
-            "NodeType": "FrackingCore"
+            "Resource": "Desc_Sulfur_C",
+            "NodeType": "Node"
         }
     ]
 }
