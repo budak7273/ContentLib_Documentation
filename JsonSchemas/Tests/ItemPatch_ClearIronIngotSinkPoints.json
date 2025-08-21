@@ -1,0 +1,7 @@
+//Game/FactoryGame/Resource/Parts/IronIngot/Desc_IronIngot.Desc_IronIngot_C
+{
+    "$schema": "./../CL_Item.json",
+    "$comment": "This changes Iron Ingots to give 0 points, clearing them from the track",
+    "ResourceSinkPoints": 0,
+    "ResourceSinkTrack": "Exploration"
+}

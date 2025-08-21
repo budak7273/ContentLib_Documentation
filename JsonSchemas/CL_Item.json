@@ -80,6 +80,14 @@
             "description": "How many points this item is worth when shredded in the AWESOME Sink",
             "$comment": "TODO Does this work?"
         },
+        "ResourceSinkTrack": {
+            "type": "string",
+            "description": "The track this item should be assigned to in the AWESOME Sink. Only meaningful if the item also has ResourceSinkPoints. In the base game, only Alien DNA cans are on the Exploration track. Defaults to 'Default' if unspecified.",
+            "enum": [
+                "Default",
+                "Exploration"
+            ]
+        },
         "ResourceItem": {
             "type": "object",
             "description": "Including this field will treat the item as an FGResourceDescriptor, which is typically used for mineable resources.",

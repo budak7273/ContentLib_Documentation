@@ -1,0 +1,6 @@
+//Game/FactoryGame/Resource/Parts/AluminumIngot/Desc_AluminumIngot.Desc_AluminumIngot_C
+{
+    "$schema": "./../CL_Item.json",
+    "$comment": "This changes Aluminum Ingots to give the same amount of points, but in Exploration",
+    "ResourceSinkTrack": "Exploration"
+}
