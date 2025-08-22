@@ -1,0 +1,41 @@
+{
+    "$schema": "./../CL_Schematic.json",
+    "Name": "Uranium Gold",
+    "Type": "Milestone",
+    "Tier": 1,
+    "MenuPriority": 10,
+    "VisualKit": "Schematic_1-3_C",
+    "Time": 300,
+    "Cost": [
+        {
+            "Item": "Desc_OreUranium_C",
+            "Amount": 50
+        },
+        {
+            "Item": "Desc_OreGold_C",
+            "Amount": 50
+        }
+    ],
+    "ScannableResources": [
+        {
+            "Resource": "Desc_OreUranium_C",
+            "NodeType": "Node"
+        },
+        {
+            "Resource": "Desc_OreGold_C",
+            "NodeType": "Node"
+        },
+        {
+            "Resource": "Desc_LiquidOil_C",
+            "NodeType": "FrackingCore"
+        },
+        {
+            "Resource": "Desc_NitrogenGas_C",
+            "NodeType": "FrackingSatellite"
+        },
+        {
+            "Resource": "Desc_Geyser_C",
+            "NodeType": "Geyser"
+        }
+    ]
+}

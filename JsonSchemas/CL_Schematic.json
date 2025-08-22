@@ -40,10 +40,11 @@
         },
         "VisualKit": {
             "type": "string",
-            "description": "Name of the Visual Kit to use. If you want to refer to the kit of an existing asset, use its descriptor name, with the _C suffix. TODO test if base-game schematics get kits genned?",
+            "description": "Name of the Visual Kit to use. If you want to refer to the kit of an existing asset, use its descriptor name, with the _C suffix.",
             "examples": [
-                "Desc_OreGold_C",
-                "Desc_Water_C",
+                "Schematic_Tutorial5_C",
+                "Schematic_1-3_C",
+                "Schematic_2-1_C",
                 "Kit_MyCustomVisualKitName"
             ]
         },
@@ -130,6 +131,42 @@
                 ]
             ]
         },
+        "ScannableResources": {
+            "type": "array",
+            "description": "Scannable Resourcess to unlock when the schematic is purchased. Appended to the existing by default, use ClearScannableResources to change this.",
+            "items": {
+                "minimum": 1,
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                    "Resource",
+                    "NodeType"
+                ],
+                "properties": {
+                    "Resource": {
+                        "$ref": "./Components/CL_NameResolvedAsset.json"
+                    },
+                    "NodeType": {
+                        "type": "string",
+                        "enum": [
+                            "Node",
+                            "FrackingSatellite",
+                            "FrackingCore",
+                            "Geyser"
+                        ],
+                        "description": "What type of node should be scanned for."
+                    }
+                }
+            },
+            "examples": [
+                [
+                    {
+                        "Resource": "Desc_OreGold_C",
+                        "NodeType": "Node"
+                    }
+                ]
+            ]
+        },
         "ItemsToGive": {
             "type": "array",
             "description": "Items to give the player upon schematic purchase, only tested with Resource Sink (AWESOME Shop) schematics.",
@@ -153,6 +190,10 @@
         "ClearSchematics": {
             "type": "boolean",
             "description": "When true, the existing schematic unlocks of a schematic will be cleared. Used to wipe unlocked schematics, or entirely replace them with the entries in the Schematics field."
+        },
+        "ClearScannableResources": {
+            "type": "boolean",
+            "description": "When true, the existing scannable resource unlocks of a schematic will be cleared. Used to wipe unlocked scannable resource, or entirely replace them with the entries in the ScannableResources field."
         },
         "ClearDeps": {
             "type": "boolean",
