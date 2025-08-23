@@ -1,0 +1,7 @@
+//Game/FactoryGame/Prototype/WAT/Desc_WAT1.Desc_WAT1_C
+{
+    "$schema": "./../CL_Item.json",
+    "$comment": "This tries to clear Somersloops from the track - they already aren't there. Should produce log message `Skipping removing item Desc_WAT1_C from sink track 'Exploration' because it wasn't there`",
+    "ResourceSinkPoints": 0,
+    "ResourceSinkTrack": "Exploration"
+}

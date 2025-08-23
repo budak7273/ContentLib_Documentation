@@ -1,0 +1,6 @@
+//Game/FactoryGame/Prototype/WAT/Desc_WAT1.Desc_WAT1_C
+{
+    "$schema": "./../CL_Item.json",
+    "$comment": "This tries to set Somersloop to the export fail message track",
+    "ResourceSinkTrack": "Sink Track Export Currently Unsupported"
+}

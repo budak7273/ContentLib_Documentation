@@ -1,0 +1,6 @@
+//Game/FactoryGame/Resource/Parts/GoldIngot/Desc_GoldIngot.Desc_GoldIngot_C
+{
+    "$schema": "./../CL_Item.json",
+    "$comment": "This changes Caterium Ingots points value while keeping them on the same track",
+    "ResourceSinkPoints": 420
+}
