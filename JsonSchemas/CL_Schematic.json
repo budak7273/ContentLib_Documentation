@@ -97,7 +97,7 @@
         },
         "Tier": {
             "type": "integer",
-            "description": "The numeric tier the schematic is sorted into in the HUB. Unknown if this affects other types of schematic.",
+            "description": "The numeric tier the schematic is sorted into in the HUB. If in the AWESOME Shop (type `ResourceSink`), then this tier must be open to purchase the item, although the game UI does not communicate this. Unknown if this affects other types of schematic.",
             "minimum": 0
         },
         "InventorySlotsToGive": {
