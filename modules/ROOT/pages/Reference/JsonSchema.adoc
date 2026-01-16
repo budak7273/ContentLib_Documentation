@@ -19,7 +19,9 @@ and correctly set up editing software will perform some syntax checking,
 get field documentation on hover,
 and auto-suggestions (ex. when you press Ctrl-Space in Visual Studio Code).
 
-Examples of using JSON Schemas in editors:
+The xref:Tutorials/Setup.adoc[Setup Tutorial] provides a list of some editors known to support JSON Schemas.
+
+Examples of the user experience when using JSON Schemas in editors:
 
 - https://youtu.be/m30JiCuW42U[Visual Studio Code (YouTube video)],
 - https://www.jetbrains.com/help/idea/json.html#ws_json_schema_add_custom[JetBrains editor (documentation)],

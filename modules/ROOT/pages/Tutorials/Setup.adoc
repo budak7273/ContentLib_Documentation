@@ -20,7 +20,34 @@ Get a text editor that supports xref:Reference/JsonSchema.adoc[JSON Schemas],
 or you can use the https://vscode.dev/[VSCode web editor]
 if you don't want to download anything.
 
-If you do this, you will reap the following benefits:
+.Common Text Editors with JSON Schema Support Information
+[cols="1,2,4a"]
+|===
+| Works? | Editor Name | Notes
+
+| ✔️ | link:https://code.visualstudio.com/Download[Visual Studio Code]
+| Flexible modern text editor
+Video demo: link:https://youtu.be/m30JiCuW42U[📹 YouTube video]
+
+| ✔️ | link:https://vscode.dev/[vscode.dev]
+| Web version of Visual Studio Code, no downloads needed.
+
+| ✔️ | JetBrains IDEs (e.g. link:https://www.jetbrains.com/rider/[Rider])
+| All JetBrains IDEs support JSON Schemas.
+See https://www.jetbrains.com/help/idea/json.html#ws_json_schema_add_custom[the JetBrains documentation].
+
+| ❌ | Windows Notepad
+| No JSON Schema support.
+
+| ❌ | Notepad++
+| A great text editor, but no JSON Schema support.
+
+| ❌ | Word/WordPad
+| Do not use a word processor for editing code.
+
+|===
+
+If you use a good editor with JSON schema support, you will reap the following benefits:
 
 - The editor will automatically check JSON syntax for you (~50% of errors people make with ContentLib are this)
 - You can hover over any part of the JSON and the editor will explain its purpose for you
