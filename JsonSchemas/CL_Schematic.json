@@ -223,6 +223,37 @@
                     }
                 }
             }
+        },
+        {
+            "$comment": "ItemsToGive only known to work with Type: ResourceSink, so require it to be present if ItemsToGive is used. Not sure why JSON schema logic requires me to write it this way, but it does.",
+            "oneOf": [
+                {
+                    "$comment": "Either ItemsToGive is not present, so it passes...",
+                    "not": {
+                        "required": [
+                            "ItemsToGive"
+                        ]
+                    }
+                },
+                {
+                    "$comment": "... or ItemsToGive is present, and Type is also present, and must be set to ResourceSink for this rule to pass.",
+                    "allOf": [
+                        {
+                            "required": [
+                                "ItemsToGive",
+                                "Type"
+                            ]
+                        },
+                        {
+                            "properties": {
+                                "Type": {
+                                    "const": "ResourceSink"
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
         }
     ],
     "patternProperties": {
