@@ -145,11 +145,17 @@
         },
         "VariablePowerConsumptionFactor": {
             "type": "number",
-            "description": "Only works in variable consumption machines (the Particle Accelerator in base game). Added to the VariablePowerConsumptionFactor to get the 'maximum' power consumption the recipe can scale up to over its cycle."
+            "description": "Only works in variable consumption machines (the Particle Accelerator, Converter, and Quantum Encoder in base game). Added to the VariablePowerConsumptionFactor to get the 'maximum' power consumption in MW the recipe can scale up to over its cycle.",
+            "examples": [
+                300
+            ]
         },
         "VariablePowerConsumptionConstant": {
             "type": "number",
-            "description": "Only works in variable consumption machines (the Particle Accelerator in base game). The 'minimum' power consumption the recipe can scale down to over its cycle."
+            "description": "Only works in variable consumption machines (the Particle Accelerator, Converter, and Quantum Encoder in base game). The 'minimum' power consumption in MW the recipe can scale down to over its cycle.",
+            "examples": [
+                100
+            ]
         },
         "ManufacturingMenuPriority": {
             "type": "number",

@@ -1,0 +1,30 @@
+{
+    "$schema": "./../CL_Recipe.json",
+    "$comment": "Example of using a Variable Power Consumption machine.",
+    "Name": "Crystal Mutation",
+    "Ingredients": [
+        {
+            "Item": "Desc_RawQuartz",
+            "Amount": 16
+        },
+        {
+            "Item": "Desc_Water",
+            "Amount": 4800
+        }
+    ],
+    "Products": [
+        {
+            "Item": "Desc_Diamond",
+            "Amount": 20
+        }
+    ],
+    "ManufacturingDuration": 8,
+    "VariablePowerConsumptionConstant": 100,
+    "VariablePowerConsumptionFactor": 300,
+    "ProducedIn": [
+        "Build_HadronCollider"
+    ],
+    "UnlockedBy": [
+        "Schematic_1-1"
+    ]
+}
