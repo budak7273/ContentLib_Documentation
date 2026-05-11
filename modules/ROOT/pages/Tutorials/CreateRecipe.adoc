@@ -170,7 +170,10 @@ Make sure to read the xref:Tutorials/Troubleshooting.adoc[Troubleshooting] page.
 * Nothing showing up at all in the logs
   ** Make sure your recipes are in the `FactoryGame/Configs/ContentLib/Recipes` directory.
 * `Wrong Naming Convention ! "Recipe" expected followed by a Name`
-  ** Your recipe file should be names like this: `Recipe_YourNameHere.json`
-* Item not showing up in-game
+  ** Your recipe file should be named like this: `Recipe_YourNameHere.json`
+* Recipe not showing up in-game
   ** Did you give your Item or Recipe a Category? If not, it will only show up when searched for.
+  ** Have you unlocked the schematic (or other source) responsible for granting access to the recipe?
   ** This could be the fault of the item, or the custom recipe you made to grant it. Check the logs as described on the Troubleshooting page.
+* Selecting the recipe in a machine immediately clears the machine's selected recipe or shows UNDEF item names
+  ** Make the sure the machine has the enough input/output ports for the Form of ingredients and products you defined. Machines without fluid ports can't use fluids, for example.
