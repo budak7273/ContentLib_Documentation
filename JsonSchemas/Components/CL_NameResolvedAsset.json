@@ -1,5 +1,5 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "https://raw.githubusercontent.com/budak7273/ContentLib_Documentation/main/JsonSchemas/CL_NameResolvedAsset.json",
     "title": "ContentLib Name Resolved Asset",
     "description": "An asset that can be specified either with a full path, or a shortened name for ContentLib to resolve. See more info here: https://docs-dev.ficsit.app/contentlib/latest/BackgroundInfo/AutomaticNameResolving.html",

@@ -1,5 +1,5 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "https://raw.githubusercontent.com/budak7273/ContentLib_Documentation/main/JsonSchemas/CL_Schematic.json",
     "title": "ContentLib Schematic",
     "description": "ContentLib Schematic struct definitions can be made from this JSON, and when converted to JSON, will follow this form.",
