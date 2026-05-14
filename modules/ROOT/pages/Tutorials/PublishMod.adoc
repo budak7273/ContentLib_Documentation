@@ -3,6 +3,8 @@
 This page explains how to publish ContentLib scripts you have created as mod for others to use
 by uploading them as a mod to the Satisfactory Mod Repository (ficsit.app).
 
+Make sure you have tested your mod locally to ensure it behaves as you intended before proceeding.
+
 == Prepare your Files
 
 === Plugin Skeleton
@@ -18,7 +20,7 @@ xref:Tutorials/Setup.adoc[Setup document]
 or your mod won't do anything!
 If you used the skeleton, it should already depend on ContentLib.
 
-=== Supporting Dedicated Servers
+=== Assemble the Multi-Target Zip File
 
 The mod repository expects mods to be uploaded in a certain structure
 to indicate which sets of files are for which platform (the game client versus dedicated servers).
@@ -49,10 +51,15 @@ https://docs.ficsit.app/satisfactory-modding/latest/UploadToSMR.html[main moddin
 to achieve this.
 Stop reading that page when you get to the "Package your Mod" section because you already did that in the "Prepare your Files" step.
 
+Make sure to include at least one screenshot or people will be sad!
+
 == Upload to SMR
 
 Once you're ready to upload,
 go to your mod's page on ficsit.app and select `New Version`.
+
+=== Select the Zip File
+
 Upload the multi-target zip file you created in the "Supporting Dedicated Servers" step.
 If everything is correct the page will show text similar to the following:
 
@@ -70,10 +77,34 @@ SML: ^3.8.0
 ContentLib: ^1.0.0
 ```
 
+If any warnings or errors are shown,
+attempt to follow any changes they propose
+and make sure you followed the file preparation steps above.
+
+=== Write a Changelog
+
 Next, write a changelog for your mod.
+People will read this to understand what you changed and why they should download the new update.
 The first few lines of the changelog will be shown as a summary in the modding discord's #mod-updates channel.
 
 If this is your first version upload,
 consider reusing the text of your mod page for the changelog.
 
+=== Submit
+
 Once you're ready, press "Create" and your mod should be live shortly!
+It's a good idea to test downloading the mod with the Satisfactory Mod Manager now that you've published it
+to make sure everything is in working order.
+
+You'll have to temporarily move the files you've been testing with locally out to another folder,
+and/or out of your ContentLib Configs folder,
+to make sure they don't interfere with the mod files that SMM downloads.
+
+== Uploading Updates
+
+To upload additional versions of your mod,
+you will need to increase the relevant version numbers in your uplugin,
+and repeat the above steps to assemble the multi-target zip file.
+
+Learn about what version numbers you need to change, and what these fields mean,
+link:https://docs.ficsit.app/satisfactory-modding/latest/Development/BeginnersGuide/ReleaseMod.html#_default_fields[on the main modding documentation].
