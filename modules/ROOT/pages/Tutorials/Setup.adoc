@@ -26,7 +26,7 @@ if you don't want to download anything.
 | Works? | Editor Name | Notes
 
 | ✔️ | link:https://code.visualstudio.com/Download[Visual Studio Code]
-| Flexible modern text editor
+| Flexible modern text editor.
 Video demo: link:https://youtu.be/m30JiCuW42U[📹 YouTube video]
 
 | ✔️ | link:https://vscode.dev/[vscode.dev]
