@@ -1,5 +1,5 @@
 {
-    "$schema": "https://raw.githubusercontent.com/budak7273/ContentLib_Documentation/main/JsonSchemas/CL_Item.json",
+    "$schema": "./../CL_Item.json",
     "$comment": "Comment lines will be ignored by the mod, and are a good place to leave yourself notes.",
     "Name": "My Custom Item",
     "VisualKit": "Desc_OreGold_C",

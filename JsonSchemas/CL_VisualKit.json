@@ -6,13 +6,31 @@
     "$comment": "This is NOT a copy-paste template! Check the docs to see how to use this! https://docs.ficsit.app/contentlib/latest/index.html",
     "type": "object",
     "additionalProperties": false,
+    "$defs": {
+        "UnrealPath": {
+            "$anchor": "UnrealPath",
+            "$comment": "Regex that matches Unreal paths to the precision we care about. https://regex101.com/r/x0imyc/1/unit-tests",
+            "pattern": "^\\/[\\w\\-\\\\\/\\.]*$"
+        },
+        "FileName": {
+            "$anchor": "FileName",
+            "$comment": "Regex that loosely matches file names to the precision we care about. https://regex101.com/r/CGy1Tp/2/unit-tests",
+            "allOf": [
+                {
+                    "pattern": "^[\\w\\-\\.]*?[^\\.][^p][^n][^g]$"
+                }
+            ]
+        }
+    },
     "properties": {
         "Mesh": {
             "type": "string",
-            "description": "Full asset path to the Mesh for dropped item and belt display. The path must be inside a packaged mod or the base game",
+            "description": "Full asset path to the Mesh for dropped item and belt display. The path MUST be to an asset inside a packaged mod or the base game.",
             "examples": [
                 "/Game/FactoryGame/Resource/Parts/PackagedWater/SM_PackedWater_01.SM_PackedWater_01"
-            ]
+            ],
+            "minLength": 1,
+            "$ref": "#UnrealPath"
         },
         "BigIcon": {
             "type": "string",
@@ -20,6 +38,15 @@
             "examples": [
                 "/Game/FactoryGame/Resource/RawResources/Water/UI/LiquidWater_Pipe_512.LiquidWater_Pipe_512",
                 "MyIconName_512"
+            ],
+            "minLength": 1,
+            "oneOf": [
+                {
+                    "$ref": "#UnrealPath"
+                },
+                {
+                    "$ref": "#FileName"
+                }
             ]
         },
         "SmallIcon": {
@@ -28,6 +55,15 @@
             "examples": [
                 "/Game/FactoryGame/Resource/RawResources/Water/UI/LiquidWater_Pipe_256.LiquidWater_Pipe_256",
                 "MyIconName_256"
+            ],
+            "minLength": 1,
+            "oneOf": [
+                {
+                    "$ref": "#UnrealPath"
+                },
+                {
+                    "$ref": "#FileName"
+                }
             ]
         },
         "FluidColor": {
