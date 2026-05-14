@@ -1,5 +1,5 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "https://raw.githubusercontent.com/budak7273/ContentLib_Documentation/main/JsonSchemas/CL_CDO.json",
     "title": "ContentLib Class Default Override",
     "description": "ContentLib CDO struct definitions can be made from this JSON, and when converted to JSON, will follow this form.",
@@ -20,40 +20,41 @@
         "Edits": {
             "type": "array",
             "description": "Property and value groupings controlling what fields on the class to overwrite.",
-            "items": [
-                {
-                    "type": "object",
-                    "additionalProperties": false,
-                    "properties": {
-                        "Property": {
-                            "type": "string",
-                            "minLength": 1,
-                            "description": "Exact case sensitive name of the field on the class to modify. Field must be a type supported by UCLCDOBPFLib::EditCDO, see here: https://github.com/Nogg-aholic/ContentLib/blob/master/Source/ContentLib/Private/CLCDOBPFLib.cpp"
-                        },
-                        "Value": {
-                            "type": [
-                                "object",
-                                "string",
-                                "number",
-                                "array",
-                                "boolean"
-                            ],
-                            "description": "Value to replace the field's original value with. Type and syntax varies depending on the type of the field."
-                        }
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Property": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "Exact case sensitive name of the field on the class to modify. Field must be a type supported by UCLCDOBPFLib::EditCDO, see here: https://github.com/Nogg-aholic/ContentLib/blob/master/Source/ContentLib/Private/CLCDOBPFLib.cpp"
                     },
-                    "patternProperties": {
-                        "schema": {
-                            "$comment": "Allow the $schema line in files",
-                            "type": "string"
-                        },
-                        "comment": {
-                            "$comment": "Allow the $comment line in files",
-                            "type": "string"
-                        }
+                    "Value": {
+                        "type": [
+                            "object",
+                            "string",
+                            "number",
+                            "array",
+                            "boolean"
+                        ],
+                        "description": "Value to replace the field's original value with. Type and syntax varies depending on the type of the field."
+                    }
+                },
+                "patternProperties": {
+                    "schema": {
+                        "$comment": "Allow the $schema line in files",
+                        "type": "string"
                     },
-                    "required": ["Property", "Value"]
-                }
-            ]
+                    "comment": {
+                        "$comment": "Allow the $comment line in files",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Property",
+                    "Value"
+                ]
+            }
         }
     },
     "required": [
