@@ -1,0 +1,18 @@
+{
+    "$schema": "./../CL_Schematic.json",
+    "Name": "My Custom Milestone",
+    "Type": "Milestone",
+    "Tier": 1,
+    "VisualKit": "Desc_OreGold_C",
+    "MenuPriority": 42.0,
+    "Time": 60,
+    "Cost": [
+        {
+            "Item": "Desc_Leaves",
+            "Amount": 10
+        }
+    ],
+    "Recipes": [
+        "Recipe_Packager_C"
+    ]
+}

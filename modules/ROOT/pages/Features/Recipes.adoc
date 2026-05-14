@@ -46,6 +46,8 @@ and that ProducedIn should be `BP_BuildGun`.
 
 Below is an example recipe and a screenshot of it within the Item Codex in game.
 
+`Recipe_CustomBiofuel.json`
+
 ```json
 {
     "$schema": "https://raw.githubusercontent.com/budak7273/ContentLib_Documentation/main/JsonSchemas/CL_Recipe.json",
@@ -78,6 +80,8 @@ image:https://i.imgur.com/ZUl6Mc5.png[Recipe]
 === Complex Recipe
 
 Here's an example recipe for the Blender made by McGalleon.
+
+`Recipe_SyntheticCrystal.json`
 
 ```json
 {

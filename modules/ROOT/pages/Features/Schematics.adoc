@@ -20,6 +20,8 @@ You may find it beneficial to add further detail in the prefix, such as `Schemat
 - The `Type` field determines where the schematic will be available for purchase.
   - Note that custom MAM nodes require custom Research Trees to be established as well. ContentLib research tree support exists but is undocumented and has not been tested for a long time.
 - AWESOME Shop Schematics without Categories are invisible unless searched for (read more in 'Notable Features')
+- A base-game bug causes HUB Milestones without icons to display improperly,
+  so if you're creating a new HUB milestone, you should always give it an icon by specifying a xref:Features/VisualKits.adoc[VisualKit].
 
 == Notable Features
 
@@ -39,10 +41,42 @@ You can use this behavior to hide schematics from display.
 
 == Examples
 
-=== RePan Oil Milestone
+=== Basic HUB Milestone
+
+A HUB Milestone that unlocks the Packager recipe in Tier 1.
+If you've created your own recipes you want it to unlock,
+list them by their JSON file name in the `Recipes` property,
+for example, `Recipe_CustomBiofuel`.
+
+`Schematic_SimpleMilestone.json`
+
+```json
+{
+  "$schema": "https://raw.githubusercontent.com/budak7273/ContentLib_Documentation/main/JsonSchemas/CL_Schematic.json",
+  "Name": "My Custom Milestone",
+  "Type": "Milestone",
+  "Tier": 1,
+  "VisualKit": "Desc_OreGold_C",
+  "MenuPriority": 42.0,
+  "Time": 60,
+  "Cost": [
+    {
+      "Item": "Desc_Leaves",
+      "Amount": 10
+    }
+  ],
+  "Recipes": [
+    "Recipe_Packager_C"
+  ]
+}
+```
+
+=== RePan Oil HUB Milestone
 
 Here is an example schematic from the RePan Oil mod.
 The visual kit it references is not included here for brevity.
+
+`Schematic_RePanAcid.json`
 
 // cspell:ignore UREX
 ```json
@@ -77,9 +111,9 @@ The visual kit it references is not included here for brevity.
 Here is an example from BlueBeka that uses the Schematic Unlock feature to hide the water unpackaging recipe from the user-visible milestone.
 It consists of 2 separate schematics.
 
-Note that the schematics' file names are numbered to ensure the hidden one is processed before the visible one to avoid [this bug](https://github.com/Nogg-aholic/ContentLib/issues/8).
+Notice that the schematics' file names are numbered to ensure the hidden one is processed before the visible one to avoid link:https://github.com/Nogg-aholic/ContentLib/issues/8[this bug].
 
-==== Visual Kit (`Kit_FluidPackaging`):
+==== Visual Kit (`Kit_FluidPackaging.json`):
 
 The xref:Features/VisualKits.adoc[Visual Kit] used by the visible schematic.
 
@@ -91,7 +125,7 @@ The xref:Features/VisualKits.adoc[Visual Kit] used by the visible schematic.
 }
 ```
 
-==== Hidden Schematic (`1Schematic_HUB_EarlyFluidPackaging_Extra`):
+==== Hidden Schematic (`1Schematic_HUB_EarlyFluidPackaging_Extra.json`):
 
 The hidden unlock is of type `Custom`, meaning it is not displayed to the player anywhere.
 
@@ -104,7 +138,7 @@ The hidden unlock is of type `Custom`, meaning it is not displayed to the player
 }
 ```
 
-==== HUB Milestone (`2Schematic_HUB_EarlyFluidPackaging`):
+==== HUB Milestone (`2Schematic_HUB_EarlyFluidPackaging.json`):
 
 ```json
 {
