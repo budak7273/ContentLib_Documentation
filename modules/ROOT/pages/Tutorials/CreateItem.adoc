@@ -32,7 +32,7 @@ We'll use it as a template to make our own item from.
 }
 ```
 
-image:https://i.imgur.com/T7OC3vq.jpg[Item In Game]
+image:Tutorials/Item_ScreenshotOfDroppedItem.jpg[Item In Game]
 
 == Setting Up
 
