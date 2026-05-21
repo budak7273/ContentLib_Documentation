@@ -146,6 +146,8 @@ because this behavior provides the most compatibility with other mods.
 
 The ClearCost, ClearRecipes, ClearSchematics, ClearScannableResources, and ClearDeps fields may be of use here.
 
+=== Adding Recipe Unlocks
+
 Here's an example schematic patch that also unlocks
 the 3 Turbofuel recipes at the same time as regular Fuel
 while still preserving the existing unlocks.
@@ -162,6 +164,8 @@ while still preserving the existing unlocks.
 }
 ```
 
+=== "Hiding" Schematics
+
 Due to a base-game bug/feature, AWESOME Shop schematics and items without assigned categories are usually not displayed in menus unless they are explicitly searched for.
 You can use this behavior to hide AWESOME Shop schematics from display.
 
@@ -174,6 +178,8 @@ Here's an example patch that makes it so the "Pretty Good Pioneering" statue doe
     "ClearSubCategories": true
 }
 ```
+
+=== Replacing Recipe Unlocks
 
 Here's an example schematic patch from RePan that entirely replaces the recipe unlocks of an existing schematic with another set of recipe unlocks:
 
@@ -190,6 +196,8 @@ Here's an example schematic patch from RePan that entirely replaces the recipe u
     ]
 }
 ```
+
+=== Unlocking Other Schematics
 
 Schematics can also unlock other schematics.
 Here's an example schematic patch that will automatically unlock the "Charcoal" schematic when the "Biocoal" schematic is unlock:
@@ -209,6 +217,8 @@ it simply adds an additional possible way to unlock it.
 However, since `Schematic_Alternate_Coal2_C` is of type Alternate and this patch causes it to be unlocked,
 `Schematic_Alternate_Coal2_C` will be removed from the alternate pool upon unlocking `Schematic_Alternate_Coal1_C`.
 Unless there was already an unclaimed hard drive with `Schematic_Alternate_Coal2_C`, in which case selecting it would give you nothing new.
+
+=== Unlocking Scannable Resources
 
 To unlock scannable resources, you can use the `ScannableResources` field.
 Simply specific the resource you want to unlock and the type of node that should be scanned for.
