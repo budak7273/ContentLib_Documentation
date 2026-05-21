@@ -88,7 +88,10 @@
         },
         "MenuPriority": {
             "type": "number",
-            "description": "Only tested for the HUB and AWESOME Shop. Controls the order that schematics appear within their category. Lower values means earlier in the menu. Negatives and decimals allowed."
+            "description": "Only tested for the HUB and AWESOME Shop. Controls the order that schematics appear within their category. Lower values means earlier in the menu. Negatives and decimals allowed.",
+            "examples": [
+                500.0
+            ]
         },
         "Time": {
             "type": "number",
@@ -120,7 +123,7 @@
         },
         "Schematics": {
             "type": "array",
-            "description": "Automatic name resolved asset. Other schematics to unlock when the schematic is purchased. Note that these have *absolutely no visual representation within the game*, you will have to confirm their successful addition by testing, checking the logs, or using ContentInspector. Appended to the existing by default, use ClearSchematics to change this.",
+            "description": "Automatic name resolved asset. Other schematics to unlock when the schematic is purchased. They must already be registered, so if unlocking another ContentLib schematic, its file name should be alphabetically before this one. Note that these have *absolutely no visual representation within the game*, you will have to confirm their successful addition by testing, checking the logs, or using ContentInspector. Appended to the existing by default, use ClearSchematics to change this.",
             "items": {
                 "minimum": 1,
                 "$ref": "./Components/CL_NameResolvedAsset.json"
@@ -164,6 +167,12 @@
                         "Resource": "Desc_OreGold_C",
                         "NodeType": "Node"
                     }
+                ],
+                [
+                    {
+                        "Resource": "Desc_Geyser_C",
+                        "NodeType": "Geyser"
+                    }
                 ]
             ]
         },
@@ -177,35 +186,35 @@
         },
         "ClearSubCategories": {
             "type": "boolean",
-            "description": "When true, the existing Sub Categories of a schematic will be cleared. Used to wipe costs, or entirely replace them with the entries in the SubCategories field."
+            "description": "For patches. When true, the existing Sub Categories of a schematic will be cleared. Used to wipe costs, or entirely replace them with the entries in the SubCategories field."
         },
         "ClearCost": {
             "type": "boolean",
-            "description": "When true, the existing unlocks cost entries of a schematic will be cleared. Used to wipe costs, or entirely replace them with the entries in the Cost field."
+            "description": "For patches. When true, the existing unlocks cost entries of a schematic will be cleared. Used to wipe costs, or entirely replace them with the entries in the Cost field."
         },
         "ClearRecipes": {
             "type": "boolean",
-            "description": "When true, the existing recipe unlocks of a schematic will be cleared. Used to wipe unlocked recipes, or entirely replace them with the entries in the Recipes field."
+            "description": "For patches. When true, the existing recipe unlocks of a schematic will be cleared. Used to wipe unlocked recipes, or entirely replace them with the entries in the Recipes field."
         },
         "ClearSchematics": {
             "type": "boolean",
-            "description": "When true, the existing schematic unlocks of a schematic will be cleared. Used to wipe unlocked schematics, or entirely replace them with the entries in the Schematics field."
+            "description": "For patches. When true, the existing schematic unlocks of a schematic will be cleared. Used to wipe unlocked schematics, or entirely replace them with the entries in the Schematics field."
         },
         "ClearScannableResources": {
             "type": "boolean",
-            "description": "When true, the existing scannable resource unlocks of a schematic will be cleared. Used to wipe unlocked scannable resource, or entirely replace them with the entries in the ScannableResources field."
+            "description": "For patches. When true, the existing scannable resource unlocks of a schematic will be cleared. Used to wipe unlocked scannable resource, or entirely replace them with the entries in the ScannableResources field."
         },
         "ClearDeps": {
             "type": "boolean",
-            "description": "When true, the existing dependencies of a schematic will be cleared. Used to wipe dependencies, or entirely replace them with the entries in the DependsOn field."
+            "description": "For patches. When true, the existing dependencies of a schematic will be cleared. Used to wipe dependencies, or entirely replace them with the entries in the DependsOn field."
         },
         "ClearItemsToGive": {
             "type": "boolean",
-            "description": "When true, the existing item rewards of a schematic will be cleared. Used to wipe item rewards, or entirely replace them with the entries in the ItemsToGive field."
+            "description": "For patches. When true, the existing item rewards of a schematic will be cleared. Used to wipe item rewards, or entirely replace them with the entries in the ItemsToGive field."
         },
         "ResearchTree": {
             "type": "object",
-            "description": "I (Robb) have not investigated this field to find out if it still works. See https://github.com/Nogg-aholic/ContentLib/blob/master/Source/ContentLib/Private/CLSchematicBPFLib.cpp if you want to try it. See ContentLib discord conversation https://discord.com/channels/771801486828896258/864639223599726612/1365851261060124713"
+            "description": "I (Robb) have not investigated this field to find out if it still works. It can only modify nodes, not roads. See https://github.com/Nogg-aholic/ContentLib/blob/master/Source/ContentLib/Private/CLSchematicBPFLib.cpp if you want to try it. See ContentLib Discord conversation: https://discord.com/channels/771801486828896258/864639223599726612/1365851261060124713"
         }
     },
     "allOf": [
