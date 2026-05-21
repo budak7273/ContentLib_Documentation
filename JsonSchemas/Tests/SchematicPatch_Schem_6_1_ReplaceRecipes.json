@@ -1,6 +1,7 @@
 //Game/FactoryGame/Schematics/Progression/Schematic_6-1.Schematic_6-1_C
 {
     "$schema": "./../CL_Schematic.json",
+    "VisualKit": "Schematic_Tutorial5_C",
     "ClearRecipes": true,
     "Recipes": [
         "Recipe_GeneratorFuel",

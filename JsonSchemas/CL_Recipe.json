@@ -119,7 +119,8 @@
         },
         "ManufacturingDuration": {
             "type": "number",
-            "description": "The time it takes for a machine to process this recipe in seconds. Recipe energy consumption is usually this times the machine's power usage."
+            "description": "The time it takes for a machine to process this recipe in seconds. Recipe energy consumption is usually this times the machine's power usage.",
+            "minimum": 0
         },
         "ManualManufacturingMultiplier": {
             "type": "number",
@@ -145,15 +146,24 @@
         },
         "VariablePowerConsumptionFactor": {
             "type": "number",
-            "description": "Only works in variable consumption machines (the Particle Accelerator in base game). Added to the VariablePowerConsumptionFactor to get the 'maximum' power consumption the recipe can scale up to over its cycle."
+            "description": "Only works in variable consumption machines (the Particle Accelerator, Converter, and Quantum Encoder in base game). Added to the VariablePowerConsumptionFactor to get the 'maximum' power consumption in MW the recipe can scale up to over its cycle.",
+            "examples": [
+                300
+            ]
         },
         "VariablePowerConsumptionConstant": {
             "type": "number",
-            "description": "Only works in variable consumption machines (the Particle Accelerator in base game). The 'minimum' power consumption the recipe can scale down to over its cycle."
+            "description": "Only works in variable consumption machines (the Particle Accelerator, Converter, and Quantum Encoder in base game). The 'minimum' power consumption in MW the recipe can scale down to over its cycle.",
+            "examples": [
+                100
+            ]
         },
         "ManufacturingMenuPriority": {
             "type": "number",
-            "description": "Controls the order that recipes appear within their category. Lower values means earlier in the menu. Negatives and decimals allowed."
+            "description": "Controls the order that recipes appear within their category. Lower values means earlier in the menu. Negatives and decimals allowed.",
+            "examples": [
+                500.0
+            ]
         },
         "OverrideName": {
             "type": "boolean",

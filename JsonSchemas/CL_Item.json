@@ -77,8 +77,17 @@
         },
         "ResourceSinkPoints": {
             "type": "integer",
-            "description": "How many points this item is worth when shredded in the AWESOME Sink",
-            "$comment": "TODO Does this work?"
+            "description": "How many points this item is worth when shredded in the AWESOME Sink. Set to `0` to make the item unsinkable. TFIT's developer tools (https://github.com/blockout22/TFIT#developer-utilities) can help calculate this for you.",
+            "minimum": 0
+        },
+        "ResourceSinkTrack": {
+            "type": "string",
+            "description": "The track this item should be assigned to in the AWESOME Sink. Only meaningful if the item also has ResourceSinkPoints. In the base game, only Alien DNA Capsules are on the Exploration track. Defaults to 'Default' if unspecified.",
+            "enum": [
+                "Default",
+                "Exploration"
+            ],
+            "default": "Default"
         },
         "ResourceItem": {
             "type": "object",

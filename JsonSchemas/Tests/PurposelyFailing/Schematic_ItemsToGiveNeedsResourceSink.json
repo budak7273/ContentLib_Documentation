@@ -1,0 +1,11 @@
+{
+  "$schema": "./../../CL_Schematic.json",
+  "$comment": "This fails because `ItemsToGive` is only known to work Type: `ResourceSink`",
+  "ItemsToGive": [
+    {
+      "Amount": 1,
+      "Item": "Desc_OreIron"
+    }
+  ],
+  "Type": "Milestone"
+}

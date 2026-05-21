@@ -1,0 +1,6 @@
+//Game/FactoryGame/Resource/Parts/CopperIngot/Desc_CopperIngot.Desc_CopperIngot_C
+{
+    "$schema": "./../CL_Item.json",
+    "$comment": "Changes Copper Ingots to give DNA points. If combined with ItemPatch_CopperSinkPoints it should be worth 100.",
+    "ResourceSinkTrack": "Exploration"
+}

@@ -14,6 +14,37 @@ You can find the source code for the mod https://github.com/Nogg-aholic/ContentL
 
 For further support, please join the https://discord.gg/kcRmFxn89d[Nog's Mods discord server].
 
+== ContentLib Capabilities
+
+ContentLib makes it easier to do a lot of things,
+but it will never be a replacement for the full Satisfactory modding suite.
+
+[cols="1,1" options="header"]
+|===
+| ContentLib can... | ContentLib CAN'T...
+
+a|
+* ✔️ Create new items, recipes, and schematics (ex. HUB Milestones)
+* ✔️ Modify properties of existing items, recipes, and schematics
+* ✔️ Change or add new icons for items and schematics
+* ✔️ Modify some properties of machines, equipment, creatures, etc.
+* ✔️ Modify some data assets created by other mods
+* ✔️ Hot reload some content without restarting the game (WIP)
+* ✔️ Be extended by other mods to dynamically generate content
+* ✔️ Enable writing mods that need few, if any, updates (ContentLib JSON structure is consistent across updates)
+a|
+* ❌ Add new meshes (3D models)
+* ❌ Create new buildings
+* ❌ Change the internal logic of machines
+* ❌ Conditionally apply your changes (they always apply unless content is missing)
+* ❌ Implement new game mechanics
+* ❌ Create road-connected MAM trees
+|===
+
+To learn more about the full modding toolkit,
+which does not have these limitations,
+see the https://docs.ficsit.app/satisfactory-modding/latest/index.html[Satisfactory Modding Documentation].
+
 == For Users
 
 If you'd like to make a couple recipe or item tweaks, these pages may be of use to you.

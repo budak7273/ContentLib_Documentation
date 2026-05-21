@@ -40,10 +40,11 @@
         },
         "VisualKit": {
             "type": "string",
-            "description": "Name of the Visual Kit to use. If you want to refer to the kit of an existing asset, use its descriptor name, with the _C suffix. TODO test if base-game schematics get kits genned?",
+            "description": "Name of the Visual Kit to use. If you want to refer to the kit of an existing asset, use its descriptor name, with the _C suffix.",
             "examples": [
-                "Desc_OreGold_C",
-                "Desc_Water_C",
+                "Schematic_Tutorial5_C",
+                "Schematic_1-3_C",
+                "Schematic_2-1_C",
                 "Kit_MyCustomVisualKitName"
             ]
         },
@@ -87,7 +88,10 @@
         },
         "MenuPriority": {
             "type": "number",
-            "description": "Only tested for the HUB and AWESOME Shop. Controls the order that schematics appear within their category. Lower values means earlier in the menu. Negatives and decimals allowed."
+            "description": "Only tested for the HUB and AWESOME Shop. Controls the order that schematics appear within their category. Lower values means earlier in the menu. Negatives and decimals allowed.",
+            "examples": [
+                500.0
+            ]
         },
         "Time": {
             "type": "number",
@@ -96,7 +100,7 @@
         },
         "Tier": {
             "type": "integer",
-            "description": "The numeric tier the schematic is sorted into in the HUB. Unknown if this affects other types of schematic.",
+            "description": "The numeric tier the schematic is sorted into in the HUB. If in the AWESOME Shop (type `ResourceSink`), then this tier must be open to purchase the item, although the game UI does not communicate this. Unknown if this affects other types of schematic.",
             "minimum": 0
         },
         "InventorySlotsToGive": {
@@ -119,7 +123,7 @@
         },
         "Schematics": {
             "type": "array",
-            "description": "Automatic name resolved asset. Other schematics to unlock when the schematic is purchased. Note that these have *absolutely no visual representation within the game*, you will have to confirm their successful addition by testing, checking the logs, or using ContentInspector. Appended to the existing by default, use ClearSchematics to change this.",
+            "description": "Automatic name resolved asset. Other schematics to unlock when the schematic is purchased. They must already be registered, so if unlocking another ContentLib schematic, its file name should be alphabetically before this one. Note that these have *absolutely no visual representation within the game*, you will have to confirm their successful addition by testing, checking the logs, or using ContentInspector. Appended to the existing by default, use ClearSchematics to change this.",
             "items": {
                 "minimum": 1,
                 "$ref": "./Components/CL_NameResolvedAsset.json"
@@ -127,6 +131,48 @@
             "examples": [
                 [
                     "Schematic_Goat"
+                ]
+            ]
+        },
+        "ScannableResources": {
+            "type": "array",
+            "description": "Scannable Resourcess to unlock when the schematic is purchased. Appended to the existing by default, use ClearScannableResources to change this.",
+            "items": {
+                "minimum": 1,
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                    "Resource",
+                    "NodeType"
+                ],
+                "properties": {
+                    "Resource": {
+                        "$ref": "./Components/CL_NameResolvedAsset.json"
+                    },
+                    "NodeType": {
+                        "type": "string",
+                        "enum": [
+                            "Node",
+                            "FrackingSatellite",
+                            "FrackingCore",
+                            "Geyser"
+                        ],
+                        "description": "What type of node should be scanned for."
+                    }
+                }
+            },
+            "examples": [
+                [
+                    {
+                        "Resource": "Desc_OreGold_C",
+                        "NodeType": "Node"
+                    }
+                ],
+                [
+                    {
+                        "Resource": "Desc_Geyser_C",
+                        "NodeType": "Geyser"
+                    }
                 ]
             ]
         },
@@ -140,31 +186,35 @@
         },
         "ClearSubCategories": {
             "type": "boolean",
-            "description": "When true, the existing Sub Categories of a schematic will be cleared. Used to wipe costs, or entirely replace them with the entries in the SubCategories field."
+            "description": "For patches. When true, the existing Sub Categories of a schematic will be cleared. Used to wipe costs, or entirely replace them with the entries in the SubCategories field."
         },
         "ClearCost": {
             "type": "boolean",
-            "description": "When true, the existing unlocks cost entries of a schematic will be cleared. Used to wipe costs, or entirely replace them with the entries in the Cost field."
+            "description": "For patches. When true, the existing unlocks cost entries of a schematic will be cleared. Used to wipe costs, or entirely replace them with the entries in the Cost field."
         },
         "ClearRecipes": {
             "type": "boolean",
-            "description": "When true, the existing recipe unlocks of a schematic will be cleared. Used to wipe unlocked recipes, or entirely replace them with the entries in the Recipes field."
+            "description": "For patches. When true, the existing recipe unlocks of a schematic will be cleared. Used to wipe unlocked recipes, or entirely replace them with the entries in the Recipes field."
         },
         "ClearSchematics": {
             "type": "boolean",
-            "description": "When true, the existing schematic unlocks of a schematic will be cleared. Used to wipe unlocked schematics, or entirely replace them with the entries in the Schematics field."
+            "description": "For patches. When true, the existing schematic unlocks of a schematic will be cleared. Used to wipe unlocked schematics, or entirely replace them with the entries in the Schematics field."
+        },
+        "ClearScannableResources": {
+            "type": "boolean",
+            "description": "For patches. When true, the existing scannable resource unlocks of a schematic will be cleared. Used to wipe unlocked scannable resource, or entirely replace them with the entries in the ScannableResources field."
         },
         "ClearDeps": {
             "type": "boolean",
-            "description": "When true, the existing dependencies of a schematic will be cleared. Used to wipe dependencies, or entirely replace them with the entries in the DependsOn field."
+            "description": "For patches. When true, the existing dependencies of a schematic will be cleared. Used to wipe dependencies, or entirely replace them with the entries in the DependsOn field."
         },
         "ClearItemsToGive": {
             "type": "boolean",
-            "description": "When true, the existing item rewards of a schematic will be cleared. Used to wipe item rewards, or entirely replace them with the entries in the ItemsToGive field."
+            "description": "For patches. When true, the existing item rewards of a schematic will be cleared. Used to wipe item rewards, or entirely replace them with the entries in the ItemsToGive field."
         },
         "ResearchTree": {
             "type": "object",
-            "description": "I (Robb) have not investigated this field to find out if it still works. See https://github.com/Nogg-aholic/ContentLib/blob/master/Source/ContentLib/Private/CLSchematicBPFLib.cpp if you want to try it. See ContentLib discord conversation https://discord.com/channels/771801486828896258/864639223599726612/1365851261060124713"
+            "description": "I (Robb) have not investigated this field to find out if it still works. It can only modify nodes, not roads. See https://github.com/Nogg-aholic/ContentLib/blob/master/Source/ContentLib/Private/CLSchematicBPFLib.cpp if you want to try it. See ContentLib Discord conversation: https://discord.com/channels/771801486828896258/864639223599726612/1365851261060124713"
         }
     },
     "allOf": [
@@ -182,6 +232,37 @@
                     }
                 }
             }
+        },
+        {
+            "$comment": "ItemsToGive only known to work with Type: ResourceSink, so require it to be present if ItemsToGive is used. Not sure why JSON schema logic requires me to write it this way, but it does.",
+            "oneOf": [
+                {
+                    "$comment": "Either ItemsToGive is not present, so it passes...",
+                    "not": {
+                        "required": [
+                            "ItemsToGive"
+                        ]
+                    }
+                },
+                {
+                    "$comment": "... or ItemsToGive is present, and Type is also present, and must be set to ResourceSink for this rule to pass.",
+                    "allOf": [
+                        {
+                            "required": [
+                                "ItemsToGive",
+                                "Type"
+                            ]
+                        },
+                        {
+                            "properties": {
+                                "Type": {
+                                    "const": "ResourceSink"
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
         }
     ],
     "patternProperties": {
