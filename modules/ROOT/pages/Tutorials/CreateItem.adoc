@@ -61,6 +61,14 @@ image:Tutorials/Item_AutoSuggest.png[image]
 
 If you don't see these, go get a good text editor as described on the xref:Tutorials/Setup.adoc[Setting Up] page!
 
+[TIP]
+====
+VSCode can automatically format your JSON files to be more readable.
+To do this, open the Command Palette by pressing `F1` or clicking `View` > `Command Palette...`, then type `Format Document` to search for it. 
+Note that the search result also tells you what the keybind is, for example, `Shift + Alt + F`.
+You can click on the result to auto-format your file, or exit the palette and press that keybind.
+====
+
 == Name and Description
 
 Setting the name and description of the item is as simple as specifying the Name and Description fields.
