@@ -25,7 +25,7 @@ if you don't want to download anything.
 |===
 | Works? | Editor Name | Notes
 
-| ✔️ | link:https://code.visualstudio.com/Download[Visual Studio Code]
+| ✔️ | link:https://code.visualstudio.com/Download[Visual Studio Code] (VSCode)
 | Flexible modern text editor.
 Video demo: link:https://youtu.be/m30JiCuW42U[📹 YouTube video]
 
@@ -65,6 +65,55 @@ If you ask for help, my first question will be "does your editor say it matches 
 I (Robb) will not check JSON syntax for you, the schema does that automatically.
 People (me included) make mistakes, the schema checker doesn't.
 ====
+
+=== Visual Studio Code Setup
+
+The documentation will assume you are using Visual Studio Code (VSCode),
+as it's the most accessible editor mentioned in the above options.
+
+As a security measure, VSCode requires you to "trust" web URLs that contain JSON schemas before the editor will load them.
+These directions will walk you through adjusting its settings so ContentLib's JSON schemas are trusted.
+Once the setting is changed it will work for every future file you work with.
+
+. Create a new text file in VSCode via `File` > `New Text File`. It will be a temporary file, so it doesn't matter where the file is located.
+. Copy and paste the below text into the file:
++
+--
+```json
+{
+    "$schema": "https://raw.githubusercontent.com/budak7273/ContentLib_Documentation/main/JsonSchemas/CL_Schematic.json",
+    "$comment": "This text's only purpose is to point to a schema URL, causing VSCode to generate the error message that lets you trust it."
+}
+```
+--
+. Notice that VSCode has detected the file as JSON and updated the colors and icon accordingly:
++
+image:Tutorials/Setup/VSCodeSchemaTrust/FileFormatDetected.png[FileFormatDetected]
+. Notice the yellow squiggle underline on the `$schema` line of the file.
+  Hover over it and you'll see the aforementioned security warning message.
+  At the bottom of the tooltip, click the blue `Quick Fix...` text
++
+image:Tutorials/Setup/VSCodeSchemaTrust/ClickQuickFix.png[ClickQuickFix]
+. Click `Configure Trusted Domains...`
++
+image:Tutorials/Setup/VSCodeSchemaTrust/ClickConfigureDomains.png[ClickConfigureDomains]
+. In the Command Pallate picker that appears, select `Configure Setting`
++
+image:Tutorials/Setup/VSCodeSchemaTrust/ClickConfigureSetting.png[ClickConfigureSetting]
+. In the Settings window, click `Add Item`
++
+image:Tutorials/Setup/VSCodeSchemaTrust/ClickAddItem.png[ClickAddItem]
+. For the new item, enter the "Key" of `+https://raw.githubusercontent.com/budak7273/ContentLib_Documentation/+` and keep the default "Value" of `true`. Click the blue `OK` button to confirm.
+This value means VSCode will trust any schema URLs that start with that path, which includes just the schemas published for ContentLib usage.
++
+image:Tutorials/Setup/VSCodeSchemaTrust/EnterPathAndClickOk.png[EnterPathAndClickOk]
+. Close the Settings window via the `X`
++
+image:Tutorials/Setup/VSCodeSchemaTrust/CloseSettings.png[CloseSettings]
+. Return to the file. The yellow squiggle underline should now be gone!
++
+image:Tutorials/Setup/VSCodeSchemaTrust/SquiggleIsGone.png[SquiggleIsGone]
+
 
 == Alternate Approach: Configs Folder
 
