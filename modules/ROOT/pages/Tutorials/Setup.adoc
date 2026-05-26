@@ -198,6 +198,8 @@ since it helps if you ever decide to go further in modding.
 
 Put the skeleton folder in the `Mods` folder of your Satisfactory game install.
 
+To find your game install, follow the directions in the link:https://docs.ficsit.app/satisfactory-modding/latest/faq.html#_where_are_my_game_files_located[Satisfactory Modding FAQ: Where are my game files located?]
+
 For example, if your game was installed in the folder
 `D:\Programs\EpicGamesGames\SatisfactoryExperimental\`
 then the folder path to inside of the folder you moved in should be 
