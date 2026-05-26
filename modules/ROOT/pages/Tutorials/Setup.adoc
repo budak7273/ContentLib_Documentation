@@ -190,11 +190,14 @@ Inside the .uplugin file:
 
 == Setting Up the Mod Folder
 
-=== Option 1 - No Unreal Editor
+You have a few options for how to get started depending on what you currently have set up:
 
-Before you decide to follow this section,
-I suggest considering Option 2,
-since it helps if you ever decide to go further in modding.
+- Go with **Option 1** if you **haven't developed mods before**, or want to try this out quickly
+- Go with **Option 2** if you **already have the CSS Unreal Editor set up**,
+  or you want to develop full mods in the future (ex. ones with custom item models, buildings, user interfaces, etc.)
+- Go with **Option 3** if you **already have an existing mod** and you'd like to add ContentLib content to it
+
+=== Option 1 - No Unreal Editor
 
 Put the skeleton folder in the `Mods` folder of your Satisfactory game install.
 
