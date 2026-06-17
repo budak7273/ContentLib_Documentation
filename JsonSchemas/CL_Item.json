@@ -17,12 +17,11 @@
         },
         "Form": {
             "type": "string",
-            "description": "Type of item, controls what can move it. Solids move on belts and can be put in the inventory. Liquid and Gas must be moved with pipes. Heat and Invalid are not useful as items as of U8.",
+            "description": "Type of item, controls what can move it. Solids move on belts and can be put in the inventory. Liquid and Gas must be moved with pipes. Invalid is not useful for items as of U8. Heat was removed in 1.2",
             "enum": [
                 "Solid",
                 "Liquid",
                 "Gas",
-                "Heat",
                 "Invalid"
             ]
         },
