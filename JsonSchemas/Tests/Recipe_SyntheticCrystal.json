@@ -27,5 +27,6 @@
     ],
     "UnlockedBy": [
         "Schematic_1-1"
-    ]
+    ],
+    "RequireItemValidation": true
 }

@@ -42,7 +42,8 @@ Below is an example recipe and a screenshot of it within the Item Codex in game.
     ],
     "UnlockedBy": [
         "Schematic_1-1"
-    ]
+    ],
+    "RequireItemValidation": true
 }
 ```
 
@@ -82,7 +83,8 @@ Here's an example recipe for the Blender made by McGalleon.
     ],
     "UnlockedBy": [
         "Schematic_1-1"
-    ]
+    ],
+    "RequireItemValidation": true
 }
 ```
 
@@ -90,8 +92,8 @@ image:Features/BlenderRecipeExample.png[Blender example in-game]
 
 == Setting Up
 
-After setting up your text editor,
-go ahead and create a new file called `Recipe_YourNameHere.json` in your mod's Recipes folder
+After xref:Tutorials/Setup.adoc[setting up your text editor],
+create a new file called `Recipe_YourNameHere.json` in your mod's Recipes folder
 and copy in the "Example Starter Recipe" from above.
 
 It is important that your recipe name is formatted in this way because the file name will become the internal recipe blueprint name once the recipe is loaded.
@@ -124,8 +126,11 @@ Find out how to track down asset names xref:Tutorials/FindAssetPath.adoc[in the 
 
 For the `ProducedIn` field, all entries must be valid recipe producers.
 ContentLib automatically logs the names of all producers it finds when the game starts, so you can find these in your log files - search for `All detected`.
+The `_C` suffix is optional.
 
-Here's an example of a few:
+Also, your text editor's JSON Schema auto-suggest feature will auto-suggest some of the base game ones for you.
+
+Here are examples of a few:
 
 * Workbench: `BP_WorkBenchComponent`
 * Equipment Workshop: `BP_WorkshopComponent`
@@ -141,17 +146,16 @@ Here's an example of a few:
 * Converter: `Build_Converter`
 * Quantum Encoder: `Build_QuantumEncoder`
 
+=== Recipe Access
 
-Alternatively, your text editor's JSON Schema auto-suggest feature can auto-suggest some of the base game ones for you.
-The `_C` suffix is optional.
-
-=== Schematic Names
+In order for your recipe to be usable, it needs to be unlocked by something - a schematic.
+That's why the example starter recipe included the `UnlockedBy` field, a helper provided by ContentLib to help you add your recipe to an existing schematic.
 
 Schematic names for HUB milestones will generally follow the format `Schematic_1-1`, but you can find out specific ones via the approaches described xref:Tutorials/FindAssetPath.adoc[in the Finding Assets tutorial].
 
 You can also create your own schematic to unlock the recipe by following the xref:Tutorials/CreateSchematic.adoc[Create a Schematic] tutorial.
 
-Use the values you've selected and the example recipe above to create your recipe, then place it in the `FactoryGame/Configs/ContentLib/Recipes` directory and launch the game to try it out. If you've done everything correctly, you should see your recipe unlocked by the schematic you specified, and you can use it in the machines you added to ProducedIn.
+Use the values you've selected and the example recipe above to create your recipe, then place it in the `FactoryGame/Configs/ContentLib/Recipes` directory and launch the game to try it out. If you've done everything correctly, you should see your recipe unlocked by the schematic you specified, and you can use it in the machines you added to `ProducedIn`.
 
 == Next Steps
 

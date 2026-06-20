@@ -71,7 +71,8 @@ Below is an example recipe and a screenshot of it within the Item Codex in game.
     ],
     "UnlockedBy": [
         "Schematic_1-1"
-    ]
+    ],
+    "RequireItemValidation": true
 }
 ```
 
@@ -113,7 +114,8 @@ Here's an example recipe for the Blender made by McGalleon.
     ],
     "UnlockedBy": [
         "Schematic_1-1"
-    ]
+    ],
+    "RequireItemValidation": true
 }
 ```
 
