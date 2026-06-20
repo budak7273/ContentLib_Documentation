@@ -157,18 +157,6 @@ Once you have decided on a mod reference, you will have to:
 Inside the .uplugin file:
 
 - Edit the FriendlyName, Description, and CreatedBy fields to your preferences
-- Replace the "SmlVersionReplaceMe" with the latest version number of SML found
-  link:https://ficsit.app/mod/SML[here], so that it follows the format `^The.Number.Here`.
-  Once you're done, that section will look similar to this:
-
-```json
-{
-  "Name": "SML",
-  "Enabled": true,
-  "SemVersion": "^3.8.0"
-},
-```
-
 - Replace the "ContentLibVersionReplaceMe" with the latest version number of ContentLib found
   link:https://ficsit.app/mod/ContentLib[here], so that it follows the format `^The.Number.Here`.
   Once you're done, that section will look similar to this:
@@ -177,7 +165,7 @@ Inside the .uplugin file:
 {
   "Name": "ContentLib",
   "Enabled": true,
-  "SemVersion": "^1.5.0"
+  "SemVersion": "^1.10.0"
 },
 ```
 
@@ -185,7 +173,7 @@ Inside the .uplugin file:
   You can find the latest game version number in the "Game Versions" column of the link:https://ficsit.app/mod/SML[SML mod page's Versions tab]. Once you're done, it will look similar to this:
 
 ```json
-"GameVersion": ">=365306",
+"GameVersion": ">=491125",
 ```
 
 == Setting Up the Mod Folder

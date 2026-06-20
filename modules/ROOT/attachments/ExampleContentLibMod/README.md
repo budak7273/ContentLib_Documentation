@@ -19,18 +19,6 @@ you will have to:
 Inside the .uplugin file:
 
 - Edit the FriendlyName, Description, and CreatedBy fields to your preferences
-- Replace the "SmlVersionReplaceMe" with the latest version number of SML found here:
-  <https://ficsit.app/sml-versions>, so that it follows the format `^The.Number.Here`.
-  Once you're done, that section will look similar to this:
-
-```json
-{
-  "Name": "SML",
-  "Enabled": true,
-  "SemVersion": "^3.7.0"
-},
-```
-
 - Replace the "ContentLibVersionReplaceMe" with the latest version number of ContentLib found here:
   <https://ficsit.app/mod/ContentLib>, so that it follows the format `^The.Number.Here`.
   Once you're done, that section will look similar to this:
@@ -39,7 +27,7 @@ Inside the .uplugin file:
 {
   "Name": "ContentLib",
   "Enabled": true,
-  "SemVersion": "^1.4.0"
+  "SemVersion": "^1.10.0"
 },
 ```
 
@@ -47,5 +35,5 @@ Inside the .uplugin file:
   You can find the latest game version number in the "Game Versions" column of the [SML mod page's Versions tab](https://ficsit.app/mod/SML). Once you're done, it will look similar to this:
 
 ```json
-"GameVersion": ">=365306",
+"GameVersion": ">=491125",
 ```
